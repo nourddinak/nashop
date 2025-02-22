@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nashop.shop - Under Development</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+        body {
+            background: radial-gradient(circle at top left, #1a1a2e 0%, #16213e 50%, #0f172a 100%);
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #60a5fa, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 6s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        .development-banner {
+            background: linear-gradient(-45deg, #ff6b6b, #6b47ff, #47c1ff, #47ff9e);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+        }
+
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.7s;
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #60a5fa, #c084fc);
+            z-index: -1;
+            filter: blur(15px);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .glow-effect:hover::after {
+            opacity: 0.3;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: rotate(360deg) scale(1.2);
+        }
+
+        input:focus {
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-white font-sans">
+    <!-- Development Banner -->
+    <div class="development-banner text-white text-center py-3 px-4 font-bold text-lg">
+        🚧 Website Under Development - Coming Soon! 🚧
+    </div>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-6 py-16">
+        <div class="flex flex-col items-center justify-center min-h-screen text-center">
+            <div class="space-y-12">
+                <div class="flex items-center justify-center space-x-4 floating">
+                    <i data-lucide="shopping-bag" class="w-16 h-16 text-blue-400"></i>
+                    <h1 class="text-7xl font-bold gradient-text">
+                        nashop.shop
+                    </h1>
+                </div>
+                <p class="text-3xl text-blue-300 opacity-90">Dinakart (DAN) Token Launch - Under Development</p>
+
+                <!-- New Features Section -->
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <div class="feature-card glass-effect p-8 rounded-2xl glow-effect">
+                        <i data-lucide="rocket" class="w-16 h-16 text-blue-400 mx-auto mb-6 floating"></i>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Innovative Shopping Experience</h3>
+                        <p class="text-gray-300 text-lg">Experience a revolutionary e-commerce platform powered by blockchain technology.</p>
+                    </div>
+                    <div class="feature-card glass-effect p-8 rounded-2xl glow-effect">
+                        <i data-lucide="shield" class="w-16 h-16 text-purple-400 mx-auto mb-6 floating"></i>
+                        <h3 class="text-2xl font-bold text-purple-400 mb-4">Secure Transactions</h3>
+                        <p class="text-gray-300 text-lg">Advanced security measures ensuring safe and transparent shopping.</p>
+                    </div>
+                </div>
+
+                <!-- Main Features -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card glass-effect p-8 rounded-2xl glow-effect">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 text-blue-400 mx-auto mb-6"></i>
+                        <h3 class="text-xl font-bold text-blue-400 mb-3">Reward Redemptions</h3>
+                        <p class="text-gray-300">Use DAN tokens to claim exciting rewards and special offers</p>
+                    </div>
+                    
+                    <div class="feature-card glass-effect p-8 rounded-2xl glow-effect">
+                        <i data-lucide="coins" class="w-12 h-12 text-purple-400 mx-auto mb-6"></i>
+                        <h3 class="text-xl font-bold text-purple-400 mb-3">Exclusive Discounts</h3>
+                        <p class="text-gray-300">Enjoy special discounts on future purchases</p>
+                    </div>
+                    
+                    <div class="feature-card glass-effect p-8 rounded-2xl glow-effect">
+                        <i data-lucide="trending-up" class="w-12 h-12 text-blue-400 mx-auto mb-6"></i>
+                        <h3 class="text-xl font-bold text-blue-400 mb-3">Tradeable Asset</h3>
+                        <p class="text-gray-300">Trade DAN tokens on various exchanges</p>
+                    </div>
+                </div>
+
+                <!-- Email Subscription -->
+                <div class="max-w-md mx-auto w-full mt-16">
+                    <form id="emailForm" class="flex space-x-3">
+                        <input
+                            type="email"
+                            id="emailInput"
+                            placeholder="Enter your email for launch updates"
+                            class="flex-1 px-6 py-4 rounded-xl glass-effect border-0 focus:outline-none text-lg"
+                            required
+                        />
+                        <button
+                            type="submit"
+                            class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-xl flex items-center space-x-2 transition-all btn-shine"
+                        >
+                            <span>Stay Updated</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                    <div id="successMessage" class="hidden text-green-400 glass-effect p-6 rounded-xl mt-6">
+                        Thanks for subscribing! We'll keep you updated on the DAN token launch.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-effect py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center space-y-8">
+                <p class="text-gray-300 text-center max-w-2xl text-lg">
+                    With Dinakart (DAN) Crypto Coin, every purchase brings you closer to exclusive rewards and a dynamic crypto trading experience.
+                </p>
+                <div class="flex space-x-8">
+                    <a href="#" class="social-icon text-gray-400 hover:text-blue-400 transition-all">
+                        <i data-lucide="twitter" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" class="social-icon text-gray-400 hover:text-blue-400 transition-all">
+                        <i data-lucide="message-circle" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" class="social-icon text-gray-400 hover:text-blue-400 transition-all">
+                        <i data-lucide="github" class="w-8 h-8"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Handle email form submission
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('emailForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('emailInput').value = '';
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Initialize cards with opacity 0 and observe them
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
