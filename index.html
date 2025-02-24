@@ -90,7 +90,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        .action-button {
+        .button {
             position: relative;
             display: inline-block;
             background: black;
@@ -101,7 +101,7 @@
             text-decoration: none;
         }
 
-        .action-button::before {
+        .button::before {
             content: '';
             position: absolute;
             top: -2px;
@@ -111,6 +111,56 @@
             background: linear-gradient(45deg, #f97316, #ec4899);
             border-radius: 9999px;
             z-index: -1;
+        }
+        
+        
+         .action-button {
+            position: relative;
+            display: inline-block;
+            background: black;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #f97316, #ec4899);
+            border-radius: 9999px;
+            z-index: -1;
+        }
+
+         .action-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
         }
 
         .social-icon {
@@ -134,7 +184,7 @@
             <span class="text-white font-bold">nashop.store</span>
         </div>
         
-        <button class="action-button">Join Presale</button>
+        <button class="button">Join Presale</button>
     </nav>
 
     <!-- Promotional Banner -->
@@ -150,7 +200,7 @@
                 <p class="text-3xl text-white">One click, instant blockchain rewards</p>
                 <p class="bg-orange-500 text-white text-center py-3 px-4 font-bold text-lg rounded-lg mx-4">       🚧 Dinakart (DAN) presale Token Launch - Under Development! 
                 test network will lunch soon to test the ecosystems🚧</p>
-                <a href="https://token.nashop.store" class="action-button">Token Page</a>
+               <a href="https://token.nashop.store" class="action-button">Token Page</a>
 
                 <!-- Tabbed Navigation -->
                 <div class="flex justify-center space-x-8 my-16">
