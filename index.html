@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nashop.store - Under Development</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
     <style>
         body {
@@ -174,6 +175,59 @@
         input:focus {
             box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
         }
+        
+        .contract-card {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .contract-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(96, 165, 250, 0.1), rgba(192, 132, 252, 0.1));
+            z-index: -1;
+        }
+        
+        .address-copy {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .address-copy:hover {
+            color: #60a5fa;
+        }
+        
+        .roadmap-item {
+            position: relative;
+        }
+        
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, #60a5fa, #c084fc);
+        }
+        
+        .roadmap-item:last-child::before {
+            height: 50%;
+        }
+        
+        .dot {
+            position: absolute;
+            left: 16px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #f97316;
+        }
     </style>
 </head>
 <body class="min-h-screen text-white font-sans">
@@ -184,7 +238,7 @@
             <span class="text-white font-bold">nashop.store</span>
         </div>
         
-        <button class="button">Join Presale</button>
+        <a href="https://token.nashop.store" class="button">Token Page</a>
     </nav>
 
     <!-- Promotional Banner -->
@@ -194,13 +248,50 @@
 
     <!-- Hero Section -->
     <div class="container mx-auto px-6 py-16">
-        <div class="flex flex-col items-center justify-center min-h-screen text-center">
+        <div class="flex flex-col items-center justify-center text-center">
             <div class="space-y-12">
                 <h1 class="text-7xl font-bold text-white">Secure Your Shopping Future</h1>
                 <p class="text-3xl text-white">One click, instant blockchain rewards</p>
-                <p class="bg-orange-500 text-white text-center py-3 px-4 font-bold text-lg rounded-lg mx-4">       🚧 Dinakart (DAN) presale Token Launch - Under Development! 
-                test token will lunch soon 🚧</p>
+                <p class="bg-orange-500 text-white text-center py-3 px-4 font-bold text-lg rounded-lg mx-4">       
+                🚧 Dinakart (DAN) presale Token Launch - Testnet stopped, Mainnet launching in 2026! 🚧
+                </p>
                <a href="https://token.nashop.store" class="action-button">Token Page</a>
+
+                <!-- Social Media Links -->
+                <div class="flex justify-center space-x-8 mt-8">
+                    <a href="https://x.com/nashopstoreweb3" target="_blank" class="social-icon text-gray-300 hover:text-blue-400">
+                        <i class="fab fa-twitter text-3xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nashop.store.web3/" target="_blank" class="social-icon text-gray-300 hover:text-pink-400">
+                        <i class="fab fa-instagram text-3xl"></i>
+                    </a>
+                    <div class="social-icon text-gray-300">
+                        <i class="fab fa-telegram text-3xl"></i>
+                        <span class="text-xs block mt-1">Coming Soon</span>
+                    </div>
+                </div>
+
+                <!-- Contract Information -->
+                <div class="contract-card glass-effect p-6 rounded-2xl max-w-2xl mx-auto mt-8">
+                    <h3 class="text-xl font-bold text-blue-400 mb-3">Smart Contract</h3>
+                    <div class="bg-black/40 p-4 rounded-lg mb-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400 text-sm">Contract Address:</span>
+                            <button onclick="copyToClipboard('0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF')" class="text-blue-400 hover:text-blue-300">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <p class="text-white break-all text-sm mt-1">0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF</p>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-400">
+                        <span>Network: Polygon</span>
+                        <span>name: DonaKart</span>
+                        <span>Token: DAN</span>
+                        <a href="https://polygonscan.com/token/0x46fc3e44a9dbbbb6b9abcd9c55b7f91037f16cff" target="_blank" class="text-blue-400 hover:text-blue-300">
+                            View Explorer <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Tabbed Navigation -->
                 <div class="flex justify-center space-x-8 my-16">
@@ -236,6 +327,33 @@
                         <p class="text-gray-300">Trade DAN tokens on various exchanges in the future</p>
                     </div>
                 </div>
+                
+                <!-- Roadmap Section -->
+                <div class="max-w-3xl mx-auto w-full mt-20">
+                    <h2 class="text-3xl font-bold gradient-text mb-10">Development Roadmap</h2>
+                    <div class="space-y-10 pl-12">
+                        <div class="roadmap-item pl-8">
+                            <div class="dot"></div>
+                            <h3 class="text-xl font-bold text-blue-400">Current Phase (2023-2025)</h3>
+                            <p class="text-gray-300 mt-2">Platform development & security enhancement. Building robust infrastructure for seamless transactions and integration.</p>
+                        </div>
+                        <div class="roadmap-item pl-8">
+                            <div class="dot"></div>
+                            <h3 class="text-xl font-bold text-blue-400">Q1 2026</h3>
+                            <p class="text-gray-300 mt-2">Mainnet Token Presale - Early Investor Access</p>
+                        </div>
+                        <div class="roadmap-item pl-8">
+                            <div class="dot"></div>
+                            <h3 class="text-xl font-bold text-blue-400">Q2 2026</h3>
+                            <p class="text-gray-300 mt-2">Platform Beta Launch - Limited Access</p>
+                        </div>
+                        <div class="roadmap-item pl-8">
+                            <div class="dot"></div>
+                            <h3 class="text-xl font-bold text-blue-400">Q4 2026</h3>
+                            <p class="text-gray-300 mt-2">Full Platform Launch - Global Access</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Contact Section -->
                 <div class="max-w-2xl mx-auto w-full mt-16">
@@ -249,12 +367,26 @@
                         </a>
                     </div>
                 </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="max-w-2xl mx-auto w-full mt-16">
+                    <div class="glass-effect p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4 text-center">Stay Updated</h3>
+                        <p class="text-center text-gray-300 mb-6">Subscribe to our newsletter to receive the latest updates about our development progress and upcoming launch.</p>
+                        <form class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg bg-black/40 text-white border border-white/10 focus:outline-none">
+                            <button type="submit" class="button px-6 py-3">
+                                Subscribe Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-12">
+    <footer class="bg-gray-900 py-12 mt-24">
         <div class="container mx-auto px-6">
             <div class="flex flex-col items-center space-y-8">
                 <div class="flex items-center space-x-2">
@@ -265,15 +397,24 @@
                     With Dinakart (DAN) Crypto Coin, every purchase brings you closer to exclusive rewards and a dynamic crypto trading experience.
                 </p>
                 <div class="flex space-x-8">
-                    <a href="#" class="social-icon text-gray-400 hover:text-blue-400 transition-all">
-                        <i data-lucide="twitter" class="w-8 h-8"></i>
+                    <a href="https://x.com/nashopstoreweb3" target="_blank" class="social-icon text-gray-400 hover:text-blue-400 transition-all">
+                        <i class="fab fa-twitter text-2xl"></i>
                     </a>
-                    <a href="#" class="social-icon text-gray-400 hover:text-blue-400 transition-all">
-                        <i data-lucide="message-circle" class="w-8 h-8"></i>
+                    <a href="https://www.instagram.com/nashop.store.web3/" target="_blank" class="social-icon text-gray-400 hover:text-pink-400 transition-all">
+                        <i class="fab fa-instagram text-2xl"></i>
                     </a>
-                    <a href="#" class="social-icon text-gray-400 hover:text-blue-400 transition-all">
-                        <i data-lucide="github" class="w-8 h-8"></i>
-                    </a>
+                    <div class="social-icon text-gray-400 transition-all flex flex-col items-center">
+                        <i class="fab fa-telegram text-2xl"></i>
+                        <span class="text-xs">Coming Soon</span>
+                    </div>
+                </div>
+                <div class="text-gray-500 text-sm mt-8">
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="#" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-gray-300 transition-colors">Terms & Conditions</a>
+                        <a href="#" class="hover:text-gray-300 transition-colors">FAQ</a>
+                    </div>
+                    <p class="mt-6">&copy; 2024 Nashop DAN Token. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -292,6 +433,32 @@
             this.style.transform = 'scale(1)';
         });
 
+        // Function to copy text to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show temporary "Copied!" notification
+                const notification = document.createElement('div');
+                notification.textContent = 'Copied to clipboard!';
+                notification.style.position = 'fixed';
+                notification.style.bottom = '20px';
+                notification.style.right = '20px';
+                notification.style.backgroundColor = 'rgba(96, 165, 250, 0.9)';
+                notification.style.color = 'white';
+                notification.style.padding = '10px 20px';
+                notification.style.borderRadius = '5px';
+                notification.style.zIndex = '1000';
+                document.body.appendChild(notification);
+                
+                setTimeout(function() {
+                    notification.style.opacity = '0';
+                    notification.style.transition = 'opacity 0.5s';
+                    setTimeout(function() {
+                        document.body.removeChild(notification);
+                    }, 500);
+                }, 2000);
+            });
+        }
+
         // Intersection Observer for scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -304,12 +471,12 @@
             threshold: 0.1
         });
 
-        // Initialize cards with opacity 0 and observe them
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-            observer.observe(card);
+        // Initialize cards and sections with opacity 0 and observe them
+        document.querySelectorAll('.feature-card, .roadmap-item, .contract-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(element);
         });
     </script>
 </body>
