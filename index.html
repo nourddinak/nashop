@@ -1,397 +1,472 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth bg-black">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nashop.store [V3] - Enter the Grid | Web3 Commerce</title>
+    <title>Nashop [X] - The Future of Web3 Commerce // Experience DAN</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (Make sure this is included) -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Custom Styles for Animations & Patterns -->
+    <!-- Lucide Icons Script -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <!-- Defer script loading -->
+
+    <!-- Inline styles for advanced effects / Fallbacks -->
     <style>
-        /* Subtle animated background grid (optional) */
-        body {
-            background-image: linear-gradient(rgba(0, 180, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(0, 180, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-position: center center;
-             /* animation: bg-pan 20s linear infinite; */ /* Uncomment for subtle pan */
-        }
-
-       /* @keyframes bg-pan {
-          0% { background-position: 0% 0%; }
-          100% { background-position: 100% 100%; }
-       } */
-
-        /* Simple Scroll Entry Animation Base - Combine with JS Intersection Observer ideally */
-        /* This setup requires JS to add/remove 'is-visible' class */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .scroll-animate.delay-1 { transition-delay: 0.1s; }
-        .scroll-animate.delay-2 { transition-delay: 0.2s; }
-        .scroll-animate.delay-3 { transition-delay: 0.3s; }
-        /* etc. */
-
-        /* Class added by JS when element is in view */
-        .scroll-animate.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Alternative (NO JS REQUIRED, but fires only once on load if in view): */
-        /* Using CSS Animation tied to scroll (very experimental, limited support) */
-         /* @property --scroll-anim-progress {
-          syntax: '<percentage>'; inherits: false; initial-value: 0%;
-        } */
-        /* @keyframes reveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } } */
-        /* .scroll-reveal-css { animation: reveal linear; animation-timeline: view(); animation-range: entry 0% cover 30%; } */
-         /* Apply scroll-reveal-css class instead of scroll-animate */
-
-
-        /* Perspective for 3D hover */
-        .perspective-parent {
-            perspective: 1000px;
-        }
-        .perspective-child {
-            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth ease-out */
-            transform-style: preserve-3d;
-        }
-        .perspective-parent:hover .perspective-child {
-            transform: rotateX(5deg) rotateY(-5deg) scale(1.03) translateZ(10px);
-            /* Add subtle shadow increase */
-            /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); */
-        }
-
-        /* Hide scrollbar for horizontal scroll */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
 
     </style>
-</head>
-<body class="min-h-screen bg-black text-gray-300 font-sans selection:bg-magenta-500/40 selection:text-white overflow-x-hidden">
 
-    <!-- Floating Header -->
-     <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
-        <div class="container mx-auto px-4 py-2.5 bg-black/60 backdrop-blur-lg border border-blue-500/30 rounded-full shadow-xl shadow-blue-900/30">
-             <div class="flex items-center justify-between">
-                <a href="#" class="flex items-center space-x-2.5 group pl-2">
-                    <!-- Pulsing orb logo idea -->
-                    <div class="relative w-6 h-6">
-                        <div class="absolute inset-0 bg-blue-500 rounded-full animate-pulse opacity-70"></div>
-                        <div class="absolute inset-0.5 bg-black rounded-full"></div>
-                         <div class="absolute inset-1 bg-blue-400 rounded-full"></div>
-                    </div>
-                    <span class="text-white font-medium text-base tracking-wide opacity-90 group-hover:opacity-100 transition-opacity">nashop.store</span>
-                </a>
-                 <a href="https://token.nashop.store"
-                   class="inline-block px-4 py-1.5 rounded-full font-medium text-xs sm:text-sm text-blue-300 bg-blue-900/30 border border-blue-500/50 hover:bg-blue-800/50 hover:border-blue-400/70 hover:text-blue-200 transition-all duration-300 ease-out transform hover:scale-[1.03]">
-                   Token Access <i class="fas fa-chevron-right ml-1 text-[0.6rem]"></i>
-                </a>
+</head>
+<body class="bg-black text-gray-200 font-sans selection:bg-fuchsia-500/40 selection:text-white overflow-x-hidden">
+
+    <!-- ** HEADER / HERO ** -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden text-center px-4 md:px-6 py-20 z-0">
+         <!-- Background Shape / Element -->
+        <div class="absolute inset-0 -z-10 opacity-20">
+             <div class="absolute -top-1/4 -left-1/4 w-3/4 h-3/4 bg-gradient-to-br from-purple-600/50 to-transparent rounded-full blur-[100px] animate-pulse duration-5000 ease-in-out"></div>
+             <div class="absolute -bottom-1/4 -right-1/4 w-3/4 h-3/4 bg-gradient-to-tl from-cyan-600/40 to-transparent rounded-full blur-[100px] animate-pulse duration-5000 ease-in-out animation-delay-3000"></div>
+        </div>
+
+        <div class="relative z-10">
+            <div class="animate-fade-in-up"> <!-- Entry animation -->
+                 <!-- Glowing Logo/Icon -->
+                 <div class="inline-block mb-8 relative">
+                    <i data-lucide="fingerprint" class="w-20 h-20 text-cyan-400"></i>
+                     <div class="absolute -inset-3 bg-cyan-500/30 rounded-full blur-2xl opacity-70 animate-pulse duration-3000"></div>
+                 </div>
+
+                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-5 uppercase tracking-tighter text-shadow-lg">
+                     <span class="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-cyan-400 text-transparent bg-clip-text">Nashop</span>
+                     <span class="block text-4xl md:text-6xl lg:text-7xl text-white/80 mt-1 md:mt-0">Reimagined</span>
+                 </h1>
+
+                 <p class="text-lg md:text-xl lg:text-2xl text-gray-300 opacity-80 max-w-3xl mx-auto mb-10">
+                     Step into the next era of decentralized commerce. Earn <strong class="text-fuchsia-400 font-semibold">$DAN</strong>, unlock exclusive perks, and own your digital shopping journey.
+                 </p>
+
+                 <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                     <a href="#features"
+                        class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-white bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:from-fuchsia-700 hover:to-purple-700 border-2 border-transparent hover:border-fuchsia-300/50 transition-all duration-300 ease-in-out transform hover:scale-[1.03] shadow-lg hover:shadow-fuchsia-500/40 focus:outline-none focus:ring-4 focus:ring-fuchsia-500/50">
+                         Explore Features <i class="fas fa-arrow-down ml-2 text-xs group-hover:translate-y-0.5 transition-transform"></i>
+                     </a>
+                      <a href="https://token.nashop.store" target="_blank"
+                         class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-gray-200 bg-gray-800/60 border-2 border-gray-700 hover:border-cyan-400 hover:text-cyan-300 transition-all duration-300 ease-in-out transform hover:scale-[1.03] shadow-md hover:shadow-cyan-500/20 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 backdrop-blur-sm">
+                          Get $DAN Token <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                      </a>
+                 </div>
             </div>
+        </div>
+        <!-- Subtle scroll down indicator -->
+         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500 animate-bounce">
+            <i data-lucide="arrow-down" class="w-6 h-6"></i>
         </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="relative overflow-hidden"> <!-- Needed for absolute positioned elements -->
+    <!-- ** ANNOUNCEMENT / STATUS ** -->
+    <section class="py-16 md:py-24 bg-black relative overflow-hidden">
+        <!-- Grid Line Background -->
+         <div class="absolute inset-0 z-0 opacity-5 bg-[linear-gradient(to_right,theme(colors.cyan.800/50)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.cyan.800/50)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div>
 
-        <!-- Hero Section - Full Screen Height, Centered Text -->
-        <section id="hero" class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-             <!-- Background Visuals -->
-             <div class="absolute inset-0 -z-20 opacity-60">
-                 <div class="absolute -top-1/4 -left-1/4 w-full h-full bg-gradient-radial from-blue-900/50 via-black to-black blur-[80px]"></div>
-                 <div class="absolute -bottom-1/4 -right-1/4 w-3/4 h-3/4 bg-gradient-radial from-magenta-900/40 via-black to-black blur-[100px]"></div>
-            </div>
-             <!-- Animated Grid Background Layer -->
-            <div class="absolute inset-0 -z-10 opacity-30 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cpath%20d%3D%22M0%2039.5L40%2039.5%22%20stroke%3D%22rgba(0%2C%20180%2C%20255%2C%200.2)%22%20stroke-width%3D%221%22%2F%3E%3Cpath%20d%3D%22M39.5%200L39.5%2040%22%20stroke%3D%22rgba(0%2C%20180%2C%20255%2C%200.2)%22%20stroke-width%3D%221%22%2F%3E%3C%2Fsvg%3E')] [mask-image:radial-gradient(ellipse_at_center,white_20%,transparent_70%)]">
+         <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text uppercase tracking-wider">Project Status</h2>
+                 <p class="text-gray-400 text-lg opacity-90">Latest updates on our journey to mainnet.</p>
             </div>
 
-            <div class="relative z-10 scroll-animate is-visible"> <!-- Entry animation -->
-                 <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 text-white leading-none tracking-tighter">
-                    <span class="block">SHOP</span>
-                    <span class="block bg-gradient-to-r from-blue-400 to-magenta-500 text-transparent bg-clip-text -mt-2 md:-mt-4 lg:-mt-6">REIMAGINED.</span>
-                </h1>
-                <p class="text-base md:text-lg lg:text-xl text-gray-400 mb-10 max-w-xl mx-auto font-light">
-                    Experience the power of Web3 commerce. Own your rewards, engage with the future.
-                </p>
-                 <a href="https://token.nashop.store"
-                   class="inline-block px-8 py-3 rounded-full font-semibold text-base text-black bg-gradient-to-r from-blue-400 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 transition-all duration-300 ease-out transform hover:scale-[1.05] shadow-lg shadow-cyan-500/30 focus:outline-none focus:ring-4 focus:ring-cyan-400/50">
-                    Launch Token Portal
-                 </a>
-                 <!-- Scroll Down Indicator -->
-                 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-600 animate-bounce opacity-50">
-                     <i class="fas fa-chevron-down text-lg"></i>
-                 </div>
-            </div>
-        </section>
-
-        <!-- Promo Banner / Announcement (sticky style maybe?) -->
-        <div class="sticky top-[76px] z-40 my-8 px-4 scroll-animate is-visible"> <!-- Adjust top offset based on header height + spacing -->
-            <div class="container mx-auto max-w-4xl">
-                <div class="bg-gradient-to-r from-blue-900/80 via-magenta-900/80 to-blue-900/80 backdrop-blur-sm text-white text-center py-2.5 px-4 font-medium text-sm rounded-lg border border-blue-500/30 shadow-md">
-                   ⚡️ Development Active | CoinGecko & CMC Applications Submitted (Review Pending) | Mainnet 2026 Target ⚡️
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                <!-- Card 1: CoinGecko -->
+                <div class="group perspective-container animate-slide-in-left"> <!-- Animation trigger -->
+                    <div class="card-3d-effect relative preserve-3d bg-gradient-to-br from-gray-900 via-black to-gray-900 border border-cyan-500/30 rounded-xl shadow-xl p-6 lg:p-8 transition-all duration-400 ease-out hover:shadow-cyan-500/30 group-hover:-translate-y-2 group-hover:rotate-x-[-3deg] group-hover:rotate-y-[5deg]"> <!-- 3D Hover -->
+                        <!-- Card Glow -->
+                        <div class="absolute -inset-px bg-gradient-to-r from-cyan-500/60 to-purple-500/60 rounded-xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-400"></div>
+                        <!-- Content -->
+                        <div class="relative flex items-start gap-4">
+                            <img src="annonce/CoinG.jpg" alt="CoinGecko Logo" class="w-12 h-12 rounded-md border border-white/10 flex-shrink-0 mt-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-1">CoinGecko Application</h3>
+                                <p class="text-sm text-gray-300 opacity-80">Listing application submitted! Tracking ID requested. Status: <span class="text-yellow-400">Pending Initial Review</span></p>
+                                 <a href="#" class="text-xs text-cyan-400/80 hover:text-cyan-300 mt-2 inline-block group/link" <i class="fas fa-arrow-right text-[10px] opacity-70 group-hover/link:translate-x-1 transition-transform duration-200"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2: CoinMarketCap -->
+                <div class="group perspective-container animate-slide-in-right"> <!-- Animation trigger -->
+                    <div class="card-3d-effect relative preserve-3d bg-gradient-to-bl from-gray-900 via-black to-gray-900 border border-purple-500/30 rounded-xl shadow-xl p-6 lg:p-8 transition-all duration-400 ease-out hover:shadow-purple-500/30 group-hover:-translate-y-2 group-hover:rotate-x-[-3deg] group-hover:rotate-y-[-5deg]"> <!-- 3D Hover -->
+                        <!-- Card Glow -->
+                         <div class="absolute -inset-px bg-gradient-to-r from-purple-500/60 to-cyan-500/60 rounded-xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-400"></div>
+                         <!-- Content -->
+                        <div class="relative flex items-start gap-4">
+                            <img src="annonce/CMC.jpg" alt="CoinMarketCap Logo" class="w-12 h-12 rounded-md border border-white/10 flex-shrink-0 mt-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-lg font-semibold text-purple-400 mb-1">CoinMarketCap Verification</h3>
+                                <p class="text-sm text-gray-300 opacity-80">Verification & Listing application sent. Ticket: <code class="text-xs bg-black/50 px-1 py-0.5 rounded text-purple-300">1091577</code>. Status: <span class="text-yellow-400">Under Review</span></p>
+                                <a href="#" class="text-xs text-purple-400/80 hover:text-purple-300 mt-2 inline-block group/link" <i class="fas fa-arrow-right text-[10px] opacity-70 group-hover/link:translate-x-1 transition-transform duration-200"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Features Section - Horizontal Scroll with 3D Cards -->
-        <section id="features" class="py-20 md:py-28 relative overflow-hidden">
-             <!-- Background glow element -->
-             <div class="absolute -bottom-1/4 left-0 w-full h-1/2 bg-gradient-to-t from-blue-900/30 to-transparent blur-[100px] -z-10"></div>
-
-            <div class="container mx-auto px-4 md:px-6">
-                 <div class="text-center mb-16 scroll-animate is-visible">
-                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">Core Capabilities</h2>
-                     <p class="text-gray-400 text-lg max-w-2xl mx-auto">Powered by the DAN token & blockchain.</p>
-                 </div>
-             </div>
-
-            <!-- Horizontal Scrolling Container -->
-            <div class="relative scroll-animate is-visible">
-                 <!-- Add fade overlays for edges -->
-                 <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-                 <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
-
-                <div class="flex space-x-6 md:space-x-8 overflow-x-auto snap-x snap-mandatory py-8 px-4 md:px-12 hide-scrollbar">
-                     <!-- Feature Card 1 -->
-                     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[45%] lg:w-[35%] perspective-parent">
-                         <div class="relative perspective-child bg-gradient-to-br from-slate-900 to-gray-900/90 border border-blue-500/30 rounded-2xl p-8 shadow-xl hover:shadow-blue-500/20 h-full flex flex-col justify-between">
-                            <div>
-                                 <div class="mb-4 w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/40">
-                                    <i data-lucide="gift" class="w-6 h-6 text-blue-400"></i>
-                                </div>
-                                <h3 class="text-xl font-semibold text-white mb-2">Instant Rewards</h3>
-                                <p class="text-gray-400 text-sm leading-relaxed">Earn DAN tokens directly on purchases. Spend them on exclusive items, discounts, or hold as an asset.</p>
-                            </div>
-                             <div class="mt-6 text-xs text-blue-400/60 font-mono uppercase tracking-wider">Feature // 01</div>
-                         </div>
-                     </div>
-                    <!-- Feature Card 2 -->
-                     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[45%] lg:w-[35%] perspective-parent">
-                        <div class="relative perspective-child bg-gradient-to-br from-slate-900 to-gray-900/90 border border-magenta-500/30 rounded-2xl p-8 shadow-xl hover:shadow-magenta-500/20 h-full flex flex-col justify-between">
-                            <div>
-                                <div class="mb-4 w-12 h-12 rounded-lg bg-magenta-500/20 flex items-center justify-center border border-magenta-500/40">
-                                     <i data-lucide="verified" class="w-6 h-6 text-magenta-400"></i>
-                                </div>
-                                <h3 class="text-xl font-semibold text-white mb-2">Verifiable Ownership</h3>
-                                <p class="text-gray-400 text-sm leading-relaxed">Blockchain provides transparent proof of your reward earnings and potential digital collectible ownership.</p>
-                             </div>
-                            <div class="mt-6 text-xs text-magenta-400/60 font-mono uppercase tracking-wider">Feature // 02</div>
-                        </div>
-                     </div>
-                    <!-- Feature Card 3 -->
-                     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[45%] lg:w-[35%] perspective-parent">
-                         <div class="relative perspective-child bg-gradient-to-br from-slate-900 to-gray-900/90 border border-cyan-500/30 rounded-2xl p-8 shadow-xl hover:shadow-cyan-500/20 h-full flex flex-col justify-between">
-                            <div>
-                                <div class="mb-4 w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center border border-cyan-500/40">
-                                     <i data-lucide="globe-2" class="w-6 h-6 text-cyan-400"></i>
-                                </div>
-                                <h3 class="text-xl font-semibold text-white mb-2">Decentralized Future</h3>
-                                <p class="text-gray-400 text-sm leading-relaxed">Participate in a growing ecosystem. DAN tokens enable trading, potential governance, and future platform interactions.</p>
-                             </div>
-                             <div class="mt-6 text-xs text-cyan-400/60 font-mono uppercase tracking-wider">Feature // 03</div>
-                         </div>
-                     </div>
-                    <!-- Add More Cards If Needed -->
-                    <div class="snap-center shrink-0 w-16"></div> <!-- Spacer at end -->
-                 </div>
+     <!-- ** CORE FEATURES (Alternating Layout) ** -->
+    <section id="features" class="py-20 md:py-32 bg-black overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6">
+             <div class="text-center mb-16 animate-fade-in-up">
+                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-cyan-400 text-transparent bg-clip-text uppercase tracking-wider">Why Nashop & $DAN?</h2>
+                 <p class="text-gray-400 text-lg opacity-90 max-w-2xl mx-auto">Unlock the true potential of decentralized rewards and ownership.</p>
             </div>
-        </section>
 
-        <!-- Contract Info Section - Integrated -->
-        <section id="contract" class="py-20 md:py-28">
-            <div class="container mx-auto px-4 md:px-6 text-center scroll-animate is-visible">
-                <i data-lucide="terminal-square" class="w-12 h-12 text-blue-500 mx-auto mb-4 opacity-70"></i>
-                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-3 tracking-tight">The <span class="text-blue-400">DAN</span> Contract</h2>
-                <p class="text-gray-400 text-base max-w-xl mx-auto mb-8">Access the core of our ecosystem on the Polygon network.</p>
-                 <div class="max-w-2xl mx-auto bg-black border border-blue-500/30 rounded-lg p-4 text-left shadow-lg shadow-blue-900/20">
-                    <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-                         <div class="flex-1 break-all">
-                             <span class="text-gray-500 text-xs uppercase tracking-wider block mb-0.5">Polygon Address</span>
-                             <code class="text-blue-300 text-sm sm:text-base font-mono" id="contractAddressFull">0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF</code>
-                        </div>
-                        <div class="flex space-x-2 mt-2 sm:mt-0 flex-shrink-0">
-                            <button onclick="copyToClipboard('0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF', this)" class="p-2 rounded-md bg-slate-800/70 hover:bg-slate-700/70 text-slate-400 hover:text-blue-300 transition-all" title="Copy">
-                                <i class="far fa-copy text-sm"></i>
-                            </button>
-                             <a href="https://polygonscan.com/token/0x46fc3e44a9dbbbb6b9abcd9c55b7f91037f16cff" target="_blank" class="p-2 rounded-md bg-slate-800/70 hover:bg-slate-700/70 text-slate-400 hover:text-blue-300 transition-all" title="Explorer">
-                                <i class="fas fa-external-link-alt text-sm"></i>
-                            </a>
-                        </div>
-                    </div>
+             <!-- Feature 1 -->
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center mb-20 md:mb-32 animate-fade-in-up">
+                <div class="relative order-2 md:order-1 group perspective-container">
+                     <!-- 3D Interactive Element Placeholder -->
+                     <div class="card-3d-effect preserve-3d relative w-full aspect-video rounded-xl bg-gradient-to-br from-purple-800/40 via-fuchsia-800/30 to-black border border-purple-600/50 p-6 shadow-2xl hover:shadow-purple-500/40 group-hover:rotate-x-[5deg] group-hover:rotate-y-[8deg] group-hover:-translate-y-2">
+                         <i data-lucide="gem" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 text-purple-400 opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500"></i>
+                          <div class="absolute inset-4 border-2 border-purple-500/30 rounded-lg animate-pulse duration-5000"></div>
+                          <span class="absolute bottom-4 right-4 text-xs text-purple-300/70">$DAN Rewards</span>
+                     </div>
+                </div>
+                 <div class="order-1 md:order-2 animate-slide-in-right">
+                     <i data-lucide="award" class="w-10 h-10 mb-4 text-purple-400"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3 text-white">Earn Real Rewards</h3>
+                    <p class="text-gray-300 opacity-85 leading-relaxed mb-4">Shop on Nashop and automatically earn $DAN tokens. Accumulate tangible crypto assets with every purchase, turning spending into investment.</p>
+                     
                 </div>
             </div>
-        </section>
 
-
-        <!-- Roadmap Section - Stacked with Connecting Lines -->
-         <section id="roadmap" class="py-20 md:py-28 relative">
-            <!-- Faint background line element -->
-             <div class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-blue-500/30 to-transparent -z-10"></div>
-
-            <div class="container mx-auto px-4 md:px-6">
-                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16 tracking-tight scroll-animate is-visible">Mission Timeline</h2>
-
-                 <div class="max-w-3xl mx-auto space-y-12">
-                    <!-- Roadmap Item 1 -->
-                     <div class="relative pl-12 scroll-animate is-visible">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 ring-4 ring-black flex items-center justify-center shadow-md">
-                             <span class="text-[0.6rem] font-bold text-black">01</span>
-                         </div>
-                         <h3 class="text-sm font-semibold text-blue-400 mb-1 uppercase tracking-wider">Current: Foundation</h3>
-                         <p class="text-base md:text-lg font-medium text-white mb-1">System Architecture & Security (23-25)</p>
-                         <p class="text-gray-400 text-sm leading-relaxed opacity-80">Developing core infrastructure, smart contracts, undergoing audits.</p>
-                    </div>
-                    <!-- Roadmap Item 2 -->
-                     <div class="relative pl-12 scroll-animate is-visible delay-1">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 ring-4 ring-black flex items-center justify-center shadow-md">
-                             <span class="text-[0.6rem] font-bold text-black">02</span>
-                        </div>
-                        <h3 class="text-sm font-semibold text-cyan-400 mb-1 uppercase tracking-wider">Target: Q1 2026</h3>
-                        <p class="text-base md:text-lg font-medium text-white mb-1">DAN Token Presale</p>
-                         <p class="text-gray-400 text-sm leading-relaxed opacity-80">Launch of the official mainnet token presale for early adopters.</p>
-                    </div>
-                     <!-- Roadmap Item 3 -->
-                    <div class="relative pl-12 scroll-animate is-visible delay-2">
-                         <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-teal-500 to-lime-500 ring-4 ring-black flex items-center justify-center shadow-md">
-                             <span class="text-[0.6rem] font-bold text-black">03</span>
-                        </div>
-                        <h3 class="text-sm font-semibold text-teal-400 mb-1 uppercase tracking-wider">Target: Q2 2026</h3>
-                         <p class="text-base md:text-lg font-medium text-white mb-1">Platform Beta Access</p>
-                        <p class="text-gray-400 text-sm leading-relaxed opacity-80">Invite-only testing phase for community feedback and refinement.</p>
+             <!-- Feature 2 -->
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center mb-20 md:mb-32 animate-fade-in-up">
+                <div class="order-1 md:order-1 animate-slide-in-left">
+                     <i data-lucide="key-round" class="w-10 h-10 mb-4 text-fuchsia-400"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3 text-white">Unlock Exclusive Access</h3>
+                    <p class="text-gray-300 opacity-85 leading-relaxed mb-4">$DAN isn't just a reward; it's your key. Gain access to tiered discounts, early product launches, limited-edition items, and special platform features based on your holdings.</p>
+                    
+                </div>
+                <div class="relative order-2 md:order-2 group perspective-container">
+                     <div class="card-3d-effect preserve-3d relative w-full aspect-video rounded-xl bg-gradient-to-tl from-fuchsia-800/40 via-purple-800/30 to-black border border-fuchsia-600/50 p-6 shadow-2xl hover:shadow-fuchsia-500/40 group-hover:rotate-x-[5deg] group-hover:rotate-y-[-8deg] group-hover:-translate-y-2">
+                        <i data-lucide="door-open" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 text-fuchsia-400 opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500"></i>
+                        <div class="absolute inset-4 border-2 border-fuchsia-500/30 rounded-lg opacity-70 animate-pulse duration-4000"></div>
+                        <span class="absolute bottom-4 right-4 text-xs text-fuchsia-300/70">Exclusive Access</span>
                      </div>
-                    <!-- Roadmap Item 4 -->
-                     <div class="relative pl-12 scroll-animate is-visible delay-3">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-lime-500 to-yellow-500 ring-4 ring-black flex items-center justify-center shadow-md">
-                             <span class="text-[0.6rem] font-bold text-black">04</span>
-                        </div>
-                        <h3 class="text-sm font-semibold text-lime-400 mb-1 uppercase tracking-wider">Target: Q4 2026</h3>
-                         <p class="text-base md:text-lg font-medium text-white mb-1">Global Platform Launch</p>
-                        <p class="text-gray-400 text-sm leading-relaxed opacity-80">Full public release, opening the Web3 commerce experience.</p>
-                    </div>
                 </div>
             </div>
-        </section>
 
-
-        <!-- Call to Action / Newsletter Section -->
-         <section id="cta" class="py-20 md:py-32 relative overflow-hidden">
-            <!-- Background Visual -->
-            <div class="absolute inset-0 -z-10 bg-gradient-to-t from-magenta-900/30 via-black to-black">
-                 <div class="absolute inset-0 opacity-30 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.05)%22%20stroke-width%3D%221%22%3E%3Cpath%20d%3D%22M0%200L60%2060ZM60%200L0%2060Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
-             </div>
-
-            <div class="container mx-auto px-4 md:px-6 text-center scroll-animate is-visible">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">Connect & Stay Informed</h2>
-                 <p class="text-gray-400 text-base md:text-lg max-w-xl mx-auto mb-10">Subscribe for critical updates and be the first to know about our launch.</p>
-
-                 <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-12">
-                     <label for="cta-email" class="sr-only">Email Address</label>
-                     <input type="email" id="cta-email" placeholder="your_email@domain.com" required aria-label="Email address for updates"
-                            class="flex-1 px-5 py-3 rounded-full bg-slate-800/70 border border-slate-700 text-white placeholder-gray-500 focus:outline-none focus:border-magenta-500 focus:ring-2 focus:ring-magenta-500/60 transition duration-200 text-sm shadow-inner appearance-none text-center sm:text-left">
-                     <button type="submit"
-                             class="px-6 py-3 rounded-full font-semibold text-sm text-black bg-gradient-to-r from-magenta-500 to-pink-500 hover:from-magenta-600 hover:to-pink-600 transition-all duration-300 ease-out transform hover:scale-105 shadow-lg shadow-magenta-500/30 focus:outline-none focus:ring-4 focus:ring-magenta-500/50 whitespace-nowrap">
-                         Keep Me Updated
-                     </button>
-                 </form>
-
-                <!-- Social Links Minimal -->
-                <div class="flex justify-center space-x-6">
-                    <a href="https://x.com/nashopstoreweb3" target="_blank" title="Twitter/X" class="text-gray-600 hover:text-blue-400 transition-colors duration-300">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                     <a href="https://t.me/dan_nashop" target="_blank" title="Telegram" class="text-gray-600 hover:text-blue-400 transition-colors duration-300">
-                        <i class="fab fa-telegram text-xl"></i>
-                    </a>
-                    <a href="mailto:contact@nashop.store" title="Contact Email" class="text-gray-600 hover:text-blue-400 transition-colors duration-300">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
+             <!-- Feature 3 -->
+             <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center animate-fade-in-up">
+                 <div class="relative order-2 md:order-1 group perspective-container">
+                     <div class="card-3d-effect preserve-3d relative w-full aspect-video rounded-xl bg-gradient-to-br from-cyan-800/40 via-blue-800/30 to-black border border-cyan-600/50 p-6 shadow-2xl hover:shadow-cyan-500/40 group-hover:rotate-x-[5deg] group-hover:rotate-y-[8deg] group-hover:-translate-y-2">
+                        <i data-lucide="refresh-cw" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 text-cyan-400 opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500 animate-spin-slow"></i> <!-- Rotating Icon -->
+                        <div class="absolute inset-4 border-2 border-cyan-500/30 rounded-lg animate-pulse duration-6000"></div>
+                        <span class="absolute bottom-4 right-4 text-xs text-cyan-300/70">Decentralized Trading</span>
+                     </div>
                 </div>
-             </div>
-        </section>
+                <div class="order-1 md:order-2 animate-slide-in-right">
+                    <i data-lucide="arrow-left-right" class="w-10 h-10 mb-4 text-cyan-400"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3 text-white">Own a Tradeable Asset</h3>
+                    <p class="text-gray-300 opacity-85 leading-relaxed mb-4">Your $DAN tokens are true crypto assets. Trade them on supported decentralized exchanges (DEXs) and potentially centralized exchanges (CEXs) in the future. Take control of your rewards.</p>
+                    
+                </div>
+            </div>
 
-    </main>
+        </div>
+    </section>
 
-    <!-- Footer - Minimal -->
-     <footer class="bg-black py-6 border-t border-blue-500/10">
-        <div class="container mx-auto px-4 md:px-6 text-center text-gray-600 text-xs">
-             <p>© 2024 Nashop.store. All Rights Reserved. The future of commerce is being built.</p>
-             <!-- Optional: Links if needed, keep minimal -->
-             <!-- <div class="mt-2 space-x-3">
-                <a href="#" class="hover:text-gray-400">Privacy</a>
-                <a href="#" class="hover:text-gray-400">Terms</a>
-            </div> -->
+
+     <!-- ** ROADMAP Section (Visual Vertical Timeline) ** -->
+    <section id="roadmap" class="py-20 md:py-32 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
+         <!-- Background elements -->
+         <div class="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-cyan-900/30 to-transparent blur-[80px] -translate-x-1/4 -translate-y-1/4 opacity-50 -z-10"></div>
+         <div class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-fuchsia-900/30 to-transparent blur-[80px] translate-x-1/4 translate-y-1/4 opacity-50 -z-10"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+             <div class="text-center mb-20 animate-fade-in-up">
+                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-fuchsia-400 text-transparent bg-clip-text uppercase tracking-wider">Roadmap to Launch</h2>
+                 <p class="text-gray-400 text-lg opacity-90 max-w-2xl mx-auto">Charting the course for the Nashop revolution.</p>
+            </div>
+
+             <!-- Roadmap Timeline Container -->
+             <div class="max-w-3xl mx-auto">
+                <div class="relative pl-8 space-y-20 md:space-y-24 roadmap-line
+                             before:absolute before:inset-y-0 before:left-8 before:w-1.5 before:-ml-[3px] before:bg-gradient-to-b before:from-cyan-700/50 before:via-purple-700/50 before:to-fuchsia-700/50 before:rounded-full
+                             "> 
+
+                     <!-- Roadmap Item 1 -->
+                     <div class="relative group animate-fade-in-up">
+                         <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 ring-[6px] ring-gray-950 shadow-lg flex items-center justify-center transform group-hover:scale-110 group-hover:shadow-cyan-500/40 transition-all duration-300 ease-out z-10">
+                              <i class="fas fa-cogs text-sm text-white/90"></i>
+                         </div>
+                         <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
+                             <span class="text-xs uppercase tracking-widest text-cyan-400 font-semibold">Phase 1 // 2023-2025</span>
+                             <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2">Foundation & Architecture</h3>
+                             <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Core platform design, smart contract engineering, rigorous security audits, foundational partnerships.</p>
+                         </div>
+                     </div>
+
+                     <!-- Roadmap Item 2 -->
+                     <div class="relative group animate-fade-in-up">
+                         <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 ring-[6px] ring-gray-950 shadow-lg flex items-center justify-center transform group-hover:scale-110 group-hover:shadow-purple-500/40 transition-all duration-300 ease-out z-10">
+                              <i class="fas fa-coins text-sm text-white/90"></i>
+                         </div>
+                         <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
+                            <span class="text-xs uppercase tracking-widest text-purple-400 font-semibold">Phase 2 // Q1 2026</span>
+                            <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2">DAN Token Presale</h3>
+                            <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Launch of the official $DAN mainnet token presale. Early access investment for our community & supporters.</p>
+                        </div>
+                     </div>
+
+                      <!-- Roadmap Item 3 -->
+                     <div class="relative group animate-fade-in-up">
+                          <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 ring-[6px] ring-gray-950 shadow-lg flex items-center justify-center transform group-hover:scale-110 group-hover:shadow-fuchsia-500/40 transition-all duration-300 ease-out z-10">
+                              <i class="fas fa-flask-vial text-sm text-white/90"></i>
+                         </div>
+                         <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
+                             <span class="text-xs uppercase tracking-widest text-fuchsia-400 font-semibold">Phase 3 // Q2 2026</span>
+                            <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2">Platform Beta Access</h3>
+                            <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Invite-only beta program launch. Testing core functionality, gathering user feedback, iterative improvements.</p>
+                         </div>
+                     </div>
+
+                     <!-- Roadmap Item 4 -->
+                     <div class="relative group animate-fade-in-up">
+                          <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-orange-500 ring-[6px] ring-gray-950 shadow-lg flex items-center justify-center transform group-hover:scale-110 group-hover:shadow-orange-500/40 transition-all duration-300 ease-out z-10">
+                              <i class="fas fa-rocket-launch text-sm text-white/90"></i>
+                         </div>
+                         <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
+                            <span class="text-xs uppercase tracking-widest text-orange-400 font-semibold">Phase 4 // Q4 2026</span>
+                             <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2">Global Mainnet Launch</h3>
+                             <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Full public release of the Nashop.store platform, activating the $DAN token economy globally.</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ** JOIN / CTA Section ** -->
+<section id="join" class="py-20 md:py-32 bg-black relative">
+    <!-- Background Mesh -->
+    <div class="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.4%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M0%200h40v1H0zM0%2040h40v1H0zM0%200v40h1V0zm40%200v40h1V0z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
+
+    <div class="container mx-auto px-4 md:px-6 text-center relative z-10">
+        <div class="animate-fade-in-up">
+            <i data-lucide="rss" class="w-12 h-12 text-purple-400 mx-auto mb-6 animate-pulse duration-1500"></i>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 text-white tracking-tight">Stay Connected</h2>
+            <p class="text-gray-400 text-lg opacity-90 max-w-2xl mx-auto mb-10">Be the first to know about project milestones, token news, and platform updates. Subscribe to our newsletter.</p>
+
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto relative group">
+                <input type="email" id="email" placeholder="your.email@domain.com" required aria-label="Email for newsletter"
+                       class="flex-1 px-6 py-4 rounded-full bg-gray-900/80 border-2 border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/70 transition duration-300 text-base shadow-inner appearance-none backdrop-blur-sm pr-36"> 
+                <button type="submit" id="subscribe-button" aria-label="Subscribe to newsletter"
+                        class="sm:absolute sm:right-1.5 sm:top-1.5 sm:bottom-1.5 px-8 sm:px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500/50 whitespace-nowrap">
+                    Subscribe
+                </button>
+            </form>
+
+            <p id="subscription-message" class="mt-4 text-green-400 hidden">You successfully subscribed!</p>
+
+            <div class="mt-16 flex justify-center space-x-6 sm:space-x-8">
+                <a href="https://x.com/nashopstoreweb3" target="_blank" title="Twitter/X" class="text-gray-600 hover:text-sky-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/nashop.store.web3/" target="_blank" title="Instagram" class="text-gray-600 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://t.me/dan_nashop" target="_blank" title="Telegram" class="text-gray-600 hover:text-blue-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                    <i class="fab fa-telegram text-2xl"></i>
+                </a>
+                <a href="mailto:contact@nashop.store" title="Email" class="text-gray-600 hover:text-gray-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- ** FOOTER ** -->
+    <footer class="bg-black py-10 border-t border-white/10">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500 opacity-80">
+                    © 2024 Nashop.store Protocol. Decentralizing Commerce.
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-1 text-xs">
+                    <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-300 transition-colors">Privacy</a>
+                    <a href="terms.html" class="text-gray-500 hover:text-gray-300 transition-colors">Terms</a>
+                    <a href="faq.html" class="text-gray-500 hover:text-gray-300 transition-colors">FAQ</a>
+                     <a href="#top" class="text-gray-500 hover:text-gray-300 transition-colors">Back to Top <i class="fas fa-arrow-up text-[10px] ml-1"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
 
-    <!-- Lucide Icons Script -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lucide Icons Init Script (Ensure it runs after elements are loaded) -->
     <script>
-      lucide.createIcons();
+      // Wait for the DOM to be ready or use defer as attribute in script tag
+      document.addEventListener('DOMContentLoaded', (event) => {
+          // Check if lucide is loaded before calling createIcons
+          if (typeof lucide !== 'undefined') {
+              lucide.createIcons();
+          } else {
+              console.warn("Lucide library not loaded yet.");
+              // Optionally retry or listen for script load event
+              const lucideScript = document.querySelector('script[src*="lucide"]');
+              if (lucideScript) {
+                  lucideScript.onload = () => {
+                      if(typeof lucide !== 'undefined') {
+                           lucide.createIcons();
+                      }
+                  }
+              }
+          }
 
-      // Clipboard Function
-       function copyToClipboard(text, buttonElement) {
-           navigator.clipboard.writeText(text).then(function() {
-               const originalIconHTML = buttonElement.innerHTML;
-               const successIconHTML = '<i class="fas fa-check text-green-400 scale-110"></i>';
-               buttonElement.innerHTML = successIconHTML;
-               buttonElement.title = 'Copied!';
-               buttonElement.classList.add('bg-green-900/30'); // Subtle green feedback
+            // Example: Basic Intersection Observer for scroll animations (Optional JS enhancement)
+            const animatedElements = document.querySelectorAll('.animate-slide-in-left, .animate-slide-in-right, .animate-fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: Stop observing after animation triggered
+                        // observer.unobserve(entry.target);
+                    } else {
+                         // Optional: Remove class if you want animation to repeat on scroll up/down
+                        // entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% visible
 
-               setTimeout(() => {
-                  buttonElement.innerHTML = originalIconHTML;
-                  buttonElement.title = 'Copy address';
-                  buttonElement.classList.remove('bg-green-900/30');
-              }, 1800);
-          }).catch(function(err) { /* ... Fallback logic as before ... */
-               console.error('Clipboard API failed: ', err);
-               try { // Fallback
-                  const textArea = document.createElement("textarea"); textArea.style.position = 'fixed'; textArea.style.top = '-9999px'; textArea.style.left = '-9999px';
-                  textArea.value = text; document.body.appendChild(textArea); textArea.focus(); textArea.select(); document.execCommand('copy'); document.body.removeChild(textArea);
-                   const originalIconHTML = buttonElement.innerHTML; const successIconHTML = '<i class="fas fa-check text-green-400 scale-110"></i>';
-                   buttonElement.innerHTML = successIconHTML; buttonElement.title = 'Copied!'; buttonElement.classList.add('bg-green-900/30');
-                   setTimeout(() => { buttonElement.innerHTML = originalIconHTML; buttonElement.title = 'Copy address'; buttonElement.classList.remove('bg-green-900/30'); }, 1800);
-               } catch (fallbackErr) { console.error('Fallback copy failed:', fallbackErr); alert('Failed to copy. Please copy manually:\n\n' + text); }
-          });
-      }
+            animatedElements.forEach(el => observer.observe(el));
 
-      // **IMPORTANT**: JS for Scroll Animations (Intersection Observer Example)
-      // This code finds elements with 'scroll-animate' and adds 'is-visible' when they enter the viewport.
-       const animatedElements = document.querySelectorAll('.scroll-animate');
-       if (animatedElements.length > 0) {
-           const observer = new IntersectionObserver((entries) => {
-               entries.forEach(entry => {
-                   if (entry.isIntersecting) {
-                       entry.target.classList.add('is-visible');
-                       // Optional: Stop observing once visible if animation should only happen once
-                       // observer.unobserve(entry.target);
-                   }
-                    // Optional: Remove class when leaving view if you want animation to repeat
-                    // else { entry.target.classList.remove('is-visible'); }
-               });
-           }, {
-               threshold: 0.1 // Trigger when 10% of the element is visible
-               // rootMargin: '0px 0px -50px 0px' // Optional: Adjust trigger point
+
+           // Example: 3D Tilt Effect with JS (More sophisticated than pure CSS hover)
+            // Requires more setup, selecting specific elements etc.
+           const tiltElements = document.querySelectorAll('.perspective-container');
+           tiltElements.forEach(container => {
+                const card = container.querySelector('.card-3d-effect');
+                if (card) {
+                    container.addEventListener('mousemove', (e) => {
+                         const rect = container.getBoundingClientRect();
+                         const x = e.clientX - rect.left - rect.width / 2;
+                         const y = e.clientY - rect.top - rect.height / 2;
+
+                         const rotateY = (x / rect.width) * 15; // Max rotation 15deg
+                         const rotateX = -(y / rect.height) * 15; // Max rotation 15deg
+
+                         card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(10px)`; // Add slight Z translate
+                    });
+                     container.addEventListener('mouseleave', () => {
+                        card.style.transform = 'rotateY(0deg) rotateX(0deg) translateZ(0px)';
+                     });
+                }
            });
 
-            animatedElements.forEach(el => {
-               observer.observe(el);
-            });
-       } else {
-            console.warn("No elements with class 'scroll-animate' found for observation.");
-       }
+      });
 
+      // Clipboard Function (kept similar for consistency)
+      function copyToClipboard(text, buttonElement) { /* ... Previous clipboard JS ... */ } // Include the JS function from previous steps
     </script>
+   <script>
+async function subscribeNewsletter(event) {
+    event.preventDefault();
+    
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value.trim();
+    const message = document.getElementById("subscription-message");
+    const subscribeButton = document.getElementById("subscribe-button");
+    
+    if (!email) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+    
+    subscribeButton.textContent = "Subscribing...";
+    subscribeButton.disabled = true;
+    
+    const scriptURL = "https://script.google.com/macros/s/AKfycby5Nhl8rwjrdvN4uj_1eSsz6DTwnpHaGk1-gYcDT17EUS1kIINpkIFhJNoyWDjkYvIa/exec"; // Replace with your deployed Google Apps Script URL
+    const formData = new FormData();
+    formData.append("email", email);
+    
+    try {
+        const response = await fetch(scriptURL, {
+            method: "POST",
+            body: formData,
+        });
+        
+        const result = await response.text();
+        message.classList.remove("hidden");
+        emailInput.value = "";
+        subscribeButton.textContent = "Subscribe";
+        subscribeButton.disabled = false;
+    } catch (error) {
+        console.error("Error!", error.message);
+        alert("There was an issue subscribing. Please try again later.");
+        subscribeButton.textContent = "Subscribe";
+        subscribeButton.disabled = false;
+    }
+}
 
-    <!-- Crypto donations widget script -->
-    <!-- <script async src="..."></script> -->
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("newsletter-form");
+    form.addEventListener("submit", subscribeNewsletter);
+});
+
+          // Simple Copy to Clipboard Function (with improved feedback)
+        function copyToClipboard(text, buttonElement) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Success feedback
+                const originalIconHTML = buttonElement.innerHTML; // Store original icon HTML
+                const successIconHTML = '<i class="fas fa-check text-green-400 transition-all duration-300 ease-in-out scale-110"></i>'; // Checkmark icon HTML with animation hint
+                buttonElement.innerHTML = successIconHTML;
+                buttonElement.title = 'Copied!';
+                buttonElement.classList.add('text-green-400', 'bg-white/10'); // Temporarily style button
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalIconHTML; // Revert icon HTML
+                    buttonElement.title = 'Copy address';
+                    buttonElement.classList.remove('text-green-400', 'bg-white/10'); // Remove styles
+                }, 1800); // Revert after 1.8 seconds
+            }).catch(function(err) {
+                // Error feedback (optional, improved alert)
+                console.error('Could not copy text using navigator: ', err);
+                try {
+                    // Fallback using execCommand
+                    const textArea = document.createElement("textarea");
+                    textArea.style.position = 'fixed'; // Prevent scrolling issues
+                    textArea.style.top = '-9999px';
+                    textArea.style.left = '-9999px';
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+
+                    // Provide success feedback for fallback
+                    const originalIconHTML = buttonElement.innerHTML;
+                    const successIconHTML = '<i class="fas fa-check text-green-400 transition-all duration-300 ease-in-out scale-110"></i>';
+                    buttonElement.innerHTML = successIconHTML;
+                    buttonElement.title = 'Copied!';
+                    buttonElement.classList.add('text-green-400', 'bg-white/10');
+                    setTimeout(() => {
+                        buttonElement.innerHTML = originalIconHTML;
+                        buttonElement.title = 'Copy address';
+                        buttonElement.classList.remove('text-green-400', 'bg-white/10');
+                    }, 1800);
+
+                } catch (fallbackErr) {
+                    console.error('Fallback copy failed:', fallbackErr);
+                    alert('Failed to copy. Please copy the address manually:\n\n' + text);
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
