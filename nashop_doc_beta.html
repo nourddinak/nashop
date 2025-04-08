@@ -705,44 +705,74 @@
          <!-- 12. Technical Integration (Developers) -->
 <section id="technical-integration" class="content-section">
     <h2 class="gradient-text-yellow-amber">12. Technical Integration (Developers)</h2>
-     <p class="mb-6 leading-relaxed text-gray-400 italic">This section provides a technical overview for developers interested in interacting with the DAN token smart contract or potentially integrating with the Nashop ecosystem. Detailed API documentation will be provided separately if/when platform integrations are opened.</p>
+
+    <!-- ** START: Ownership Renounced Announcement ** -->
+    <div class="mb-8 p-4 border border-green-500 rounded-lg bg-green-900/20">
+        <h3 class="text-xl font-semibold text-green-400 mb-3">🚨 Major Update: DinaKart Contract Ownership Renounced! 🚨</h3>
+        <p class="mb-3 text-gray-300">
+            Big news! As of today, the ownership of the DAN token smart contract has officially been renounced! It's now permanently set to the zero address (<code class="text-sm bg-slate-800 px-1 rounded">0x0000000000000000000000000000000000000000</code>), which means we’ve gone **FULLY decentralized!** 🎉💥
+        </p>
+        <p class="mb-3 font-semibold text-gray-200">So, why does this matter to you? 🤔</p>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>
+                <strong>✨ No Central Authority:</strong> With ownership renounced, there’s no single entity controlling the contract. It’s governed solely by its immutable code and the community. This makes the DAN token fundamentally trustless and secure! 🔐🚀
+            </li>
+            <li>
+                <strong>🌍 True Decentralization:</strong> This action permanently locks in our commitment to decentralization. No one (not even the original deployers) can mint new tokens, pause transactions, or modify the core contract rules. It’s truly in the hands of the community now, 100%! 💪✨
+            </li>
+        </ul>
+        <p class="text-gray-300">
+             You can engage with the DAN token (<code class="text-sm bg-slate-800 px-1 rounded">0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF</code>) with total peace of mind, knowing its foundation is transparent, unchangeable, and community-centric—powered by YOU! 🙌💚 We’re thrilled about this milestone!
+        </p>
+    </div>
+    <!-- ** END: Ownership Renounced Announcement ** -->
+
+     <p class="mb-6 leading-relaxed text-gray-400 italic">This section provides a technical overview for developers interested in interacting with the now ownerless DAN token smart contract or potentially integrating with the Nashop ecosystem. Detailed API documentation will be provided separately if/when platform integrations are opened.</p>
 
      <h4>Interacting with the DAN Token Contract:</h4>
     <ul>
-        <!-- Updated Contract Info -->
         <li>The DAN token is an ERC-20 compliant smart contract deployed on the Polygon network.</li>
-        <li><strong>Contract Address :</strong> <code class="text-sm bg-slate-800 px-1 rounded">0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF</code></li>
-         <li>The contract incorporates standard ERC-20 functionality along with extensions from OpenZeppelin and its set to 0x000 adress ower wat makes it fully disntrlazed:
+        <li><strong>Contract Address:</strong> <code class="text-sm bg-slate-800 px-1 rounded">0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF</code></li>
+        <li>The contract incorporates standard ERC-20 functionality along with extensions from OpenZeppelin. <strong>Crucially, ownership has been renounced to the <code class="text-xs bg-slate-800 px-1 rounded">0x0...000</code> address, rendering owner-specific functions (like minting or pausing) inactive.</strong>
             <ul>
-                 
+                 <!-- Specific extensions can still be listed if relevant, e.g., Burnable, Permit -->
+                 <li>ERC20 Standard Functions</li>
+                 <li>ERC20 Burnable (allowing users to burn their own tokens)</li>
+                 <li>ERC20 Permit (for gasless approvals)</li>
+                 <!-- ERC20 Pausable is present but unusable without an owner -->
+                 <!-- Ownable functions are present but unusable without an owner -->
             </ul>
-         </li>
-         <li>Developers can use standard Ethereum/Polygon libraries like <code class="text-xs">ethers.js</code> or <code class="text-xs">web3.py</code> to interact with the contract's functions, including:
+        </li>
+        <li>Developers can use standard Ethereum/Polygon libraries like <code class="text-xs">ethers.js</code> or <code class="text-xs">web3.py</code> to interact with the contract's public functions, including:
             <ul>
                  <li>Read balances: <code class="text-xs">balanceOf(address account)</code></li>
-                 <li>Read total supply: <code class="text-xs">totalSupply()</code> <span class="text-amber-400 text-xs italic">(Note: Owner can mint more)</span></li>
+                 <li>Read total supply: <code class="text-xs">totalSupply()</code> <span class="text-red-400 text-xs italic">(Note: Immutable; minting is disabled due to renounced ownership.)</span></li>
                  <li>Transfer tokens: <code class="text-xs">transfer(address recipient, uint256 amount)</code></li>
                  <li>Check spending allowance: <code class="text-xs">allowance(address owner, address spender)</code></li>
                  <li>Approve spending (standard): <code class="text-xs">approve(address spender, uint256 amount)</code></li>
-                <li>Approve spending (gasless): <code class="text-xs">permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)</code></li>
-                <li>Transfer tokens on behalf of others (requires allowance): <code class="text-xs">transferFrom(address sender, address recipient, uint256 amount)</code></li>
+                 <li>Approve spending (gasless): <code class="text-xs">permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)</code></li>
+                 <li>Transfer tokens on behalf of others (requires allowance): <code class="text-xs">transferFrom(address sender, address recipient, uint256 amount)</code></li>
                  <li>Burn own tokens: <code class="text-xs">burn(uint256 amount)</code></li>
                  <li>Burn tokens from another address (requires allowance): <code class="text-xs">burnFrom(address account, uint256 amount)</code></li>
                  <li>Listen to events: <code class="text-xs">Transfer(address indexed from, address indexed to, uint256 value)</code>, <code class="text-xs">Approval(address indexed owner, address indexed spender, uint256 value)</code></li>
-             </ul>
-         </li>
-         <li>The full contract ABI (Application Binary Interface), which defines all functions and events, will be required for integration and will be made available through official channels.</li>
+                 <!-- Note: Paused/Unpaused events will no longer be emitted -->
+            </ul>
+        </li>
+         <li>The full contract ABI (Application Binary Interface), defining all functions and events, remains necessary for integration and will be available through official channels. Note that functions requiring ownership will revert if called.</li>
      </ul>
+
+    <!-- Keep code example, but add notes about owner/paused state -->
     <pre><code class="language-javascript">// Example using ethers.js (conceptual)
 import { ethers } from 'ethers';
 
 // Use the appropriate RPC URL for Polygon Mainnet or Amoy Testnet
 const provider = new ethers.providers.JsonRpcProvider('YOUR_POLYGON_RPC_URL');
 
-// *** USE THE OFFICIAL DAN TOKEN CONTRACT ADDRESS ***
+// *** DAN TOKEN CONTRACT ADDRESS ***
 const danTokenAddress = '0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF';
 
-// *** ABI should include standard ERC20 + ERC20Burnable, ERC20Pausable, ERC20Permit functions/events ***
+// *** ABI includes standard ERC20 + extensions (Burnable, Permit, Pausable, Ownable) ***
+// Note: Functions requiring owner (mint, pause, unpause, transferOwnership) will fail.
 const danTokenAbi = [
   // Common ERC20 Functions/Events
   "function name() view returns (string)",
@@ -759,16 +789,17 @@ const danTokenAbi = [
   // ERC20Burnable
   "function burn(uint256 amount)",
   "function burnFrom(address account, uint256 amount)",
-  // ERC20Pausable (Events)
-  "event Paused(address account)",
-  "event Unpaused(address account)",
+  // ERC20Pausable (Functions are owner-only; view function `paused()` is readable)
+  "function paused() view returns (bool)", // Can still check if it WAS paused before renouncing
+  "event Paused(address account)", // Unlikely to be emitted again
+  "event Unpaused(address account)", // Unlikely to be emitted again
   // ERC20Permit
   "function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)",
   "function nonces(address owner) view returns (uint256)",
-  "function DOMAIN_SEPARATOR() view returns (bytes32)"
-  // Relevant Ownable functions (viewing owner) might also be included
-  // Relevant Pausable functions (checking status) might also be included
-  // ... plus any other relevant functions/events from the full ABI
+  "function DOMAIN_SEPARATOR() view returns (bytes32)",
+  // Ownable (View function `owner()` readable; transfer/renounce are owner-only)
+  "function owner() view returns (address)" // Will return 0x00...000
+  // ... plus potentially other functions/events from the full ABI
 ];
 
 const danContract = new ethers.Contract(danTokenAddress, danTokenAbi, provider);
@@ -776,15 +807,15 @@ const danContract = new ethers.Contract(danTokenAddress, danTokenAbi, provider);
 async function getDanInfo(userAddress) {
   try {
     const balance = await danContract.balanceOf(userAddress);
-    const decimals = await danContract.decimals(); // Get decimals dynamically
-    // Use decimals for correct formatting (ethers.utils.formatUnits)
+    const decimals = await danContract.decimals();
     console.log(`DAN Balance: ${ethers.utils.formatUnits(balance, decimals)}`);
 
-    const owner = await danContract.owner(); // Example: If owner() is in ABI
-    console.log(`Contract Owner: ${owner}`);
+    const owner = await danContract.owner();
+    console.log(`Contract Owner: ${owner} (Renounced to zero address)`); // Updated Log
 
-    const paused = await danContract.paused(); // Example: If paused() view function is in ABI
-    console.log(`Contract Paused: ${paused}`);
+    // Pause state is now effectively immutable (should be 'false' if unpaused before renouncing)
+    const paused = await danContract.paused();
+    console.log(`Contract Paused State: ${paused} (Cannot be changed)`); // Updated Log
 
   } catch (error) {
     console.error("Error fetching contract data:", error);
@@ -794,24 +825,31 @@ async function getDanInfo(userAddress) {
 // Example call:
 // getDanInfo("0xUSER_ADDRESS_HERE");
 
-// To send transactions (transfer, approve, permit, burn, etc.), connect a signer:
+// To send transactions (transfer, approve, permit, burn), connect a signer:
 // const signer = provider.getSigner();
 // const danContractWithSigner = danContract.connect(signer);
-// const amountFormatted = ethers.utils.parseUnits("100", await danContract.decimals()); // Format amount with correct decimals
+// const amountFormatted = ethers.utils.parseUnits("100", await danContract.decimals());
 // // Example transfer:
 // // const tx = await danContractWithSigner.transfer(recipientAddress, amountFormatted);
 // // await tx.wait();
 // // console.log("Transfer successful!");
 </code></pre>
 
-    <h4>Owner-Specific Capabilities:</h4>
-     <p class="mb-4 leading-relaxed text-gray-400">Note that certain administrative functions are restricted to the contract <code class="text-xs">owner</code> address:</p>
-    <ul>
-        <li><code class="text-xs">mint(address to, uint256 amount)</code>: Create and assign new DAN tokens.</li>
-        <li><code class="text-xs">pause()</code>: Halt all token transfers (except potentially owner actions).</li>
-         <li><code class="text-xs">unpause()</code>: Resume token transfers.</li>
-         <li>Functions to manage ownership (<code class="text-xs">transferOwnership</code>, <code class="text-xs">renounceOwnership</code>).</li>
+    <!-- ** START: Updated Owner Capabilities Section ** -->
+    <h4>Impact of Renounced Ownership on Administrative Functions:</h4>
+     <p class="mb-4 leading-relaxed text-gray-400">
+        Previously, certain administrative functions were restricted to the contract <code class="text-xs">owner</code>. **Now that ownership has been permanently renounced to the zero address (<code class="text-xs bg-slate-800 px-1 rounded">0x0...000</code>), these functions are effectively disabled and cannot be called by anyone:**
+    </p>
+    <ul class="text-gray-400 list-disc list-inside space-y-1">
+        <li><code class="text-xs line-through">mint(address to, uint256 amount)</code>: <span class="text-red-400 italic">No new tokens can ever be created.</span></li>
+        <li><code class="text-xs line-through">pause()</code>: <span class="text-red-400 italic">Token transfers cannot be halted.</span></li>
+        <li><code class="text-xs line-through">unpause()</code>: <span class="text-red-400 italic">If the contract was paused before renouncing, it cannot be unpaused.</span></li>
+        <li><code class="text-xs line-through">transferOwnership(address newOwner)</code>: <span class="text-red-400 italic">Ownership cannot be transferred.</span></li>
+        <li><code class="text-xs line-through">renounceOwnership()</code>: <span class="text-red-400 italic">This action has already been taken and cannot be undone.</span></li>
     </ul>
+    <p class="mt-2 text-sm text-green-400">This immutability ensures the contract operates exactly as deployed, reinforcing decentralization and trust.</p>
+    <!-- ** END: Updated Owner Capabilities Section ** -->
+
 
     <h4>Potential Future Nashop APIs:</h4>
     <p class="mb-4 leading-relaxed">In later stages, Nashop might offer APIs for specific integrations, such as:</p>
@@ -822,7 +860,6 @@ async function getDanInfo(userAddress) {
     </ul>
      <p class="mt-4 text-sm text-gray-400 italic">The availability and specifics of any APIs are subject to future development plans and will be accompanied by comprehensive developer documentation if released.</p>
  </section>
-
          <!-- 15. Glossary -->
         <section id="glossary" class="content-section">
              <h2 class="gradient-text-green-teal">15. Glossary of Terms</h2>
