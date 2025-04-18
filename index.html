@@ -5,30 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Nashop: The Future of Decentralized Shopping | Earn $DAN Tokens</title>
-
     <meta name="description" content="Explore Nashop, the future of decentralized online shopping. Earn $DAN crypto tokens with every purchase, unlock exclusive perks, and own your commerce journey. Join the revolution!">
-
     <meta name="keywords" content="Nashop, DAN token, $DAN, decentralized shopping, crypto rewards, web3 commerce, blockchain shopping, online shopping, cryptocurrency, NFT marketplace, digital ownership">
 
-    <link rel="canonical" href="https://www.nashop.store/" /> <meta property="og:title" content="Nashop: The Future of Decentralized Shopping | Earn $DAN Tokens" />
+    <link rel="canonical" href="https://www.nashop.store/" />
+    <meta property="og:title" content="Nashop: The Future of Decentralized Shopping | Earn $DAN Tokens" />
     <meta property="og:description" content="Earn $DAN crypto tokens with every purchase on Nashop, unlock exclusive perks, and own your decentralized commerce journey." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.nashop.store/" /> <meta property="og:image" content="https://www.nashop.store/img/nashop-og-image.png" /> <meta property="og:site_name" content="Nashop" />
+    <meta property="og:url" content="https://www.nashop.store/" />
+    <meta property="og:image" content="https://www.nashop.store/img/nashop-og-image.png" />
+    <meta property="og:site_name" content="Nashop" />
 
-    <meta name="twitter:card" content="summary_large_image" /> <meta name="twitter:site" content="@nashopstoreweb3" /> <meta name="twitter:creator" content="@nashopstoreweb3" /> <meta name="twitter:title" content="Nashop: The Future of Decentralized Shopping | Earn $DAN Tokens" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nashopstoreweb3" />
+    <meta name="twitter:creator" content="@nashopstoreweb3" />
+    <meta name="twitter:title" content="Nashop: The Future of Decentralized Shopping | Earn $DAN Tokens" />
     <meta name="twitter:description" content="Earn $DAN crypto tokens with every purchase on Nashop, unlock exclusive perks, and own your decentralized commerce journey." />
-    <meta name="twitter:image" content="https://www.nashop.store/img/nashop-twitter-image.png" /> <link rel="icon" type="image/x-icon" href="SHOP-LOGO-BLACK.ico">
+    <meta name="twitter:image" content="https://www.nashop.store/img/nashop-twitter-image.png" />
+    <link rel="icon" type="image/x-icon" href="SHOP-LOGO-BLACK.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest"> <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="manifest" href="/site.webmanifest">
 
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <script defer src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Your existing styles remain here */
         .perspective-container { perspective: 1000px; }
         .preserve-3d { transform-style: preserve-3d; }
         .card-3d-effect { transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
@@ -36,40 +40,61 @@
 
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes fade-in-up {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(25px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
-        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; opacity: 0; }
+        .animate-fade-in-up { animation: fade-in-up 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards; }
 
-        @keyframes slide-in-left {
-             from { opacity: 0; transform: translateX(-30px); }
-             to { opacity: 1; transform: translateX(0); }
-         }
-         .animate-slide-in-left { animation: slide-in-left 0.8s ease-out forwards; opacity: 0; }
+        .animate-fade-in-up { opacity: 0; animation-play-state: paused; }
+        .animate-fade-in-up.is-visible { opacity: 1; animation-play-state: running; }
 
-         @keyframes slide-in-right {
-             from { opacity: 0; transform: translateX(30px); }
-             to { opacity: 1; transform: translateX(0); }
-         }
-         .animate-slide-in-right { animation: slide-in-right 0.8s ease-out forwards; opacity: 0; }
+        .text-shadow-lg { text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+        html { scroll-behavior: smooth; }
+        .animation-delay-3000 { animation-delay: 3s; }
+        .duration-5000 { animation-duration: 5s; }
+        .duration-6000 { animation-duration: 6s; }
+        .duration-7000 { animation-duration: 7s; }
 
-         .animate-slide-in-left, .animate-slide-in-right, .animate-fade-in-up { opacity: 0; animation-play-state: paused; }
-         .animate-slide-in-left.is-visible, .animate-slide-in-right.is-visible, .animate-fade-in-up.is-visible { opacity: 1; animation-play-state: running; }
-
-         .text-shadow-lg { text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
-         html { scroll-behavior: smooth; }
-         .animation-delay-3000 { animation-delay: 3s; }
-         .duration-5000 { animation-duration: 5s; }
-         .roadmap-line::before { animation: pulse-line 4s infinite ease-in-out; }
+        .roadmap-line::before { animation: pulse-line 4s infinite ease-in-out; }
          @keyframes pulse-line {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
+            0%, 100% { opacity: 0.6; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.02); }
+         }
+        .roadmap-point-glow { transition: box-shadow 0.3s ease-out; }
+        li.group:hover .roadmap-point-glow { box-shadow: 0 0 15px 3px rgba(var(--glow-color, 76, 29, 149), 0.6); }
+
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 45s linear infinite;
+        }
+        section#partners.group:hover .animate-marquee {
+             animation-play-state: paused;
+        }
+
+        /* Feature Pillar Animation Delays */
+        .feature-pillar-1.is-visible { animation-delay: 0s; }
+        .feature-pillar-2.is-visible { animation-delay: 0.15s; }
+        .feature-pillar-3.is-visible { animation-delay: 0.3s; }
+
+        /* Subtle grid pattern for Features background */
+        #features::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
          }
 
-        /* 8. Basic Schema Markup (JSON-LD - Highly Recommended) */
-        /* Helps search engines understand your content structure. Place in <head> or <body>. */
-        /* This is a basic example, customize it further based on your site's specifics. */
-        /* You can generate more complex schema using online tools. */
+         /* Input focus glow */
+         #email:focus {
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.4); /* Purple glow */
+         }
 
     </style>
     <script type="application/ld+json">
@@ -77,212 +102,253 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Nashop",
-      "url": "https://www.nashop.store/", // IMPORTANT: Update this URL
+      "url": "https://www.nashop.store/",
       "description": "Nashop is a decentralized online shopping platform rewarding users with $DAN crypto tokens for purchases.",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.nashop.store/search?q={search_term_string}", // IMPORTANT: Update if you have search functionality
+        "target": "https://www.nashop.store/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
     </script>
 
 </head>
-<body class="bg-black text-gray-200 font-sans selection:bg-fuchsia-500/40 selection:text-white overflow-x-hidden">
+<body class="bg-black text-gray-200 font-sans selection:bg-fuchsia-500/40 selection:text-white overflow-x-hidden antialiased">
 
-    <header id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden text-center px-4 md:px-6 py-20 z-0" role="banner"> <div class="absolute inset-0 -z-10 opacity-20" aria-hidden="true"> <div class="absolute -top-1/4 -left-1/4 w-3/4 h-3/4 bg-gradient-to-br from-purple-600/50 to-transparent rounded-full blur-[100px] animate-pulse duration-5000 ease-in-out"></div>
-             <div class="absolute -bottom-1/4 -right-1/4 w-3/4 h-3/4 bg-gradient-to-tl from-cyan-600/40 to-transparent rounded-full blur-[100px] animate-pulse duration-5000 ease-in-out animation-delay-3000"></div>
+    <header id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden text-center px-4 md:px-6 py-20 z-0" role="banner">
+        <div class="absolute inset-0 -z-10 opacity-20" aria-hidden="true">
+            <div class="absolute -top-1/4 -left-1/4 w-3/4 h-3/4 bg-gradient-to-br from-purple-600/50 to-transparent rounded-full blur-[100px] animate-pulse duration-5000 ease-in-out"></div>
+            <div class="absolute -bottom-1/4 -right-1/4 w-3/4 h-3/4 bg-gradient-to-tl from-cyan-600/40 to-transparent rounded-full blur-[100px] animate-pulse duration-6000 ease-in-out animation-delay-3000"></div>
         </div>
 
         <div class="relative z-10">
-            <div class="animate-fade-in-up">
-                 <div class="inline-block mb-8 relative">
-                    <i data-lucide="fingerprint" class="w-20 h-20 text-cyan-400" aria-label="Nashop logo icon"></i> <div class="absolute -inset-3 bg-cyan-500/30 rounded-full blur-2xl opacity-70 animate-pulse duration-3000" aria-hidden="true"></div>
-                 </div>
+            <div class="animate-fade-in-up is-visible">
+                <div class="inline-block mb-8 relative transition-transform duration-300 hover:scale-110">
+                    <i data-lucide="fingerprint" class="w-20 h-20 text-cyan-400" aria-label="Nashop logo icon"></i>
+                    <div class="absolute -inset-3 bg-cyan-500/30 rounded-full blur-2xl opacity-70 animate-pulse duration-3000" aria-hidden="true"></div>
+                </div>
 
-                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-5 uppercase tracking-tighter text-shadow-lg">
-                     <span class="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-cyan-400 text-transparent bg-clip-text">Nashop</span>
-                     <span class="block text-4xl md:text-6xl lg:text-7xl text-white/80 mt-1 md:mt-0">THE FUTURE OF ONLINE SHOPPING</span>
-                 </h1>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-5 uppercase tracking-tighter text-shadow-lg">
+                    <span class="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-cyan-400 text-transparent bg-clip-text">Nashop</span>
+                    <span class="block text-4xl md:text-6xl lg:text-7xl text-white/80 mt-1 md:mt-0">THE FUTURE OF ONLINE SHOPPING</span>
+                </h1>
 
-                 <p class="text-lg md:text-xl lg:text-2xl text-gray-300 opacity-80 max-w-3xl mx-auto mb-10">
-                     Step into the next era of decentralized commerce. Earn <strong class="text-fuchsia-400 font-semibold">$DAN</strong>, unlock exclusive perks, and own your digital shopping journey.
-                 </p>
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-300 opacity-80 max-w-3xl mx-auto mb-10">
+                    Step into the next era of decentralized commerce. Earn <strong class="text-fuchsia-400 font-semibold">$DAN</strong>, unlock exclusive perks, and own your digital shopping journey.
+                </p>
 
-                 <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
-                     <a href="#features"
-                        class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-white bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:from-fuchsia-700 hover:to-purple-700 border-2 border-transparent hover:border-fuchsia-300/50 transition-all duration-300 ease-in-out transform hover:scale-[1.03] shadow-lg hover:shadow-fuchsia-500/40 focus:outline-none focus:ring-4 focus:ring-fuchsia-500/50">
-                         Explore Nashop Features <i class="fas fa-arrow-down ml-2 text-xs group-hover:translate-y-0.5 transition-transform"></i>
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <a href="#features"
+                       class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-white bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:from-fuchsia-700 hover:to-purple-700 border-2 border-transparent hover:border-fuchsia-300/50 transition-all duration-300 ease-in-out transform hover:scale-[1.03] shadow-lg hover:shadow-fuchsia-500/40 focus:outline-none focus:ring-4 focus:ring-fuchsia-500/50">
+                        Explore Nashop Features <i class="fas fa-arrow-down ml-2 text-xs transition-transform group-hover:translate-y-0.5"></i>
+                    </a>
+                    <a href="https://token.nashop.store" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-gray-200 bg-gray-800/60 border-2 border-gray-700 hover:border-cyan-400 hover:text-cyan-300 transition-all duration-300 ease-in-out transform hover:scale-[1.03] shadow-md hover:shadow-cyan-500/20 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 backdrop-blur-sm">
+                         Get $DAN Token <i class="fas fa-external-link-alt ml-2 text-xs"></i>
                      </a>
-                      <a href="https://token.nashop.store" target="_blank" rel="noopener noreferrer"
-                         class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-gray-200 bg-gray-800/60 border-2 border-gray-700 hover:border-cyan-400 hover:text-cyan-300 transition-all duration-300 ease-in-out transform hover:scale-[1.03] shadow-md hover:shadow-cyan-500/20 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 backdrop-blur-sm">
-                          Get $DAN Token <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                      </a>
-                     <a href="/nashop_doc_beta" target="_blank" rel="noopener noreferrer"
-                         class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-gray-200 bg-gray-800/60 border-2 border-gray-700 hover:border-cyan-400 hover:text-cyan-300 transition-all duration-300 ease-in-out transform hover:scale-[1.03] shadow-md hover:shadow-cyan-500/20 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 backdrop-blur-sm">
-                          Read Beta Documentation <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                      </a>
-                 </div>
+                    <a href="/nashop_doc_beta" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-gray-200 bg-gray-800/60 border-2 border-gray-700 hover:border-cyan-400 hover:text-cyan-300 transition-all duration-300 ease-in-out transform hover:scale-[1.03] shadow-md hover:shadow-cyan-500/20 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 backdrop-blur-sm">
+                         Read Beta Documentation <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                     </a>
+                </div>
             </div>
         </div>
-         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500 animate-bounce">
-            <a href="#features" aria-label="Scroll down to features"> <i data-lucide="arrow-down" class="w-6 h-6"></i>
-            </a>
-        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500 animate-bounce">
+           <a href="#features" aria-label="Scroll down to features"> <i data-lucide="arrow-down" class="w-6 h-6 hover:text-cyan-300 transition-colors"></i>
+           </a>
+       </div>
     </header>
 
-     <section id="features" aria-labelledby="features-heading" class="py-20 md:py-32 bg-black overflow-hidden"> <div class="container mx-auto px-4 md:px-6">
-             <div class="text-center mb-16 animate-fade-in-up">
-                 <h2 id="features-heading" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-cyan-400 text-transparent bg-clip-text uppercase tracking-wider">Why Nashop & $DAN?</h2>
-                 <p class="text-gray-400 text-lg opacity-90 max-w-2xl mx-auto">Unlock the true potential of decentralized rewards and ownership.</p>
-            </div>
-
-             <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center mb-20 md:mb-32 animate-fade-in-up">
-                <div class="relative order-2 md:order-1 group perspective-container">
-                     <div class="card-3d-effect preserve-3d relative w-full aspect-video rounded-xl bg-gradient-to-br from-purple-800/40 via-fuchsia-800/30 to-black border border-purple-600/50 p-6 shadow-2xl hover:shadow-purple-500/40 group-hover:rotate-x-[5deg] group-hover:rotate-y-[8deg] group-hover:-translate-y-2">
-                         <i data-lucide="gem" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 text-purple-400 opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500" aria-label="Gem icon representing rewards"></i>
-                          <div class="absolute inset-4 border-2 border-purple-500/30 rounded-lg animate-pulse duration-5000" aria-hidden="true"></div>
-                          <span class="absolute bottom-4 right-4 text-xs text-purple-300/70">$DAN Rewards</span>
-                     </div>
-                </div>
-                 <div class="order-1 md:order-2 animate-slide-in-right">
-                     <i data-lucide="award" class="w-10 h-10 mb-4 text-purple-400" aria-hidden="true"></i>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-3 text-white">Earn Real Rewards</h3>
-                    <p class="text-gray-300 opacity-85 leading-relaxed mb-4">Shop on Nashop and automatically earn $DAN tokens. Accumulate tangible crypto assets with every purchase, turning spending into investment.</p>
-                 </div>
-            </div>
-
-             <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center mb-20 md:mb-32 animate-fade-in-up">
-                <div class="order-1 md:order-1 animate-slide-in-left">
-                     <i data-lucide="key-round" class="w-10 h-10 mb-4 text-fuchsia-400" aria-hidden="true"></i>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-3 text-white">Unlock Exclusive Access</h3>
-                    <p class="text-gray-300 opacity-85 leading-relaxed mb-4">$DAN isn't just a reward; it's your key. Gain access to tiered discounts, early product launches, limited-edition items, and special platform features based on your holdings.</p>
-                </div>
-                <div class="relative order-2 md:order-2 group perspective-container">
-                     <div class="card-3d-effect preserve-3d relative w-full aspect-video rounded-xl bg-gradient-to-tl from-fuchsia-800/40 via-purple-800/30 to-black border border-fuchsia-600/50 p-6 shadow-2xl hover:shadow-fuchsia-500/40 group-hover:rotate-x-[5deg] group-hover:rotate-y-[-8deg] group-hover:-translate-y-2">
-                        <i data-lucide="door-open" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 text-fuchsia-400 opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500" aria-label="Open door icon representing exclusive access"></i>
-                        <div class="absolute inset-4 border-2 border-fuchsia-500/30 rounded-lg opacity-70 animate-pulse duration-4000" aria-hidden="true"></div>
-                        <span class="absolute bottom-4 right-4 text-xs text-fuchsia-300/70">Exclusive Access</span>
-                     </div>
-                </div>
-            </div>
-
-             <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center animate-fade-in-up">
-                 <div class="relative order-2 md:order-1 group perspective-container">
-                     <div class="card-3d-effect preserve-3d relative w-full aspect-video rounded-xl bg-gradient-to-br from-cyan-800/40 via-blue-800/30 to-black border border-cyan-600/50 p-6 shadow-2xl hover:shadow-cyan-500/40 group-hover:rotate-x-[5deg] group-hover:rotate-y-[8deg] group-hover:-translate-y-2">
-                        <i data-lucide="refresh-cw" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 text-cyan-400 opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500 animate-spin-slow" aria-label="Rotating arrows icon representing trading"></i>
-                        <div class="absolute inset-4 border-2 border-cyan-500/30 rounded-lg animate-pulse duration-6000" aria-hidden="true"></div>
-                        <span class="absolute bottom-4 right-4 text-xs text-cyan-300/70">Decentralized Trading</span>
-                     </div>
-                </div>
-                <div class="order-1 md:order-2 animate-slide-in-right">
-                    <i data-lucide="arrow-left-right" class="w-10 h-10 mb-4 text-cyan-400" aria-hidden="true"></i>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-3 text-white">Own a Tradeable Asset</h3>
-                    <p class="text-gray-300 opacity-85 leading-relaxed mb-4">Your $DAN tokens are true crypto assets. Trade them on supported decentralized exchanges (DEXs) and potentially centralized exchanges (CEXs) in the future. Take control of your rewards.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-     <section id="roadmap" aria-labelledby="roadmap-heading" class="py-20 md:py-32 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
-         <div class="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-cyan-900/30 to-transparent blur-[80px] -translate-x-1/4 -translate-y-1/4 opacity-50 -z-10" aria-hidden="true"></div>
-         <div class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-fuchsia-900/30 to-transparent blur-[80px] translate-x-1/4 translate-y-1/4 opacity-50 -z-10" aria-hidden="true"></div>
+    <section id="features" aria-labelledby="features-heading" class="py-20 md:py-32 bg-gradient-to-b from-black via-purple-950/15 to-black relative overflow-hidden">
+        <div class="absolute top-1/4 left-0 w-1/3 h-1/2 bg-gradient-to-br from-fuchsia-600/10 to-transparent rounded-full blur-[120px] opacity-50 -translate-x-1/2 animate-pulse duration-[6000ms]" aria-hidden="true"></div>
+        <div class="absolute bottom-1/4 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-cyan-600/10 to-transparent rounded-full blur-[120px] opacity-50 translate-x-1/2 animate-pulse duration-[7000ms] animation-delay-3000" aria-hidden="true"></div>
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
-             <div class="text-center mb-20 animate-fade-in-up">
-                 <h2 id="roadmap-heading" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-fuchsia-400 text-transparent bg-clip-text uppercase tracking-wider">Roadmap to Launch</h2>
-                 <p class="text-gray-400 text-lg opacity-90 max-w-2xl mx-auto">Charting the course for the Nashop revolution.</p>
+            <div class="text-center mb-16 md:mb-20 animate-fade-in-up">
+                <h2 id="features-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-purple-400 via-fuchsia-400 to-cyan-400 text-transparent bg-clip-text uppercase tracking-tighter">
+                    Why Choose <span class="whitespace-nowrap">Nashop & $DAN?</span>
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+                    Experience the synergy of shopping and earning in the decentralized future.
+                </p>
             </div>
 
-             <div class="max-w-3xl mx-auto">
-                <ol class="relative pl-8 space-y-20 md:space-y-24 roadmap-line
-                             before:absolute before:inset-y-0 before:left-8 before:w-1.5 before:-ml-[3px] before:bg-gradient-to-b before:from-cyan-700/50 before:via-purple-700/50 before:to-fuchsia-700/50 before:rounded-full
-                             ">
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
 
-                     <li class="relative group animate-fade-in-up"> <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 ring-[6px] ring-gray-950 shadow-lg flex items-center justify-center transform group-hover:scale-110 group-hover:shadow-cyan-500/40 transition-all duration-300 ease-out z-10">
-                              <i class="fas fa-cogs text-sm text-white/90" aria-hidden="true"></i>
-                         </div>
-                         <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
-                             <span class="text-xs uppercase tracking-widest text-cyan-400 font-semibold">Phase 1 // 2023-2025</span>
-                             <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2">Foundation & Architecture</h3>
-                             <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Core platform design, smart contract engineering, rigorous security audits, foundational partnerships.</p>
-                         </div>
-                     </li>
-
-                     <li class="relative group animate-fade-in-up"> <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 ring-[6px] ring-gray-950 shadow-lg flex items-center justify-center transform group-hover:scale-110 group-hover:shadow-purple-500/40 transition-all duration-300 ease-out z-10">
-                              <i class="fas fa-coins text-sm text-white/90" aria-hidden="true"></i>
-                         </div>
-                         <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
-                            <span class="text-xs uppercase tracking-widest text-purple-400 font-semibold">Phase 2 // Q1 2026</span>
-                            <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2">DAN Token Presale</h3>
-                            <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Launch of the official $DAN mainnet token presale. Early access investment for our community & supporters.</p>
+                <div class="feature-pillar-1 group flex flex-col bg-gray-900/40 border border-purple-800/30 rounded-2xl p-6 lg:p-8 text-center backdrop-blur-sm hover:bg-purple-950/20 hover:border-purple-600/50 transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 animate-fade-in-up">
+                    <div class="flex justify-center mb-6">
+                        <div class="relative p-4 bg-gradient-to-br from-purple-600/30 to-fuchsia-600/30 rounded-full ring-2 ring-purple-500/40 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                             <i data-lucide="gem" class="w-10 h-10 text-purple-300 group-hover:text-purple-200 transition-colors"></i>
                         </div>
-                     </li>
-
-                      <li class="relative group animate-fade-in-up"> <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 ring-[6px] ring-gray-950 shadow-lg flex items-center justify-center transform group-hover:scale-110 group-hover:shadow-fuchsia-500/40 transition-all duration-300 ease-out z-10">
-                              <i class="fas fa-flask-vial text-sm text-white/90" aria-hidden="true"></i>
-                         </div>
-                         <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
-                             <span class="text-xs uppercase tracking-widest text-fuchsia-400 font-semibold">Phase 3 // Q2 2026</span>
-                            <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2">Platform Beta Access</h3>
-                            <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Invite-only beta program launch. Testing core functionality, gathering user feedback, iterative improvements.</p>
-                         </div>
-                     </li>
-
-                     <li class="relative group animate-fade-in-up"> <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-orange-500 ring-[6px] ring-gray-950 shadow-lg flex items-center justify-center transform group-hover:scale-110 group-hover:shadow-orange-500/40 transition-all duration-300 ease-out z-10">
-                              <i class="fas fa-rocket-launch text-sm text-white/90" aria-hidden="true"></i>
-                         </div>
-                         <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
-                            <span class="text-xs uppercase tracking-widest text-orange-400 font-semibold">Phase 4 // Q4 2026</span>
-                             <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2">Global Mainnet Launch</h3>
-                             <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Full public release of the Nashop.store platform, activating the $DAN token economy globally.</p>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Earn Real Rewards</h3>
+                    <p class="text-gray-300 opacity-85 leading-relaxed mb-8 text-sm">
+                        Every purchase fuels your crypto wallet. Shop smart and accumulate tangible <strong class="text-purple-300 font-semibold">$DAN</strong> tokens, turning everyday spending into a potential investment.
+                    </p>
+                    <div class="relative perspective-container mt-auto">
+                        <div class="card-3d-effect preserve-3d relative w-full h-40 md:h-48 rounded-xl bg-gradient-to-br from-purple-800/50 via-fuchsia-800/40 to-gray-950/60 border border-purple-600/40 shadow-lg group-hover:scale-[1.02] flex items-center justify-center p-4 overflow-hidden">
+                            <i data-lucide="coins" class="w-16 h-16 text-purple-400 opacity-50 group-hover:opacity-80 transition-opacity duration-300 group-hover:scale-105"></i>
+                            <span class="absolute bottom-3 right-3 text-xs text-purple-300/70 opacity-80">$DAN Value</span>
                         </div>
-                     </li>
-                </ol> </div>
+                    </div>
+                </div>
+
+                <div class="feature-pillar-2 group flex flex-col bg-gray-900/40 border border-fuchsia-800/30 rounded-2xl p-6 lg:p-8 text-center backdrop-blur-sm hover:bg-fuchsia-950/20 hover:border-fuchsia-600/50 transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-fuchsia-500/20 animate-fade-in-up">
+                    <div class="flex justify-center mb-6">
+                        <div class="relative p-4 bg-gradient-to-br from-fuchsia-600/30 to-purple-600/30 rounded-full ring-2 ring-fuchsia-500/40 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="key-round" class="w-10 h-10 text-fuchsia-300 group-hover:text-fuchsia-200 transition-colors"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Unlock VIP Perks</h3>
+                    <p class="text-gray-300 opacity-85 leading-relaxed mb-8 text-sm">
+                        Your <strong class="text-fuchsia-300 font-semibold">$DAN</strong> isn't just currency; it's your key. Gain tiered access to exclusive discounts, early product drops, limited editions, and unique platform features.
+                    </p>
+                    <div class="relative perspective-container mt-auto">
+                        <div class="card-3d-effect preserve-3d relative w-full h-40 md:h-48 rounded-xl bg-gradient-to-tl from-fuchsia-800/50 via-purple-800/40 to-gray-950/60 border border-fuchsia-600/40 shadow-lg group-hover:scale-[1.02] flex items-center justify-center p-4 overflow-hidden">
+                             <i data-lucide="lock-keyhole" class="w-16 h-16 text-fuchsia-400 opacity-50 group-hover:opacity-80 transition-opacity duration-300 group-hover:scale-105"></i>
+                             <span class="absolute bottom-3 right-3 text-xs text-fuchsia-300/70 opacity-80">Tiered Benefits</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-pillar-3 group flex flex-col bg-gray-900/40 border border-cyan-800/30 rounded-2xl p-6 lg:p-8 text-center backdrop-blur-sm hover:bg-cyan-950/20 hover:border-cyan-600/50 transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/20 animate-fade-in-up">
+                    <div class="flex justify-center mb-6">
+                        <div class="relative p-4 bg-gradient-to-br from-cyan-600/30 to-blue-600/30 rounded-full ring-2 ring-cyan-500/40 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="arrow-left-right" class="w-10 h-10 text-cyan-300 group-hover:text-cyan-200 transition-colors"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Own Your Value</h3>
+                    <p class="text-gray-300 opacity-85 leading-relaxed mb-8 text-sm">
+                        Control your rewards. <strong class="text-cyan-300 font-semibold">$DAN</strong> tokens are genuine crypto assets you own. Trade them on supported DEXs, participate in the ecosystem, and manage your digital wealth.
+                    </p>
+                    <div class="relative perspective-container mt-auto">
+                        <div class="card-3d-effect preserve-3d relative w-full h-40 md:h-48 rounded-xl bg-gradient-to-br from-cyan-800/50 via-blue-800/40 to-gray-950/60 border border-cyan-600/40 shadow-lg group-hover:scale-[1.02] flex items-center justify-center p-4 overflow-hidden">
+                             <i data-lucide="candlestick-chart" class="w-16 h-16 text-cyan-400 opacity-50 group-hover:opacity-80 transition-opacity duration-300 group-hover:scale-105"></i>
+                             <span class="absolute bottom-3 right-3 text-xs text-cyan-300/70 opacity-80">Market Ready</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
+    <section id="roadmap" aria-labelledby="roadmap-heading" class="py-20 md:py-32 bg-gradient-to-b from-black via-gray-950/80 to-black relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-cyan-900/20 to-transparent blur-[90px] -translate-x-1/4 -translate-y-1/4 opacity-60 -z-10" aria-hidden="true"></div>
+        <div class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-fuchsia-900/20 to-transparent blur-[90px] translate-x-1/4 translate-y-1/4 opacity-60 -z-10" aria-hidden="true"></div>
 
-    <section id="partners" aria-labelledby="partners-heading" class="py-20 md:py-32 bg-gray-950/50 backdrop-blur-sm">
+       <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-20 animate-fade-in-up">
+                <h2 id="roadmap-heading" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-fuchsia-400 text-transparent bg-clip-text uppercase tracking-wider">Roadmap to Launch</h2>
+                <p class="text-gray-400 text-lg opacity-90 max-w-2xl mx-auto">Charting the course for the Nashop revolution.</p>
+           </div>
+
+            <div class="max-w-3xl mx-auto">
+               <ol class="relative pl-8 space-y-20 md:space-y-24 roadmap-line before:absolute before:inset-y-0 before:left-8 before:w-1.5 before:-ml-[3px] before:bg-gradient-to-b before:from-cyan-700/60 before:via-purple-700/60 before:to-fuchsia-700/60 before:rounded-full">
+
+                    <li class="relative group animate-fade-in-up" style="--glow-color: 56, 189, 248;">
+                         <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 ring-[6px] ring-gray-950/80 shadow-lg flex items-center justify-center transform group-hover:scale-110 roadmap-point-glow z-10">
+                             <i class="fas fa-cogs text-sm text-white/90" aria-hidden="true"></i>
+                         </div>
+                        <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
+                            <span class="text-xs uppercase tracking-widest text-cyan-400 font-semibold">Phase 1 // 2023-2025</span>
+                            <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2 group-hover:text-cyan-300 transition-colors">Foundation & Architecture</h3>
+                            <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Core platform design, smart contract engineering, rigorous security audits, foundational partnerships.</p>
+                        </div>
+                    </li>
+
+                    <li class="relative group animate-fade-in-up" style="--glow-color: 168, 85, 247;">
+                        <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 ring-[6px] ring-gray-950/80 shadow-lg flex items-center justify-center transform group-hover:scale-110 roadmap-point-glow z-10">
+                            <i class="fas fa-coins text-sm text-white/90" aria-hidden="true"></i>
+                        </div>
+                        <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
+                           <span class="text-xs uppercase tracking-widest text-purple-400 font-semibold">Phase 2 // Q1 2026</span>
+                           <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2 group-hover:text-purple-300 transition-colors">DAN Token Presale</h3>
+                           <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Launch of the official $DAN mainnet token presale. Early access investment for our community & supporters.</p>
+                       </div>
+                    </li>
+
+                     <li class="relative group animate-fade-in-up" style="--glow-color: 217, 70, 239;">
+                        <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 ring-[6px] ring-gray-950/80 shadow-lg flex items-center justify-center transform group-hover:scale-110 roadmap-point-glow z-10">
+                            <i class="fas fa-flask-vial text-sm text-white/90" aria-hidden="true"></i>
+                        </div>
+                        <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
+                            <span class="text-xs uppercase tracking-widest text-fuchsia-400 font-semibold">Phase 3 // Q2 2026</span>
+                           <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2 group-hover:text-fuchsia-300 transition-colors">Platform Beta Access</h3>
+                           <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Invite-only beta program launch. Testing core functionality, gathering user feedback, iterative improvements.</p>
+                        </div>
+                    </li>
+
+                    <li class="relative group animate-fade-in-up" style="--glow-color: 249, 115, 22;">
+                        <div class="absolute -left-1 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-orange-500 ring-[6px] ring-gray-950/80 shadow-lg flex items-center justify-center transform group-hover:scale-110 roadmap-point-glow z-10">
+                             <i class="fas fa-rocket text-sm text-white/90" aria-hidden="true"></i>
+                        </div>
+                        <div class="pl-12 transform transition-transform duration-300 group-hover:translate-x-2">
+                           <span class="text-xs uppercase tracking-widest text-orange-400 font-semibold">Phase 4 // Q4 2026</span>
+                            <h3 class="text-xl md:text-2xl font-semibold text-white mt-1 mb-2 group-hover:text-orange-300 transition-colors">Global Mainnet Launch</h3>
+                            <p class="text-gray-300 opacity-80 text-sm leading-relaxed">Full public release of the Nashop.store platform, activating the $DAN token economy globally.</p>
+                       </div>
+                    </li>
+               </ol>
+            </div>
+       </div>
+    </section>
+
+
+    <section id="partners" aria-labelledby="partners-heading" class="py-20 md:py-32 bg-gray-950/60 backdrop-blur-md relative overflow-hidden group">
+        <div class="absolute inset-y-0 left-0 w-20 md:w-32 z-10 bg-gradient-to-r from-gray-950/70 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-20 md:w-32 z-10 bg-gradient-to-l from-gray-950/70 to-transparent pointer-events-none"></div>
+
         <div class="container mx-auto px-4 md:px-6">
-             <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
-                 <h2 id="partners-heading" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 text-transparent bg-clip-text uppercase tracking-wider">Partnered With</h2> </div>
+            <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
+                <h2 id="partners-heading" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 text-transparent bg-clip-text uppercase tracking-wider">Our Ecosystem Partners</h2>
+                <p class="text-gray-400 text-sm opacity-80 max-w-lg mx-auto mt-2">Proudly collaborating with pioneers in the Web3 space.</p>
+            </div>
 
-             <div id="partner-logos-container" class="flex flex-wrap justify-center items-center gap-x-8 gap-y-8 md:gap-x-16 lg:gap-x-20" role="list"> </div>
+            <div class="w-full overflow-hidden">
+                <div id="partner-marquee" class="flex animate-marquee whitespace-nowrap py-4">
+                    <div id="partner-logos-set1" class="flex items-center justify-around flex-shrink-0 mx-10 space-x-16 md:space-x-24 lg:space-x-32" role="list">
+                    </div>
+                    <div id="partner-logos-set2" aria-hidden="true" class="flex items-center justify-around flex-shrink-0 mx-10 space-x-16 md:space-x-24 lg:space-x-32">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
 
     <section id="join" aria-labelledby="join-heading" class="py-20 md:py-32 bg-black relative">
-        <div class="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.4%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M0%200h40v1H0zM0%2040h40v1H0zM0%200v40h1V0zm40%200v40h1V0z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" aria-hidden="true"></div>
+        <div class="absolute inset-0 z-0 opacity-[0.06] bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.4%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M0%200h40v1H0zM0%2040h40v1H0zM0%200v40h1V0zm40%200v40h1V0z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" aria-hidden="true"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-purple-900/10 to-transparent blur-[100px] opacity-30 -z-10" aria-hidden="true"></div>
 
         <div class="container mx-auto px-4 md:px-6 text-center relative z-10">
             <div class="animate-fade-in-up">
-                <i data-lucide="rss" class="w-12 h-12 text-purple-400 mx-auto mb-6 animate-pulse duration-1500" aria-label="Newsletter feed icon"></i>
+                <i data-lucide="mail-check" class="w-12 h-12 text-purple-400 mx-auto mb-6 transition-transform hover:scale-110 duration-300" aria-label="Newsletter icon"></i>
                 <h2 id="join-heading" class="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 text-white tracking-tight">Stay Connected</h2>
                 <p class="text-gray-400 text-lg opacity-90 max-w-2xl mx-auto mb-10">Be the first to know about project milestones, token news, and platform updates. Subscribe to our newsletter.</p>
 
-                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto relative group" aria-labelledby="join-heading">
-                    <label for="email" class="sr-only">Email Address</label> <input type="email" id="email" name="email" placeholder="your.email@domain.com" required aria-label="Email for newsletter" aria-describedby="subscription-message"
-                           class="flex-1 px-6 py-4 rounded-full bg-gray-900/80 border-2 border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/70 transition duration-300 text-base shadow-inner appearance-none backdrop-blur-sm pr-36">
+                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto relative" aria-labelledby="join-heading">
+                    <label for="email" class="sr-only">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@domain.com" required aria-label="Email for newsletter" aria-describedby="subscription-message"
+                           class="flex-1 px-6 py-4 rounded-full bg-gray-900/80 border-2 border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/80 focus:ring-0 transition duration-300 text-base shadow-inner appearance-none backdrop-blur-sm pr-36">
                     <button type="submit" id="subscribe-button" aria-label="Subscribe to newsletter"
-                            class="sm:absolute sm:right-1.5 sm:top-1.5 sm:bottom-1.5 px-8 sm:px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500/50 whitespace-nowrap">
+                            class="sm:absolute sm:right-1.5 sm:top-1.5 sm:bottom-1.5 px-8 sm:px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 transition-all duration-300 ease-in-out transform hover:scale-[1.04] shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500/50 whitespace-nowrap">
                         Subscribe
                     </button>
                 </form>
-                <p id="subscription-message" role="status" class="mt-4 text-green-400 hidden"></p>
+                <p id="subscription-message" role="status" class="mt-4 text-sm text-green-400 hidden h-5"></p>
 
-                <div class="mt-16 flex justify-center space-x-6 sm:space-x-8" role="navigation" aria-label="Social media links"> <a href="https://x.com/nashopstoreweb3" target="_blank" rel="noopener noreferrer" title="Nashop on Twitter/X" class="text-gray-600 hover:text-sky-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
-                        <i class="fab fa-x-twitter text-2xl" aria-hidden="true"></i> <span class="sr-only">Twitter/X</span> </a>
-                    <a href="https://www.instagram.com/nashop.store.web3/" target="_blank" rel="noopener noreferrer" title="Nashop on Instagram" class="text-gray-600 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                <div class="mt-16 flex justify-center space-x-6 sm:space-x-8" role="navigation" aria-label="Social media links">
+                    <a href="https://x.com/nashopstoreweb3" target="_blank" rel="noopener noreferrer" title="Nashop on Twitter/X" class="text-gray-500 hover:text-sky-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                        <i class="fab fa-x-twitter text-2xl" aria-hidden="true"></i> <span class="sr-only">Twitter/X</span>
+                    </a>
+                    <a href="https://www.instagram.com/nashop.store.web3/" target="_blank" rel="noopener noreferrer" title="Nashop on Instagram" class="text-gray-500 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
                         <i class="fab fa-instagram text-2xl" aria-hidden="true"></i> <span class="sr-only">Instagram</span>
                     </a>
-                    <a href="https://t.me/dan_nashop" target="_blank" rel="noopener noreferrer" title="Nashop Telegram Group" class="text-gray-600 hover:text-blue-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                    <a href="https://t.me/dan_nashop" target="_blank" rel="noopener noreferrer" title="Nashop Telegram Group" class="text-gray-500 hover:text-blue-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
                         <i class="fab fa-telegram text-2xl" aria-hidden="true"></i> <span class="sr-only">Telegram</span>
                     </a>
-                    <a href="mailto:contact@nashop.store" title="Email Nashop Contact" class="text-gray-600 hover:text-gray-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                    <a href="mailto:contact@nashop.store" title="Email Nashop Contact" class="text-gray-500 hover:text-gray-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
                         <i class="fas fa-envelope text-2xl" aria-hidden="true"></i> <span class="sr-only">Email Contact</span>
                     </a>
                 </div>
@@ -291,15 +357,17 @@
     </section>
 
 
-    <footer class="bg-black py-10 border-t border-white/10" role="contentinfo"> <div class="container mx-auto px-4 md:px-6 text-center">
+    <footer class="bg-black py-10 border-t border-white/10" role="contentinfo">
+        <div class="container mx-auto px-4 md:px-6 text-center">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <p class="text-xs text-gray-500 opacity-80">
-                    &copy; <script>document.write(new Date().getFullYear())</script> NASHOP Protocol. Decentralizing Commerce. </p>
-                 <nav aria-label="Footer links" class="flex flex-wrap justify-center items-center gap-x-4 gap-y-1 text-xs">
-                    <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
-                    <a href="terms.html" class="text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
-                    <a href="faq.html" class="text-gray-500 hover:text-gray-300 transition-colors">FAQ</a>
-                     <a href="#top" class="text-gray-500 hover:text-gray-300 transition-colors">Back to Top <i class="fas fa-arrow-up text-[10px] ml-1" aria-hidden="true"></i></a>
+                    © <script>document.write(new Date().getFullYear())</script> NASHOP Protocol. Decentralizing Commerce.
+                </p>
+                <nav aria-label="Footer links" class="flex flex-wrap justify-center items-center gap-x-4 gap-y-1 text-xs">
+                    <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-300 transition-colors duration-200">Privacy Policy</a>
+                    <a href="terms.html" class="text-gray-500 hover:text-gray-300 transition-colors duration-200">Terms of Service</a>
+                    <a href="faq.html" class="text-gray-500 hover:text-gray-300 transition-colors duration-200">FAQ</a>
+                    <a href="#top" class="text-gray-500 hover:text-gray-300 transition-colors duration-200 inline-flex items-center">Back to Top <i class="fas fa-arrow-up text-[10px] ml-1.5" aria-hidden="true"></i></a>
                 </nav>
             </div>
         </div>
@@ -308,160 +376,160 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', (event) => {
-          // Initialize Lucide Icons
           if (typeof lucide !== 'undefined') {
               try { lucide.createIcons(); } catch (e) { console.error("Lucide icon creation failed:", e); }
           } else {
-              console.warn("Lucide library not loaded on DOMContentLoaded.");
-              // Fallback if needed
+              console.warn("Lucide library not loaded.");
           }
 
-           // --- PARTNER LOGO INJECTION SCRIPT (with improved Alt Text) ---
            const partnerLogos = [
-               // IMPORTANT: List your partner logo filenames here
                'FROGPAY.png',
                'BNINER.jpg',
-               // Add more partner logo filenames
            ];
-           const logoContainer = document.getElementById('partner-logos-container');
-           const logoBasePath = 'img/partners/'; // Make sure this path is correct
+           const logoSet1Container = document.getElementById('partner-logos-set1');
+           const logoSet2Container = document.getElementById('partner-logos-set2');
+           const logoBasePath = 'img/partners/';
 
-           if (logoContainer) {
-               partnerLogos.forEach(filename => {
-                   const img = document.createElement('img');
-                   img.src = logoBasePath + filename;
-                   img.loading = 'lazy'; // 9. Lazy load images below the fold
-
-                   // Improved Alt text generation
-                   let altText = filename.substring(0, filename.lastIndexOf('.')) || filename;
-                   altText = altText.replace(/[-_]/g, ' '); // Replace hyphens/underscores
-                   // Basic capitalization (optional, adjust as needed)
-                   altText = altText.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
-                   // *** Add more specific names if needed:
-                   // if (altText.toLowerCase() === 'frogpay') altText = "FrogPay";
-                   // if (altText.toLowerCase() === 'bniner') altText = "Bniner";
-                   img.alt = `Nashop Partner: ${altText}`; // Descriptive alt text
-
-                   img.className = 'h-10 md:h-12 w-auto max-w-[120px] md:max-w-[150px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer';
-                   img.setAttribute('role', 'listitem'); // Add role for semantics
-
-                   // Optional: Wrap logo in a link if partners have websites
-                   // const link = document.createElement('a');
-                   // link.href = '#'; // Replace with actual partner URL
-                   // link.title = `Visit ${altText}`;
-                   // link.target = "_blank";
-                   // link.rel = "noopener noreferrer";
-                   // link.appendChild(img);
-                   // logoContainer.appendChild(link);
-
-                   logoContainer.appendChild(img); // Use this line if logos are not linked
-               });
+           if (logoSet1Container && logoSet2Container) {
+                if (partnerLogos.length === 0) {
+                     const partnersSection = document.getElementById('partners');
+                     if(partnersSection) partnersSection.style.display = 'none';
+                } else {
+                    partnerLogos.forEach(filename => {
+                        const img = document.createElement('img');
+                        img.src = logoBasePath + filename;
+                        img.loading = 'lazy';
+                        let altText = filename.substring(0, filename.lastIndexOf('.')) || filename;
+                        altText = altText.replace(/[-_]/g, ' ').toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
+                        img.alt = `Nashop Partner: ${altText}`;
+                        img.className = 'h-16 md:h-20 lg:h-24 w-auto max-w-[150px] md:max-w-[200px] object-contain filter grayscale opacity-70 hover:filter-none hover:opacity-100 transition-all duration-300 ease-in-out transform hover:scale-[1.08] cursor-pointer flex-shrink-0';
+                        img.setAttribute('role', 'listitem');
+                        logoSet1Container.appendChild(img);
+                        const clone = img.cloneNode(true);
+                        logoSet2Container.appendChild(clone);
+                    });
+                }
            } else {
-               console.error("Partner logos container '#partner-logos-container' not found!");
+               console.error("Partner logo containers not found!");
            }
-           // --- END OF PARTNER LOGO INJECTION SCRIPT ---
 
-            // Intersection Observer for scroll animations
-            const animatedElements = document.querySelectorAll('.animate-slide-in-left, .animate-slide-in-right, .animate-fade-in-up');
-            if ('IntersectionObserver' in window) { // Check browser support
-                const observer = new IntersectionObserver((entries) => {
+           const animatedElements = document.querySelectorAll('.animate-fade-in-up');
+           if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, observerInstance) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('is-visible');
-                            // Optional: Stop observing after animation triggered once
-                            // observer.unobserve(entry.target);
+                            observerInstance.unobserve(entry.target);
                         }
-                        // Optional: Reset if you want animation to repeat on scroll out/in
-                        // else {
-                        //     entry.target.classList.remove('is-visible');
-                        // }
                     });
-                }, { threshold: 0.1 }); // Trigger when 10% visible
+                }, { threshold: 0.1 });
 
-                animatedElements.forEach(el => observer.observe(el));
+                animatedElements.forEach(el => {
+                    if (!el.closest('header')) {
+                         observer.observe(el);
+                    } else {
+                        el.classList.add('is-visible'); // Ensure header animates immediately
+                    }
+                 });
             } else {
-                // Fallback for older browsers: just make elements visible
                 animatedElements.forEach(el => el.classList.add('is-visible'));
             }
 
-           // 3D Tilt Effect (Keep as is)
-           const tiltElements = document.querySelectorAll('.perspective-container');
-           tiltElements.forEach(container => {
+            const tiltContainers = document.querySelectorAll('.perspective-container');
+            tiltContainers.forEach(container => {
                 const card = container.querySelector('.card-3d-effect');
                 if (card) {
                     container.addEventListener('mousemove', (e) => {
                          const rect = container.getBoundingClientRect();
                          const x = e.clientX - rect.left - rect.width / 2;
                          const y = e.clientY - rect.top - rect.height / 2;
-                         const rotateY = (x / rect.width) * 10; // Slightly reduced rotation
-                         const rotateX = -(y / rect.height) * 10; // Slightly reduced rotation
-                         card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(5px)`; // Reduced translateZ
+                         const rotateY = (x / (rect.width / 2)) * 7;
+                         const rotateX = -(y / (rect.height / 2)) * 5;
+                         requestAnimationFrame(() => {
+                            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(5px) scale(1.02)`; // Slight scale up during JS tilt
+                         });
                     });
-                     container.addEventListener('mouseleave', () => {
-                        card.style.transform = 'rotateY(0deg) rotateX(0deg) translateZ(0px)';
-                     });
+                    container.addEventListener('mouseleave', () => {
+                        requestAnimationFrame(() => {
+                            card.style.transform = ''; // Reset inline style, let CSS take over
+                        });
+                    });
                 }
            });
 
-           // --- Newsletter Form Submission (Keep as is, ensure scriptURL is correct) ---
             const newsletterForm = document.getElementById("newsletter-form");
             if (newsletterForm) {
                 newsletterForm.addEventListener("submit", subscribeNewsletter);
             }
 
-      }); // End of DOMContentLoaded
+      });
 
-      // Newsletter Function (Keep as is)
-        async function subscribeNewsletter(event) {
+      async function subscribeNewsletter(event) {
             event.preventDefault();
             const emailInput = document.getElementById("email");
             const email = emailInput.value.trim();
             const message = document.getElementById("subscription-message");
             const subscribeButton = document.getElementById("subscribe-button");
 
-            if (!email || !emailInput.checkValidity()) { // Basic HTML5 validation check
+            if (!email || !emailInput.checkValidity()) {
                 message.textContent = "Please enter a valid email address.";
                 message.classList.remove("hidden", "text-green-400");
-                message.classList.add("text-red-400");
+                message.classList.add("text-red-500"); // Use red-500 for better contrast
                 emailInput.focus();
                 return;
             }
 
             subscribeButton.textContent = "Subscribing...";
             subscribeButton.disabled = true;
-            message.classList.add("hidden"); // Hide previous messages
+            message.classList.add("hidden");
+            message.classList.remove("text-red-500", "text-green-400"); // Clear previous status colors
 
-            const scriptURL = "https://script.google.com/macros/s/AKfycbzBVe_hIaecNcXRLm-NQB33pUzSYNhoF2D7fFg6JTgy2vYWiW56QbIJXy_AZ61GKOJ8/exec"; // Ensure this is correct
+            const scriptURL = "https://script.google.com/macros/s/AKfycbzBVe_hIaecNcXRLm-NQB33pUzSYNhoF2D7fFg6JTgy2vYWiW56QbIJXy_AZ61GKOJ8/exec";
             const formData = new FormData();
             formData.append("email", email);
 
             try {
                 const response = await fetch(scriptURL, { method: "POST", body: formData });
-                // Google Apps Script often redirects on success (opaque response) or returns 200
                 if (response.ok || response.type === 'opaque' || response.status === 200) {
                     message.textContent = "✅ Success! Thanks for subscribing.";
-                    message.classList.remove("hidden", "text-red-400");
+                    message.classList.remove("hidden");
                     message.classList.add("text-green-400");
                     emailInput.value = "";
                     setTimeout(() => message.classList.add('hidden'), 5000);
                 } else {
-                     throw new Error(`Subscription failed: ${response.status} ${response.statusText}`);
+                     throw new Error(`Subscription failed: Status ${response.status}`);
                 }
             } catch (error) {
                 console.error("Error subscribing:", error);
-                message.textContent = "❌ Error! Could not subscribe. Please try again later.";
-                message.classList.remove("hidden", "text-green-400");
-                message.classList.add("text-red-400");
+                message.textContent = "❌ Error! Subscription failed. Please try again later.";
+                message.classList.remove("hidden");
+                message.classList.add("text-red-500");
             } finally {
                  subscribeButton.textContent = "Subscribe";
                  subscribeButton.disabled = false;
              }
         }
 
-        // Clipboard Function (Keep as is)
-        function copyToClipboard(text, buttonElement) {
-            // Implementation details... (unchanged)
-        }
+      function copyToClipboard(text, buttonElement) {
+          navigator.clipboard.writeText(text).then(() => {
+              const originalText = buttonElement.innerHTML;
+              buttonElement.innerHTML = '<i class="fas fa-check mr-1"></i> Copied!';
+              buttonElement.classList.add('bg-green-600', 'border-green-500');
+              setTimeout(() => {
+                  buttonElement.innerHTML = originalText;
+                  buttonElement.classList.remove('bg-green-600', 'border-green-500');
+              }, 2000);
+          }).catch(err => {
+              console.error('Failed to copy: ', err);
+              const originalText = buttonElement.innerHTML;
+              buttonElement.innerHTML = '<i class="fas fa-times mr-1"></i> Failed';
+              buttonElement.classList.add('bg-red-600', 'border-red-500');
+               setTimeout(() => {
+                  buttonElement.innerHTML = originalText;
+                  buttonElement.classList.remove('bg-red-600', 'border-red-500');
+              }, 2500);
+          });
+      }
     </script>
 
 </body>
