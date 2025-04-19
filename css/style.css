@@ -212,9 +212,7 @@ section#partners.group:hover .animate-marquee {
     max-width: 90%;
     width: auto;          /* Maintain aspect ratio */
     object-fit: contain;
-    /* --- Appearance matching example's SVG fill: --- */
-    /* Option 1: Simple White/Light Tint */
-    filter: brightness(0) invert(1); /* Makes image white */
+   
     opacity: 0.7;
 
     /* Option 2: Lilac Tint (requires more tweaking) */
