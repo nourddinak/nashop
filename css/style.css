@@ -212,20 +212,8 @@ section#partners.group:hover .animate-marquee {
     max-width: 90%;
     width: auto;          /* Maintain aspect ratio */
     object-fit: contain;
-   
     opacity: 0.7;
-
-    /* Option 2: Lilac Tint (requires more tweaking) */
-    /* filter: brightness(0) invert(90%) sepia(20%) saturate(5000%) hue-rotate(240deg); */
-    /* opacity: 0.8; */
-
     transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions */
-}
-
-/* Logo Hover Effect - Remove filter/opacity */
-.brandsCarousel:hover .brandLogo img {
-    filter: none; /* Remove filter */
-    opacity: 1;   /* Full opacity */
 }
 
 
