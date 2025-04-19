@@ -1,0 +1,263 @@
+/* style.css */
+
+/* --- General Styles --- */
+.perspective-container { perspective: 1000px; }
+.preserve-3d { transform-style: preserve-3d; }
+.card-3d-effect { transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+.animate-spin-slow { animation: spin 15s linear infinite; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(25px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-fade-in-up { animation: fade-in-up 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards; }
+
+.animate-fade-in-up { opacity: 0; animation-play-state: paused; }
+.animate-fade-in-up.is-visible { opacity: 1; animation-play-state: running; }
+
+.text-shadow-lg { text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+html { scroll-behavior: smooth; }
+.animation-delay-3000 { animation-delay: 3s; }
+.duration-5000 { animation-duration: 5s; }
+.duration-6000 { animation-duration: 6s; }
+.duration-7000 { animation-duration: 7s; }
+
+/* --- Roadmap Styles --- */
+.roadmap-line::before {
+    content: '';
+    position: absolute;
+    inset-y: 0;
+    left: 32px; /* Corresponds to Tailwind's pl-8 */
+    width: 6px;
+    margin-left: -3px;
+    background: linear-gradient(to bottom, rgba(56, 189, 248, 0.4), rgba(168, 85, 247, 0.4), rgba(217, 70, 239, 0.4));
+    border-radius: 3px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    animation: pulse-line 4s infinite ease-in-out;
+ }
+ @keyframes pulse-line {
+    0%, 100% { opacity: 0.6; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.02); }
+ }
+.roadmap-point-glow { transition: box-shadow 0.3s ease-out, transform 0.3s ease-out; }
+li.group:hover .roadmap-point-glow { box-shadow: 0 0 15px 3px rgba(var(--glow-color, 76, 29, 149), 0.7); } /* Uses CSS variable --glow-color */
+li.group .roadmap-point-glow { transform: scale(1); transition: transform 0.3s ease; }
+li.group:hover .roadmap-point-glow { transform: scale(1.15); }
+
+
+/* --- Partner Marquee Styles --- */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* Ensures seamless loop if set1 = set2 */
+}
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+section#partners.group:hover .animate-marquee {
+     animation-play-state: paused;
+}
+/* Fade effects for Partner Carousel */
+.partners-carousel-container::before,
+.partners-carousel-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6rem; /* w-24 */
+    z-index: 2;
+    pointer-events: none; /* Allows hover/click through */
+}
+.partners-carousel-container::before {
+    left: 0;
+    /* Match the section background: bg-gray-950/60 -> use rgb(17, 24, 39) */
+    background: linear-gradient(to right, rgb(17, 24, 39) 20%, rgba(17, 24, 39, 0));
+}
+.partners-carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(17, 24, 39) 20%, rgba(17, 24, 39, 0));
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .partners-carousel-container::before,
+  .partners-carousel-container::after {
+      width: 8rem; /* w-32 */
+  }
+}
+
+
+/* --- Feature Pillar Styles --- */
+.feature-pillar-1.is-visible { animation-delay: 0s; }
+.feature-pillar-2.is-visible { animation-delay: 0.15s; }
+.feature-pillar-3.is-visible { animation-delay: 0.3s; }
+
+/* Subtle grid pattern for Features background */
+#features::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+ }
+
+ /* --- Input Focus Glow --- */
+ #email:focus {
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.4); /* Purple glow */
+    /* Tailwind focus rings are removed by focus:ring-0 in the HTML */
+ }
+
+/* --- Body Styles (can add base styles here if needed) --- */
+/* --- Style Overrides and Additions for Partners Section (Inspired by Example) --- */
+
+:root {
+    /* Define colors from the example for use */
+    --lemon-zest: #d7f20c;
+    --lilac-dream: #d285f2;
+    --off-white: #ebf2f0;
+    --crimson-red: #a60311;
+    --midnight-plum: #140826; /* Dark background color */
+}
+
+/* Apply the background color to the partners section */
+.partners-section-bg {
+    background-color: var(--midnight-plum);
+}
+
+/* Style the heading - Choose a light color for contrast on dark bg */
+.text-partner-heading {
+   /* Use a light color like the example's --off-white or Tailwind white */
+   color: var(--off-white);
+   /* Or use Tailwind equivalent: color: theme('colors.white'); */
+}
+
+/* Style the subheading */
+.text-partner-subheading {
+    color: var(--off-white); /* Match paragraph color from example */
+    opacity: 0.8; /* Keep existing opacity or adjust */
+}
+
+/* Carousel Container Styles (from .brandsCarousel) */
+.brandsCarousel {
+    max-width: 60rem;       /* 960px */
+    height: 6.25rem;      /* 100px - Fixed height */
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;       /* Crucial for clipping */
+    position: relative;
+}
+
+/* Gradient Fades (from .brandsCarousel::before/::after) */
+.brandsCarousel::before,
+.brandsCarousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 6.25rem;      /* 100px */
+    height: 100%;       /* Match container height */
+    /* Use the section's background color for the solid part of the gradient */
+    background: linear-gradient(to right, var(--midnight-plum) 20%, transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.brandsCarousel::before {
+    left: 0;
+}
+
+.brandsCarousel::after {
+    right: 0;
+    transform: rotateZ(180deg); /* Flip the gradient for the right side */
+}
+
+/* Marquee Track Styles (from .carouselTrack) */
+.carouselTrack {
+    display: flex;          /* Enable flexbox for the track */
+    width: calc(10rem * 20); /* Example calculation: Logo width * number of logos * 2 sets */
+                            /* Adjust 10rem based on actual logo/spacing */
+                            /* JS could calculate this more accurately if needed */
+    animation: infiniteLoop 45s linear infinite; /* Keep animation speed or adjust */
+    will-change: transform;   /* Performance hint */
+    height: 100%; /* Ensure track fills container height */
+}
+
+/* Content within the track (our sets 1 & 2) */
+.carouselTrackContent {
+    display: flex;
+    align-items: center; /* Vertically center logos in the track */
+    height: 100%;
+    padding-left: 1rem; /* Add some padding inside */
+    padding-right: 1rem;
+}
+
+/* Individual Logo Wrapper Styles (from .brandLogo) */
+.brandLogo {
+    display: flex;         /* Use flex to center img if needed */
+    align-items: center;   /* Vertically center the img */
+    justify-content: center; /* Horizontally center the img */
+    width: 10rem;         /* Approx width per logo + spacing (adjust as needed) */
+                            /* This width * number of logos affects the total track width calculation */
+    height: 100%;          /* Fill track height */
+    margin-left: 1rem;     /* Spacing between logos */
+    margin-right: 1rem;
+    flex-shrink: 0;        /* Prevent logos from shrinking */
+}
+
+/* Style the actual image logo */
+.brandLogo img {
+    display: block;
+    max-height: 70%;      /* Control logo size within the wrapper */
+    max-width: 90%;
+    width: auto;          /* Maintain aspect ratio */
+    object-fit: contain;
+    /* --- Appearance matching example's SVG fill: --- */
+    /* Option 1: Simple White/Light Tint */
+    filter: brightness(0) invert(1); /* Makes image white */
+    opacity: 0.7;
+
+    /* Option 2: Lilac Tint (requires more tweaking) */
+    /* filter: brightness(0) invert(90%) sepia(20%) saturate(5000%) hue-rotate(240deg); */
+    /* opacity: 0.8; */
+
+    transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions */
+}
+
+/* Logo Hover Effect - Remove filter/opacity */
+.brandsCarousel:hover .brandLogo img {
+    filter: none; /* Remove filter */
+    opacity: 1;   /* Full opacity */
+}
+
+
+/* Animation (Renamed from example's 'infiniteLoop' to keep JS simpler) */
+@keyframes infiniteLoop {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        /* Translate by the width of one logo set */
+        /* JS needs to ensure set1 and set2 have the same width */
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* Pause animation on carousel hover */
+.brandsCarousel:hover .carouselTrack {
+    animation-play-state: paused;
+}
+
+/* Optional: Responsive Adjustments for Fades/Width */
+@media (max-width: 768px) { /* md breakpoint */
+  .brandsCarousel::before,
+  .brandsCarousel::after {
+      width: 4rem; /* Reduce fade width on smaller screens */
+  }
+  .brandLogo {
+      width: 8rem; /* Adjust logo spacing */
+      /* Recalculate .carouselTrack width if needed based on this change */
+  }
+}
+
+/* Ensure any conflicting Tailwind utilities from HTML are overridden or removed */
