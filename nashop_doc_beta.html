@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nashop DAN Token - Comprehensive Documentation</title>
+    <link rel="icon" type="image/x-icon" href="SHOP-LOGO-BLACK.ico">
+
+    <!-- External Stylesheets & Fonts -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- External Scripts (defer loading) -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Add custom base styles or component styles here if needed */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Example font */
+            background-color: #111827;
+            /* bg-gray-900 */
+            background-image: linear-gradient(145deg, #0f172a 0%, #1e293b 40%, #334155 100%);
+            /* Deeper gradient: slate-900 -> slate-800 -> slate-700 */
+            color: #d1d5db;
+            /* text-gray-300 default */
+        }
+
+        .content-section {
+            background-color: rgba(30, 41, 59, 0.85);
+            /* bg-slate-800 with opacity */
+            backdrop-filter: blur(12px);
+            /* Slightly stronger blur */
+            border: 1px solid rgba(51, 65, 85, 0.6);
+            /* border-slate-700 with opacity */
+            border-radius: 0.75rem;
+            /* rounded-xl */
+            padding: 2rem;
+            /* p-8 */
+            margin-bottom: 2.5rem;
+            /* mb-10 */
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2), 0 4px 8px -4px rgba(0, 0, 0, 0.1), inset 0 1px 1px 0 rgba(255, 255, 255, 0.03);
+            /* Enhanced shadow + subtle inset */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            scroll-margin-top: 80px;
+            /* Offset for fixed header if you add one later */
+            color: #f9fafb;
+            /* text-gray-50 */
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            /* mb-6 */
+            font-size: 1.875rem;
+            /* text-3xl */
+            font-weight: 600;
+            /* font-semibold */
+            letter-spacing: -0.025em;
+            /* tracking-tight */
+            border-bottom: 1px solid #475569;
+            /* border-slate-600 */
+            padding-bottom: 0.5rem;
+            /* pb-2 */
+        }
+
+        h3 {
+            margin-top: 2rem;
+            /* mt-8 */
+            margin-bottom: 1rem;
+            /* mb-4 */
+            font-size: 1.5rem;
+            /* text-2xl */
+            font-weight: 600;
+            /* font-semibold */
+            color: #e5e7eb;
+            /* text-gray-200 */
+        }
+
+        h4 {
+            margin-top: 1.5rem;
+            /* mt-6 */
+            margin-bottom: 0.75rem;
+            /* mb-3 */
+            font-size: 1.25rem;
+            /* text-xl */
+            font-weight: 500;
+            /* font-medium */
+            color: #d1d5db;
+            /* text-gray-300 */
+        }
+
+        /* Gradient Text Snippet */
+        .gradient-text-blue-purple {
+            background-image: linear-gradient(to right, #60a5fa, #a78bfa);
+            /* blue-400 to purple-400 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-text-green-teal {
+            background-image: linear-gradient(to right, #34d399, #2dd4bf);
+            /* emerald-400 to cyan-400 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-text-yellow-amber {
+            background-image: linear-gradient(to right, #facc15, #fbbf24);
+            /* yellow-400 to amber-400 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-text-red-orange {
+            background-image: linear-gradient(to right, #f87171, #fb923c);
+            /* red-400 to orange-400 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-text-purple-pink {
+            background-image: linear-gradient(to right, #c084fc, #f472b6);
+            /* purple-400 to pink-400 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Enhanced list styling */
+        ul:not(.no-styling) {
+            list-style: disc;
+            margin-left: 1.5rem;
+            /* ml-6 */
+            margin-bottom: 1rem;
+            /* mb-4 */
+        }
+
+        ol:not(.no-styling) {
+            list-style: decimal;
+            margin-left: 1.5rem;
+            /* ml-6 */
+            margin-bottom: 1rem;
+            /* mb-4 */
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            /* mb-2 */
+        }
+
+        /* Code block styling */
+        pre {
+            background-color: #1e293b;
+            /* bg-slate-800 */
+            border: 1px solid #334155;
+            /* border-slate-700 */
+            border-radius: 0.5rem;
+            /* rounded-lg */
+            padding: 1rem;
+            /* p-4 */
+            overflow-x: auto;
+            /* Scroll long lines */
+            margin-bottom: 1rem;
+            /* mb-4 */
+            font-size: 0.875rem;
+            /* text-sm */
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            /* Example monospace font */
+            color: #cbd5e1;
+            /* text-slate-300 */
+        }
+
+        pre code {
+            color: inherit;
+        }
+
+        /* Link styling */
+        a {
+            color: #60a5fa;
+            /* text-blue-400 */
+            transition: color 0.2s ease-in-out;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #93c5fd;
+            /* text-blue-300 */
+            text-decoration: underline;
+        }
+
+        /* Table of Contents styling */
+        .toc {
+            background-color: rgba(51, 65, 85, 0.7);
+            /* bg-slate-700 translucent */
+            border: 1px solid #475569;
+            /* border-slate-600 */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: #9ca3af;
+            /* text-gray-400 */
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            color: #e5e7eb;
+            /* text-gray-200 */
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            color: #f9fafb;
+            border-bottom: 1px solid #475569;
+            padding-bottom: 0.5rem;
+        }
+
+
+        /* Simple animation for badges */
+        @keyframes pulse-badge {
+
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+            }
+
+            70% {
+                opacity: 0.9;
+                box-shadow: 0 0 0 5px rgba(251, 191, 36, 0);
+            }
+        }
+
+        .pulsing-badge {
+            animation: pulse-badge 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        /* bg-slate-800 */
+        ::-webkit-scrollbar-thumb {
+            background-color: #475569;
+            border-radius: 20px;
+            border: 3px solid #1e293b;
+        }
+
+        /* bg-slate-600 */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #64748b;
+        }
+
+        /* bg-slate-500 */
+    </style>
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+
+    <!-- Custom styles to hide scrollbar -->
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        html {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+
+<body class="text-gray-300">
+
+    <div class="container mx-auto px-4 lg:px-8 py-12 max-w-6xl">
+
+        <!-- Header -->
+        <header class="mb-12 text-center border-b border-slate-700 pb-8">
+            <div class="flex justify-center items-center mb-5">
+                <!-- Example: <img src="images/nashop_logo_white_vibrant.svg" alt="Nashop Logo" class="h-20 mr-4 filter drop-shadow(0 5px 10px rgba(0,0,0,0.3))"> -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tighter">
+                    <span class="gradient-text-blue-purple">Nashop</span> & <span> DINAKERT <span class="gradient-text-green-teal">{DAN}</span> Token
+                </h1>
+            </div>
+            <p class="text-xl text-gray-400 mb-4">Comprehensive Technical & Ecosystem Documentation</p>
+            <span class="inline-block mt-2 px-4 py-2 text-sm font-semibold text-yellow-900 bg-yellow-300 rounded-full shadow-md pulsing-badge">
+                ⚠️ Currently in beta all info might update fully in Launch
+            </span>
+            <p class="text-sm text-gray-500 mt-4">Last Updated: <span id="updateDate">April 8, 2025</span></p>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="toc content-section" aria-labelledby="toc-heading">
+            <h3 id="toc-heading">Table of Contents</h3>
+            <ul class="no-styling space-y-2">
+                <li><a href="#introduction">1. Introduction & Vision</a></li>
+                <li><a href="#problem-solution">2. Problem & Solution</a></li>
+                <li><a href="#nashop-platform">3. The Nashop Platform</a>
+                    <ul class="no-styling ml-4 mt-1 space-y-1">
+                        <li><a href="#platform-overview">3.1 Overview & Core Features</a></li>
+                        <li><a href="#user-journey">3.2 User Journey</a></li>
+                        <li><a href="#merchant-integration">3.3 Merchant Integration</a></li>
+                        <li><a href="#technical-architecture">3.4 Technical Architecture (High-Level)</a></li>
+                    </ul>
+                </li>
+                <li><a href="#dan-token">4. The DAN Token (Dinakart)</a>
+                    <ul class="no-styling ml-4 mt-1 space-y-1">
+                        <li><a href="#token-details">4.1 Token Specifications</a></li>
+                        <li><a href="#token-utility">4.2 Core Utility & Use Cases</a></li>
+                        <li><a href="#value-proposition">4.3 Value Proposition</a></li>
+                        <li><a href="#how-to-acquire">4.4 How to Acquire & Use DAN</a></li>
+                    </ul>
+                </li>
+                <li><a href="#tokenomics">5. Tokenomics & Distribution</a>
+                    <ul class="no-styling ml-4 mt-1 space-y-1">
+                        <li><a href="#allocation-details">5.1 Allocation Breakdown & Rationale</a></li>
+                        <li><a href="#vesting-schedule">5.2 Vesting Schedule Details</a></li>
+                        <li><a href="#supply-mechanisms">5.3 Supply Dynamics & Potential Future Mechanisms</a></li>
+                    </ul>
+                </li>
+                <li><a href="#staking">6. Staking (Future Feature)</a></li>
+                <li><a href="#security">7. Security</a>
+                    <ul class="no-styling ml-4 mt-1 space-y-1">
+                        <li><a href="#smart-contract-security">7.1 Smart Contract Security & Audits</a></li>
+                        <li><a href="#platform-security">7.2 Platform Security Measures</a></li>
+                        <li><a href="#user-security">7.3 User Security Best Practices</a></li>
+                    </ul>
+                </li>
+                <li><a href="#roadmap">8. Development Roadmap</a></li>
+                <li><a href="#team-advisors">9. Team & Advisors</a></li>
+                <li><a href="#community-governance">10. Community & Governance</a></li>
+                <li><a href="#partnerships">11. Partnerships</a></li>
+                <li><a href="#technical-integration">12. Technical Integration (Developers)</a></li>
+                <li><a href="#challenges-risks">13. Challenges & Risk Factors</a></li>
+                <li><a href="#faq">14. Frequently Asked Questions (FAQ)</a></li>
+                <li><a href="#glossary">15. Glossary of Terms</a></li>
+                <li><a href="#legal-disclaimer">16. Legal Disclaimer</a></li>
+                <li><a href="#contact-socials">17. Contact & Social Channels</a></li>
+            </ul>
+        </nav>
+
+        <!-- 1. Introduction & Vision -->
+        <section id="introduction" class="content-section">
+            <h2 class="gradient-text-blue-purple">1. Introduction & Vision</h2>
+            <p class="mb-4 leading-relaxed">Welcome to the comprehensive documentation for Nashop and its native utility token, Dinakart (DAN). Nashop is pioneering the next generation of e-commerce by seamlessly integrating the power of blockchain technology and Web3 principles into the everyday online shopping experience. Our vision is to create a symbiotic ecosystem where consumers are rewarded for their loyalty with tangible digital assets, merchants gain access to engaged customers, and the value generated is distributed more equitably among participants.</p>
+            <p class="leading-relaxed">We believe the current e-commerce landscape, while vast, often lacks meaningful engagement and true value-sharing mechanisms for consumers. Nashop aims to bridge this gap by leveraging the transparency, security, and programmability of blockchain, specifically the Polygon network. The DAN token sits at the heart of this vision, transforming passive shopping into an active process of value accumulation and participation.</p>
+            <h3>Our Core Principles:</h3>
+            <ul>
+                <li><strong class="text-gray-100">User Empowerment:</strong> Rewarding shoppers with DAN tokens gives them ownership and utility beyond traditional points systems.</li>
+                <li><strong class="text-gray-100">Transparency:</strong> Utilizing blockchain for reward distribution and potentially other platform functions enhances trust.</li>
+                <li><strong class="text-gray-100">Seamless Integration:</strong> Providing a Web3-enhanced experience without requiring deep blockchain knowledge from average users.</li>
+                <li><strong class="text-gray-100">Sustainable Ecosystem:</strong> Designing tokenomics and platform mechanics to foster long-term growth and value for all stakeholders.</li>
+                <li><strong class="text-gray-100">Innovation:</strong> Continuously exploring new ways to leverage blockchain for improved e-commerce experiences (e.g., decentralized reviews, NFT loyalty badges, etc.).</li>
+            </ul>
+        </section>
+
+        <!-- 2. Problem & Solution -->
+        <section id="problem-solution" class="content-section">
+            <h2 class="gradient-text-green-teal">2. Problem & Solution</h2>
+            <h3>The Problem in Traditional E-commerce Loyalty:</h3>
+            <ul>
+                <li><strong class="text-gray-100">Siloed Value:</strong> Traditional loyalty points are often locked within a single merchant's ecosystem, offering limited flexibility and perceived value.</li>
+                <li><strong class="text-gray-100">Lack of Ownership:</strong> Users don't truly own their loyalty points; they are liabilities on the company's books and can be devalued or revoked.</li>
+                <li><strong class="text-gray-100">Limited Engagement:</strong> Standard programs often fail to create deep, sustained engagement beyond simple discounts.</li>
+                <li><strong class="text-gray-100">Data Privacy Concerns:</strong> Centralized platforms collect vast amounts of user data, raising privacy issues.</li>
+            </ul>
+            <h3>The Nashop & DAN Solution:</h3>
+            <p class="mb-4 leading-relaxed">Nashop addresses these challenges by introducing a blockchain-based reward system centered around the DAN token:</p>
+            <ul>
+                <li><strong class="text-gray-100">Fungible & Potentially Tradeable Rewards:</strong> DAN tokens, being POL-20 standard, offer inherent flexibility. While initially focused on platform utility (discounts, redemptions), the plan for exchange listing provides an avenue for external liquidity and price discovery, giving tokens real-world economic potential beyond the Nashop store.</li>
+                <li><strong class="text-gray-100">True User Ownership:</strong> Users hold DAN tokens in their own compatible cryptocurrency wallets (e.g., MetaMask, Trust Wallet), granting them control and ownership facilitated by blockchain technology.</li>
+                <li><strong class="text-gray-100">Enhanced Engagement:</strong> Beyond discounts, DAN can unlock tiered benefits, exclusive access, potential staking rewards (future feature), and participation in community initiatives, fostering a deeper connection.</li>
+                <li><strong class="text-gray-100">Increased Transparency:</strong> On-chain reward distribution (when feasible and desired) can offer unparalleled transparency compared to opaque traditional systems. (Note: Specific implementation details TBD).</li>
+            </ul>
+            <p class="leading-relaxed">By integrating DAN, Nashop transforms customer loyalty from a simple discount mechanism into an opportunity for users to accumulate valuable, flexible digital assets, fundamentally changing the shopper-platform relationship.</p>
+        </section>
+
+        <!-- 3. The Nashop Platform -->
+        <section id="nashop-platform" class="content-section">
+            <h2 class="gradient-text-yellow-amber">3. The Nashop Platform</h2>
+
+            <div id="platform-overview">
+                <h3>3.1 Overview & Core Features</h3>
+                <p class="mb-4 leading-relaxed">Nashop.store is the primary user-facing application of the ecosystem. It aims to be a modern, user-friendly e-commerce platform offering a wide variety of goods (details of product categories TBD), enhanced with unique Web3 features powered by the DAN token.</p>
+                <h4>Key Platform Features:</h4>
+                <ul>
+                    <li><strong class="text-gray-100">Standard E-commerce Functionality:</strong> Product browsing, search, categorization, shopping cart, secure checkout (supporting both traditional payment methods and potentially crypto payments in the future).</li>
+                    <li><strong class="text-gray-100">DAN Token Rewards:</strong> Automatic calculation and distribution of DAN tokens to the user's connected wallet upon successful purchase completion (based on a predefined percentage or logic).</li>
+                    <li><strong class="text-gray-100">Wallet Integration:</strong> Seamless connection with popular Polygon-compatible wallets (e.g., MetaMask) for receiving and potentially utilizing DAN tokens.</li>
+                    <li><strong class="text-gray-100">Reward Redemption Center:</strong> A dedicated section where users can view their DAN balance and spend tokens on exclusive discounts, special offers, merchandise, or other defined rewards.</li>
+                    <li><strong class="text-gray-100">User Profile & Dashboard:</strong> Management of account details, order history, DAN transaction history, and connected wallet status.</li>
+                    <li><strong class="text-gray-100">Potential Future Features:</strong> Tiered loyalty levels based on DAN holdings, NFT-based loyalty badges/achievements, community features, staking interface (see Section 6).</li>
+                </ul>
+            </div>
+
+            <div id="user-journey">
+                <h3>3.2 User Journey (Simplified)</h3>
+                <ol>
+                    <li><strong class="text-gray-100">Visit & Browse:</strong> User visits <a href="https://nashop.store" target="_blank">nashop.store</a> and browses products like any typical e-commerce site.</li>
+                    <li><strong class="text-gray-100">Connect Wallet (Optional but Recommended):</strong> User is prompted to connect their Polygon-compatible wallet (e.g., MetaMask) to enable DAN rewards. This step might be integrated into the signup or checkout process.</li>
+                    <li><strong class="text-gray-100">Add to Cart & Checkout:</strong> User adds items to their cart and proceeds to checkout. They select a payment method (e.g., credit card).</li>
+                    <li><strong class="text-gray-100">Purchase Confirmation:</strong> User completes the purchase.</li>
+                    <li><strong class="text-gray-100">DAN Reward Calculation:</strong> The Nashop backend calculates the DAN tokens earned based on the purchase amount (excluding taxes, shipping, etc.).</li>
+                    <li><strong class="text-gray-100">DAN Token Distribution:</strong> After a confirmation period (to prevent fraud/returns abuse), the calculated DAN tokens are sent to the user's connected wallet address on the Polygon network. (During Test Mode, this uses Testnet DAN).</li>
+                    <li><strong class="text-gray-100">View & Redeem:</strong> User can view their DAN balance in their wallet or on the Nashop dashboard. They can visit the Reward Redemption Center to use DAN for available benefits.</li>
+                </ol>
+                <p class="text-sm text-gray-400 italic">Note: The exact mechanics of wallet connection, transaction signing (if any required from the user for reward acceptance), and gas fees (potentially sponsored by Nashop via mechanisms like gas relayers) are subject to final technical implementation.</p>
+            </div>
+
+            <div id="merchant-integration">
+                <h3>3.3 Merchant Integration (Conceptual)</h3>
+                <p class="mb-4 leading-relaxed">While the initial model might focus on Nashop's own inventory or drop-shipping, a future phase could involve onboarding third-party merchants.</p>
+                <h4>Potential Merchant Benefits:</h4>
+                <ul>
+                    <li>Access to a loyal and engaged customer base holding DAN tokens.</li>
+                    <li>Participation in innovative marketing campaigns utilizing the DAN token.</li>
+                    <li>Potentially reduced transaction fees compared to traditional platforms (depending on the model).</li>
+                    <li>Tools and analytics to understand customer behaviour related to DAN rewards.</li>
+                </ul>
+                <h4>Integration Considerations:</h4>
+                <ul>
+                    <li>APIs for product listing and order management.</li>
+                    <li>Clear processes for payout and fee structures.</li>
+                    <li>Ensuring reward calculations apply correctly to merchant products.</li>
+                </ul>
+            </div>
+
+            <div id="technical-architecture">
+                <h3>3.4 Technical Architecture (High-Level Overview)</h3>
+                <p class="mb-4 leading-relaxed">Nashop employs a hybrid architecture, combining traditional web technologies for the e-commerce frontend/backend with blockchain components for token management and reward distribution.</p>
+                <ul>
+
+                    <li><strong class="text-gray-100">Blockchain Interaction Layer:</strong> Service responsible for:
+                        <ul>
+                            <li>Monitoring confirmed purchases eligible for rewards.</li>
+                            <li>Calculating DAN reward amounts.</li>
+                            <li>Interacting with the Polygon network via RPC nodes (e.g., Infura, Alchemy, or self-hosted).</li>
+                            <li>Managing a secure wallet (potentially multi-sig or HSM-based) holding the 'Shopping Rewards' allocation of DAN.</li>
+                            <li>Executing batch transactions to distribute DAN tokens to user wallets, potentially using gas-efficient methods or relayers.</li>
+                            <li>Reading DAN balances from the blockchain for display on the user dashboard.</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-100">Smart Contracts:</strong>
+                        <ul>
+                            <li><strong>DAN Token Contract (POL-20):</strong> The core ERC-20/POL-20 contract defining the DAN token, its supply, and standard functions (transfer, balanceOf, etc.). Deployed on the Polygon network.</li>
+                            <li><strong>Vesting Contracts (Potentially):</strong> Separate contracts to manage the time-locked release of Team, Locked, and potentially Marketing tokens.</li>
+
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-100">Infrastructure:</strong> Cloud hosting (e.g., AWS, Google Cloud, Azure, or platforms like PythonAnywhere/Heroku). Monitoring, logging, security services.</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- 4. The DAN Token (Dinakart) -->
+        <section id="dan-token" class="content-section">
+            <h2 class="gradient-text-purple-pink">4. The DAN Token (Dinakart)</h2>
+
+            <div id="token-details">
+                <h3>4.1 Token Specifications</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-700 bg-slate-800 rounded-lg shadow-md">
+                        <tbody class="divide-y divide-slate-700">
+                            <tr class="hover:bg-slate-700/50 transition-colors">
+                                <td class="px-6 py-3 font-medium text-gray-100">Token Name:</td>
+                                <td class="px-6 py-3 text-gray-300">Dinakart</td>
+                            </tr>
+                            <tr class="hover:bg-slate-700/50 transition-colors">
+                                <td class="px-6 py-3 font-medium text-gray-100">Token Symbol:</td>
+                                <td class="px-6 py-3 text-gray-300">DAN</td>
+                            </tr>
+                            <tr class="hover:bg-slate-700/50 transition-colors">
+                                <td class="px-6 py-3 font-medium text-gray-100">Blockchain Network:</td>
+                                <td class="px-6 py-3 text-gray-300">Polygon (Matic)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-700/50 transition-colors">
+                                <td class="px-6 py-3 font-medium text-gray-100">Token Standard:</td>
+                                <td class="px-6 py-3 text-gray-300">POL-20 (Equivalent to ERC-20 on Polygon)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-700/50 transition-colors">
+                                <td class="px-6 py-3 font-medium text-gray-100">Total Supply:</td>
+                                <td class="px-6 py-3 text-gray-300">10,000,000 DAN (Ten Million)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-700/50 transition-colors">
+                                <td class="px-6 py-3 font-medium text-gray-100">Decimals:</td>
+                                <td class="px-6 py-3 text-gray-300">18 (Standard for ERC-20 type tokens)</td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-700/50 transition-colors">
+                                <td class="px-6 py-3 font-medium text-gray-100">Contract Address (Mainnet):</td>
+                                <td class="px-6 py-3 text-gray-300 text-sm break-all"><code>[Placeholder: Mainnet Contract Address - Post-launch]</code> <a href="#" class="text-blue-400 ml-2 hover:text-blue-300">[View on PolygonScan (Mainnet)]</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="token-utility">
+                <h3>4.2 Core Utility & Use Cases</h3>
+                <p class="mb-4 leading-relaxed">The DAN token is designed with multiple layers of utility within the Nashop ecosystem and beyond:</p>
+                <ol>
+                    <li>
+                        <strong class="text-gray-100">Shopping Rewards:</strong> The primary acquisition method. Users earn DAN passively by shopping on Nashop.store. This directly incentivizes platform usage and loyalty.
+                        <ul>
+                            <li>*Example:* Spend $100 on Nashop, receive X DAN tokens based on the current reward rate.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong class="text-gray-100">Redemption for Benefits:</strong> Users can actively spend their earned DAN within the Nashop platform's Reward Redemption Center.
+                        <ul>
+                            <li>*Example 1:* Redeem 500 DAN for a 15% discount voucher on the next purchase.</li>
+                            <li>*Example 2:* Redeem 1000 DAN for exclusive Nashop-branded merchandise.</li>
+                            <li>*Example 3:* Redeem 250 DAN to enter a special prize draw.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong class="text-gray-100">Tiered Access & Privileges (Potential Future Use):</strong> Holding certain amounts of DAN could unlock different user tiers with scaling benefits.
+                        <ul>
+                            <li>*Example:* Holding 5000+ DAN might grant access to early product launches or higher reward earn rates.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong class="text-gray-100">Staking Rewards (Future Feature):</strong> Users will be able to lock up their DAN tokens in a staking contract to help secure the network (if applicable, depending on staking model) or simply participate in reward distribution, earning additional DAN over time. See Section 6.
+                        <ul>
+                            <li>*Example:* Stake 10,000 DAN and earn an estimated APY paid in other tokens.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong class="text-gray-100">Governance Rights (Potential Future Use):</strong> In later phases, DAN holders might be granted voting rights on certain platform proposals or parameter changes, promoting decentralization.
+                        <ul>
+                            <li>*Example:* Vote on proposals regarding reward rates or new feature prioritization using DAN tokens as voting power.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong class="text-gray-100">Tradeable Asset:</strong> As stated in the whitepaper, DAN is intended to be listed on cryptocurrency exchanges. This allows holders to buy, sell, or trade DAN with other users globally, providing liquidity and allowing market-driven price discovery.
+                        <ul>
+                            <li>*Example:* User sells earned DAN on Exchange X for USDC, or buys more DAN on Exchange Y to reach a higher loyalty tier.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div id="value-proposition">
+                <h3>4.3 Value Proposition</h3>
+                <p class="mb-4 leading-relaxed">The value of the DAN token derives from several key factors:</p>
+                <ul>
+                    <li><strong class="text-gray-100">Direct Utility:</strong> Its direct use within Nashop for tangible benefits (discounts, rewards) creates inherent demand tied to platform activity.</li>
+                    <li><strong class="text-gray-100">Scarcity:</strong> The fixed total supply of 10 million DAN ensures no inflationary pressure from minting new tokens beyond the initial allocation.</li>
+                    <li><strong class="text-gray-100">Ecosystem Growth:</strong> As the Nashop platform grows in user base and transaction volume, the demand for DAN (for redemption, potential staking, tier access) is expected to increase.</li>
+                    <li><strong class="text-gray-100">Staking Incentives (Future):</strong> Staking rewards create an incentive to hold and lock DAN, reducing circulating supply and potentially increasing demand.</li>
+                    <li><strong class="text-gray-100">External Market Dynamics:</strong> Listing on exchanges allows for broader participation and price discovery based on overall market sentiment and project developments.</li>
+                    <li><strong class="text-gray-100">Community & Governance:</strong> Potential future governance rights can add value for holders wishing to participate in the project's direction.</li>
+                </ul>
+            </div>
+
+            <div id="how-to-acquire">
+                <h3>4.4 How to Acquire & Use DAN</h3>
+                <h4>Acquiring DAN:</h4>
+                <ol>
+                    <li><strong class="text-gray-100">Shopping Rewards (Primary):</strong> Make purchases on <a href="https://nashop.store" target="_blank">nashop.store</a>.</li>
+                    <li><strong class="text-gray-100">Presale (Completed/Upcoming):</strong> Participate in official presale events (check official channels for announcements - Q1 2026 target mentioned).</li>
+                    <li><strong class="text-gray-100">Community Incentives/Airdrops (Potential):</strong> Participate in marketing campaigns, beta testing programs, or community events that may offer DAN rewards.</li>
+                    <li><strong class="text-gray-100">Staking Rewards (Future):</strong> Stake existing DAN tokens to earn other tokens.</li>
+                    <li><strong class="text-gray-100">Exchange Purchase (Future):</strong> Once listed, buy DAN on supported cryptocurrency exchanges using other cryptocurrencies or fiat.</li>
+                </ol>
+                <h4>Using DAN:</h4>
+                <ol>
+                    <li><strong class="text-gray-100">Redeem on Nashop:</strong> Spend DAN in the Nashop Reward Redemption Center for discounts, products, or services.</li>
+
+                    <li><strong class="text-gray-100">Hold for Tiers/Governance (Potential Future):</strong> Simply hold DAN in our website to qualify for potential future benefits.</li>
+                    <li><strong class="text-gray-100">Trade on Exchanges (Future):</strong> Sell or trade DAN on supported exchanges.</li>
+                    <li><strong class="text-gray-100">Transfer (Peer-to-Peer):</strong> Send DAN directly to another Polygon wallet address like any other POL-20 token.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 5. Tokenomics & Distribution -->
+        <section id="tokenomics" class="content-section">
+            <h2 class="gradient-text-green-teal">5. Tokenomics & Distribution</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-center">
+                <div class="bg-gradient-to-br from-slate-700 to-slate-800 p-5 rounded-lg shadow-lg border border-slate-600">
+                    <div class="text-sm font-medium text-gray-400 mb-1 uppercase tracking-wider">Total Supply</div>
+                    <div class="text-3xl font-bold text-white">10,000,000 <span class="text-xl font-normal text-gray-300">DAN</span></div>
+                </div>
+                <div class="bg-gradient-to-br from-slate-700 to-slate-800 p-5 rounded-lg shadow-lg border border-slate-600">
+                    <div class="text-sm font-medium text-gray-400 mb-1 uppercase tracking-wider">Network</div>
+                    <div class="text-3xl font-bold text-white">Polygon <span class="text-lg font-normal text-gray-300">(POL-20)</span></div>
+                </div>
+                <div class="bg-gradient-to-br from-slate-700 to-slate-800 p-5 rounded-lg shadow-lg border border-slate-600">
+                    <div class="text-sm font-medium text-gray-400 mb-1 uppercase tracking-wider">Decimal Precision</div>
+                    <div class="text-3xl font-bold text-white">18</div>
+                </div>
+            </div>
+
+            <div id="allocation-details">
+                <h3>5.1 Allocation Breakdown & Rationale</h3>
+                <p class="mb-6 text-gray-400 italic">The token allocation is designed to balance immediate needs (launch, liquidity) with long-term ecosystem growth, user incentivization, and team commitment.</p>
+                <!-- Enhanced Allocation Visualization -->
+                <div class="space-y-4 mb-8">
+                    <div class="bg-slate-700 rounded-lg p-4 border border-blue-500 shadow-md">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium text-blue-300">Presale</span><span class="font-bold text-white">10% (1,000,000 DAN)</span>
+                        </div>
+                        <div class="w-full bg-slate-600 rounded-full h-2.5">
+                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 10%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Rationale: Raise initial funds for development, marketing, and listing. Provides early access opportunity.</p>
+                    </div>
+                    <div class="bg-slate-700 rounded-lg p-4 border border-teal-500 shadow-md">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium text-teal-300">Liquidity Pool</span><span class="font-bold text-white">10% (1,000,000 DAN)</span>
+                        </div>
+                        <div class="w-full bg-slate-600 rounded-full h-2.5">
+                            <div class="bg-teal-500 h-2.5 rounded-full" style="width: 10%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Rationale: Ensure sufficient liquidity on decentralized exchanges (DEXs) upon listing, facilitating trading and price stability. Subject to a 2-year lock.</p>
+                    </div>
+                    <div class="bg-slate-700 rounded-lg p-4 border border-green-500 shadow-md">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium text-green-300">Shopping Rewards</span><span class="font-bold text-white">30% (3,000,000 DAN)</span>
+                        </div>
+                        <div class="w-full bg-slate-600 rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 30%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Rationale: Core user acquisition and retention mechanism. Largest allocation reflects focus on rewarding platform activity. Gradual release tied to usage.</p>
+                    </div>
+                    <div class="bg-slate-700 rounded-lg p-4 border border-purple-500 shadow-md">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium text-purple-300">Community & Marketing</span><span class="font-bold text-white">10% (1,000,000 DAN)</span>
+                        </div>
+                        <div class="w-full bg-slate-600 rounded-full h-2.5">
+                            <div class="bg-purple-500 h-2.5 rounded-full" style="width: 10%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Rationale: Fund growth initiatives, partnerships, community building, airdrops, and awareness campaigns. Includes vesting to align with long-term goals.</p>
+                    </div>
+                    <div class="bg-slate-700 rounded-lg p-4 border border-gray-500 shadow-md">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium text-gray-300">Locked (Ecosystem Reserve)</span><span class="font-bold text-white">30% (3,000,000 DAN)</span>
+                        </div>
+                        <div class="w-full bg-slate-600 rounded-full h-2.5">
+                            <div class="bg-gray-500 h-2.5 rounded-full" style="width: 30%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Rationale: Reserved for long-term ecosystem health, future strategic initiatives, potential future staking rewards pools, or unforeseen needs. Long 5-year lock signifies commitment to sustainability.</p>
+                    </div>
+                    <div class="bg-slate-700 rounded-lg p-4 border border-red-500 shadow-md">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium text-red-300">Team</span><span class="font-bold text-white">10% (1,000,000 DAN)</span>
+                        </div>
+                        <div class="w-full bg-slate-600 rounded-full h-2.5">
+                            <div class="bg-red-500 h-2.5 rounded-full" style="width: 10%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Rationale: Compensate and incentivize the core team responsible for building and maintaining the platform. Subject to cliff and linear vesting to ensure long-term alignment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="vesting-schedule">
+                <h3>5.2 Vesting Schedule Details</h3>
+                <p class="mb-4 leading-relaxed">Vesting schedules are implemented for several allocations to prevent large token dumps, align incentives, and ensure gradual release into the circulating supply.</p>
+                <ul>
+                    <li><strong class="text-gray-100">Presale (10%):</strong> <span class="text-green-400 font-medium">100% unlocked at TGE (Token Generation Event).</span> Allows early supporters immediate access to their tokens.</li>
+                    <li><strong class="text-gray-100">Liquidity Pool (10%):</strong> <span class="text-red-400 font-medium">Locked for 2 years.</span> Managed via a time-locked contract or trusted third-party locker (e.g., Unicrypt, Team Finance) to guarantee liquidity availability.</li>
+                    <li><strong class="text-gray-100">Shopping Rewards (30%):</strong> <span class="text-yellow-400 font-medium">Gradual release based on platform activity.</span> Not strictly time-vested, but algorithmically released from the reserve wallet as users earn rewards. This ensures tokens enter circulation organically as the platform grows. Rate may be adjustable via governance (future).</li>
+                    <li><strong class="text-gray-100">Community & Marketing (10%):</strong> <span class="text-yellow-400 font-medium">10% available at TGE, remaining 90% vested linearly over 12 months.</span> Provides initial funds for launch marketing while ensuring sustained resources for ongoing growth campaigns. Unlocks occur monthly or quarterly.</li>
+                    <li><strong class="text-gray-100">Locked (Ecosystem Reserve) (30%):</strong> <span class="text-red-400 font-medium">Locked for 5 years.</span> Held in a secure multi-signature wallet. Release after 5 years subject to community/team decision for strategic ecosystem needs.</li>
+                    <li><strong class="text-gray-100">Team (10%):</strong> <span class="text-yellow-400 font-medium">6-month cliff, then linear vesting over the following 18 months.</span> Team receives no tokens for the first 6 months after TGE. Afterwards, tokens unlock proportionally over 1.5 years (total 2-year vesting period including cliff). Ensures team commitment beyond launch.</li>
+                </ul>
+                <p class="mt-4 text-sm text-gray-400 italic">[Placeholder for a chart visualizing the token release schedule over time]</p>
+            </div>
+
+            <div id="supply-mechanisms">
+                <h3>5.3 Supply Dynamics & Potential Future Mechanisms</h3>
+                <ul>
+                    <li><strong class="text-gray-100">Fixed Supply:</strong> The total supply is capped at 10,000,000 DAN. No more tokens can ever be minted according to the standard contract implementation.</li>
+                    <li><strong class="text-gray-100">Circulating Supply Growth:</strong> The circulating supply will gradually increase as tokens unlock from vesting schedules and are distributed as shopping rewards.</li>
+
+
+                    </li>
+                </ul>
+                <p class="mt-4 text-sm text-gray-400 italic">Any implementation of deflationary mechanisms would be subject to future planning, potential governance proposals, and clear communication to the community.</p>
+            </div>
+        </section>
+
+        <!-- 6. Staking -->
+        <section id="staking" class="content-section">
+            <h2 class="gradient-text-blue-purple">6. Staking (Future Feature)</h2>
+            <p class="mb-4 leading-relaxed">Staking is a planned feature that will allow DAN token holders to lock their tokens for a period to earn rewards. This incentivizes long-term holding and contributes to the ecosystem's stability.</p>
+            <h4>Potential Staking Model Overview:</h4>
+            <ul>
+                <li><strong class="text-gray-100">Mechanism:</strong> Users stake DAN tokens in the Nashop platform.</li>
+
+                <li><strong class="text-gray-100">Reward Calculation:</strong> Rewards would likely be calculated based on the amount of DAN staked and the duration of the staking period (APY - Annual Percentage Yield).</li>
+                <li><strong class="text-gray-100">Lock-up Periods:</strong> Different lock-up options (e.g., 30 days, 90 days) might be offered, potentially with varying APYs.</li>
+                <li><strong class="text-gray-100">Withdrawal:</strong> Processes for unstaking and claiming rewards will be clearly defined. Early unstaking might incur penalties.</li>
+            </ul>
+            <p class="mt-4 text-sm text-gray-400 italic">Note: The specific details of the staking program (APYs, lock-up terms, contract address, launch date) will be announced closer to its implementation. This section provides a conceptual outline.</p>
+        </section>
+
+
+        <!-- 7. Security -->
+        <section id="security" class="content-section">
+            <h2 class="gradient-text-red-orange">7. Security</h2>
+            <p class="mb-6 leading-relaxed">Security is paramount for the Nashop platform, the DAN token, and its users. We employ a multi-layered approach to mitigate risks.</p>
+
+            <div id="smart-contract-security">
+                <h3>7.1 Smart Contract Security & Audits</h3>
+                <ul>
+                    <li><strong class="text-gray-100">Standard Implementation:</strong> The DAN token contract adheres strictly to the well-audited OpenZeppelin ERC20/POL-20 standards to minimize vulnerability risks associated with custom logic.</li>
+                    <li><strong class="text-gray-100">Professional Audits:</strong>
+                        <ul>
+                            <li>The core DAN token contract, vesting contracts, and any future staking contracts will undergo comprehensive security audits by reputable third-party blockchain security firms before mainnet deployment.</li>
+                            <li>Audit reports will be made publicly available for transparency.</li>
+                            <li><strong class="text-green-400">[Current Status: Pre-Audit Phase. Links to audit reports will be added here upon completion.]</strong></li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-100">Testing:</strong> Extensive testing occurs on testnets (like Polygon amoy) to identify potential issues before deploying to the main network. Includes unit tests, integration tests, and simulated scenario tests.</li>
+                    <li><strong class="text-gray-100">Simplicity Principle:</strong> Smart contracts are designed to be as simple as possible while fulfilling their intended function, reducing the attack surface.</li>
+                </ul>
+            </div>
+
+            <div id="platform-security">
+                <h3>7.2 Platform Security Measures</h3>
+                <ul>
+                    <li><strong class="text-gray-100">Secure Infrastructure:</strong> Utilizing reputable cloud providers with robust security features (e.g., firewalls, DDoS protection, intrusion detection systems).</li>
+                    <li><strong class="text-gray-100">Data Encryption:</strong> Encryption of sensitive data both in transit (TLS/SSL) and at rest.</li>
+                    <li><strong class="text-gray-100">Access Controls:</strong> Strict internal access controls and permission management for backend systems and databases.</li>
+                    <li><strong class="text-gray-100">Secure Wallet Management:</strong> The wallets holding significant funds (e.g., Shopping Rewards reserve, Team/Locked allocations) employ robust security practices:
+                        <ul>
+
+                            <li><strong>Hardware Wallets/HSMs:</strong> Potentially using hardware security modules or hardware wallets for storing private keys offline.</li>
+                            <li><strong>Cold Storage:</strong> Keeping the majority of reserve funds in cold storage (offline) wallets.</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-100">Regular Backups:</strong> Frequent and secure backups of platform data.</li>
+                    <li><strong class="text-gray-100">Monitoring & Alerting:</strong> Continuous monitoring of systems and blockchain transactions for suspicious activity.</li>
+                    <li><strong class="text-gray-100">Anti-Fraud Measures:</strong> Mechanisms to detect and prevent fraudulent activities, such as abuse of the reward system during product returns.</li>
+                    <li><strong class="text-gray-100">Anti-Whale Measures (Tokenomics):</strong> While not a direct platform security feature, transaction limits mentioned in the whitepaper aim to prevent manipulative trading affecting token price stability, which indirectly supports ecosystem security.</li>
+                </ul>
+            </div>
+
+            <div id="user-security">
+                <h3>7.3 User Security Best Practices</h3>
+                <p class="mb-4 leading-relaxed">While Nashop implements robust platform security, users play a crucial role in protecting their own assets (DAN tokens and wallet access).</p>
+                <strong class="text-gray-100">Essential User Actions:</strong>
+                <ul>
+                    <li><strong class="text-gray-100">Secure Your Wallet:</strong>
+                        <ul>
+                            <li>Use reputable wallet software (e.g., MetaMask, Trust Wallet, hardware wallets like Ledger/Trezor).</li>
+                            <li><strong>NEVER share your private key or seed phrase with ANYONE.</strong> Nashop staff or admins will NEVER ask for it.</li>
+                            <li>Store your seed phrase securely offline (e.g., written down, stored in multiple secure locations). Do NOT store it digitally (photos, cloud storage, email).</li>
+                            <li>Use a strong, unique password for your wallet application. Enable biometric security if available.</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-100">Beware of Phishing Scams:</strong>
+                        <ul>
+                            <li>Be suspicious of unsolicited emails, direct messages, or website popups asking for wallet connection or personal information.</li>
+                            <li>Always double-check website URLs. Bookmark the official <a href="https://nashop.store" target="_blank">nashop.store</a> and related sites.</li>
+                            <li>Verify information through official Nashop channels (listed in Section 17) before acting.</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-100">Approve Connections Carefully:</strong> When connecting your wallet to Nashop or other DApps, carefully review the permissions you are granting. Disconnect from sites you no longer use.</li>
+                    <li><strong class="text-gray-100">Use Hardware Wallets for Significant Holdings:</strong> For larger amounts of DAN or other crypto assets, consider using a hardware wallet for the highest level of security.</li>
+                    <li><strong class="text-gray-100">Keep Software Updated:</strong> Ensure your browser, wallet application, and operating system are up-to-date with the latest security patches.</li>
+                    <li><strong class="text-gray-100">Monitor Your Transactions:</strong> Regularly check your wallet's transaction history on PolygonScan for any unauthorized activity.</li>
+                </ul>
+                <p class="mt-4 font-semibold text-red-400">You are responsible for the security of your own wallet. Nashop cannot recover lost funds due to compromised private keys or user error.</p>
+            </div>
+        </section>
+
+
+        <!-- 8. Development Roadmap -->
+        <section id="roadmap" class="content-section">
+            <h2 class="gradient-text-purple-pink">8. Development Roadmap</h2>
+            <p class="mb-6 leading-relaxed text-gray-400 italic">This roadmap outlines key milestones. Timelines are estimates and subject to change based on development progress, market conditions, and strategic adjustments. We prioritize building robust and secure features.</p>
+            <div class="relative border-l-4 border-blue-500 ml-3 space-y-12 pl-8">
+                <!-- Phase 1: Foundation & Presale -->
+                <div class="relative">
+                    <div class="absolute -left-[44px] -top-1 w-8 h-8 bg-blue-500 rounded-full border-4 border-slate-800 ring-4 ring-blue-500/30 flex items-center justify-center font-bold text-white">1</div>
+                    <h3 class="text-xl font-semibold text-blue-300 mt-0 mb-2">Phase 1: Foundation & Presale (Target: Q1 2026)</h3>
+                    <ul class="list-disc text-sm ml-5">
+                        <li>Finalize Core Smart Contracts (DAN Token, Vesting).</li>
+                        <li>Complete Smart Contract Audits (Round 1).</li>
+                        <li>Develop Initial Nashop Platform Backend & Frontend (Core e-commerce).</li>
+                        <li>Integrate basic Wallet Connection functionality.</li>
+                        <li>Develop Presale Platform/Interface.</li>
+                        <li>Conduct Mainnet DAN Token Presale Event.</li>
+                        <li>Establish Initial Marketing & Community Channels.</li>
+                    </ul>
+                </div>
+                <!-- Phase 2: Beta Launch & Reward System -->
+                <div class="relative">
+                    <div class="absolute -left-[44px] -top-1 w-8 h-8 bg-blue-500 rounded-full border-4 border-slate-800 ring-4 ring-blue-500/30 flex items-center justify-center font-bold text-white">2</div>
+                    <h3 class="text-xl font-semibold text-blue-300 mt-0 mb-2">Phase 2: Platform Beta Launch (Target: Q2 2026)</h3>
+                    <ul class="list-disc text-sm ml-5">
+                        <li>Deploy Nashop platform for limited Beta access .</li>
+                        <li>Implement DAN Shopping Reward distribution mechanism.</li>
+                        <li>Develop User Dashboard with DAN balance display & basic history.</li>
+                        <li>Refine User Interface based on Beta feedback.</li>
+                        <li>Set up Liquidity Pool on a target DEX (Post-TGE).</li>
+                        <li>Token Generation Event (TGE) - Distribution of Presale & initial unlocks.</li>
+                        <li>Expand Community Engagement Programs.</li>
+                    </ul>
+                </div>
+                <!-- Phase 3: Full Platform Launch -->
+                <div class="relative">
+                    <div class="absolute -left-[44px] -top-1 w-8 h-8 bg-blue-500 rounded-full border-4 border-slate-800 ring-4 ring-blue-500/30 flex items-center justify-center font-bold text-white">3</div>
+                    <h3 class="text-xl font-semibold text-blue-300 mt-0 mb-2">Phase 3: Full Platform Launch (Target: Q4 2026)</h3>
+                    <ul class="list-disc text-sm ml-5">
+                        <li>Open Nashop platform for global public access on Mainnet.</li>
+                        <li>Launch Reward Redemption Center with initial offers/discounts.</li>
+                        <li>Scale infrastructure for increased traffic.</li>
+                        <li>Initiate broader marketing campaigns.</li>
+                        <li>Pursue initial CEX (Centralized Exchange) listing discussions/applications.</li>
+                        <li>Formalize user support channels.</li>
+                    </ul>
+                </div>
+                <!-- Phase 4: Ecosystem Expansion (Post-Launch) -->
+                <div class="relative">
+                    <div class="absolute -left-[44px] -top-1 w-8 h-8 bg-gray-500 rounded-full border-4 border-slate-800 ring-4 ring-gray-500/30 flex items-center justify-center font-bold text-white">4</div>
+                    <h3 class="text-xl font-semibold text-gray-400 mt-0 mb-2">Phase 4: Ecosystem Expansion (Post-Launch - 2027+)</h3>
+                    <ul class="list-disc text-sm ml-5">
+
+                        <li>Research potential NFT implementations (Loyalty Badges, Collectibles).</li>
+                        <li>Explore Decentralized Governance Models for DAN holders.</li>
+                        <li>Expand strategic partnerships.</li>
+                        <li>Continuous platform optimization and feature additions based on user feedback.</li>
+                        <li>Further CEX/DEX listings.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Team & Advisors -->
+        <section id="team-advisors" class="content-section">
+            <h2 class="gradient-text-yellow-amber">9. Team & Advisors</h2>
+            <p class="mb-6 leading-relaxed text-gray-400 italic">
+                <!-- *** REVISED PARAGRAPH STARTS HERE *** -->
+                We believe that the true strength of Nashop and DAN lies in decentralization. While a dedicated group of core contributors provides the initial foundation and expertise essential for launch, the project's trajectory will ultimately be shaped by its community. We are committed to transparency about these core contributors and fostering a transition towards community-driven development and governance.
+                <!-- *** REVISED PARAGRAPH ENDS HERE *** -->
+            </p>
+
+            <p class="text-sm text-center text-gray-500">Core contributor token allocations are subject to the vesting schedule outlined in Section 5.2 to align incentives with the long-term success of the decentralized ecosystem.</p>
+        </section>
+
+        <!-- 10. Community & Governance -->
+        <section id="community-governance" class="content-section">
+            <h2 class="gradient-text-green-teal">10. Community & Governance</h2>
+            <h3>Building a Strong Community</h3>
+            <p class="mb-4 leading-relaxed">A vibrant and engaged community is vital for the Nashop ecosystem. We foster community through various channels and initiatives:</p>
+            <ul>
+                <li><strong class="text-gray-100">Active Social Channels:</strong> Engaging discussions, updates, and support on Telegram, Twitter/X, Instagram (see Section 17 for links).</li>
+                <li><strong class="text-gray-100">Transparency & Communication:</strong> Regular updates on development progress, roadmap achievements, and important announcements.</li>
+                <li><strong class="text-gray-100">Feedback Mechanisms:</strong> Encouraging user feedback through dedicated channels to help shape platform improvements.</li>
+                <li><strong class="text-gray-100">Community Programs (Potential):</strong> Ambassador programs, beta testing groups, content creation rewards, and community events (online/offline).</li>
+            </ul>
+
+            <h3>Future Governance Model</h3>
+            <p class="mb-4 leading-relaxed">While initially managed by the core team, the long-term vision includes progressive decentralization, potentially empowering DAN token holders with governance rights.</p>
+            <h4>Potential Governance Areas:</h4>
+            <ul>
+                <li>Proposing and voting on changes to platform parameters (e.g., reward rates, staking variables).</li>
+                <li>Guiding the allocation of community treasury funds (if established).</li>
+                <li>Prioritizing future feature development.</li>
+                <li>Electing community council members (if applicable).</li>
+            </ul>
+            <h4>Implementation Approach:</h4>
+            <ul>
+                <li>Governance would likely be implemented using on-chain voting mechanisms via dedicated smart contracts or established platforms (e.g., Snapshot).</li>
+                <li>DAN tokens would likely represent voting power (e.g., 1 DAN = 1 Vote, or quadratic voting).</li>
+                <li>Clear proposal submission and voting processes would be established.</li>
+            </ul>
+            <p class="mt-4 text-sm text-gray-400 italic">The transition to a decentralized governance model will be carefully planned and executed in later phases of the project, likely post-Phase 4. Details will be shared well in advance.</p>
+        </section>
+
+        <!-- 11. Partnerships -->
+        <!-- 11. Partnerships -->
+        <section id="partnerships" class="content-section">
+            <h2 class="gradient-text-blue-purple">11. Partnerships</h2>
+            <p class="mb-6 leading-relaxed">Strategic partnerships are key to accelerating growth, enhancing platform capabilities, and expanding the utility of the DAN token. We are actively exploring collaborations across various sectors.</p>
+
+            <h4>Areas of Focus for Partnerships:</h4>
+            <ul class="list-disc list-inside space-y-1 mb-6 text-gray-400">
+                <li><strong class="text-gray-100">Technology Providers:</strong> Collaborations with blockchain infrastructure providers (nodes, analytics), wallet providers, security audit firms, and payment gateways.</li>
+                <li><strong class="text-gray-100">Marketing & Growth:</strong> Partnerships with influencers, marketing agencies, affiliate networks, and other Web3/e-commerce communities.</li>
+                <li><strong class="text-gray-100">Merchant & Brand Partnerships:</strong> Onboarding key merchants or brands onto the Nashop platform (especially if a marketplace model is adopted). Exclusive co-branded rewards or campaigns.</li>
+                <li><strong class="text-gray-100">Ecosystem Collaborations:</strong> Partnerships with other Polygon-based projects or DeFi protocols for cross-promotion or integration (e.g., using DAN in other DApps).</li>
+                <li><strong class="text-gray-100">Exchange Listings:</strong> Partnering with reputable centralized (CEX) and decentralized (DEX) exchanges for listing the DAN token.</li>
+            </ul>
+
+            <!-- ** START: Custom Partnership Card ** -->
+            <h4 class="mt-8 mb-4 text-lg font-semibold text-gray-200">Featured Partnership:</h4>
+            <div class="mt-4 bg-gradient-to-br from-slate-800 to-slate-800/80 border border-blue-700/50 rounded-lg p-5 shadow-lg max-w-2xl mx-auto transition-shadow hover:shadow-blue-600/30">
+                <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-5">
+                    <!-- Partnership Details -->
+                    <div class="flex-1">
+                        <h5 class="text-xl font-bold text-white mb-1">
+                            Partnership with FrogPayAI <span class="text-base font-medium text-gray-400">(@FrogPayAI)</span> 🐸💚
+                        </h5>
+                        <a href="https://x.com/FrogPayAI/status/1908104761498353993" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-colors duration-200">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                            View Announcement on X
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- ** END: Custom Partnership Card ** -->
+
+        </section>
+
+        <!-- 12. Technical Integration (Developers) -->
+        <section id="technical-integration" class="content-section">
+            <h2 class="gradient-text-yellow-amber">12. Technical Integration (Developers)</h2>
+
+            <!-- ** START: Ownership Renounced Announcement ** -->
+            <div class="mb-8 p-4 border border-green-500 rounded-lg bg-green-900/20">
+                <h3 class="text-xl font-semibold text-green-400 mb-3">🚨 Major Update: DinaKart Contract Ownership Renounced! 🚨</h3>
+                <p class="mb-3 text-gray-300">
+                    Big news! As of today, the ownership of the DAN token smart contract has officially been renounced! It's now permanently set to the zero address (<code class="text-sm bg-slate-800 px-1 rounded">0x0000000000000000000000000000000000000000</code>), which means we’ve gone **FULLY decentralized!** 🎉💥
+                </p>
+                <p class="mb-3 font-semibold text-gray-200">So, why does this matter to you? 🤔</p>
+                <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+                    <li>
+                        <strong>✨ No Central Authority:</strong> With ownership renounced, there’s no single entity controlling the contract. It’s governed solely by its immutable code and the community. This makes the DAN token fundamentally trustless and secure! 🔐🚀
+                    </li>
+                    <li>
+                        <strong>🌍 True Decentralization:</strong> This action permanently locks in our commitment to decentralization. No one (not even the original deployers) can mint new tokens, pause transactions, or modify the core contract rules. It’s truly in the hands of the community now, 100%! 💪✨
+                    </li>
+                </ul>
+                <p class="text-gray-300">
+                    You can engage with the DAN token (<code class="text-sm bg-slate-800 px-1 rounded">0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF</code>) with total peace of mind, knowing its foundation is transparent, unchangeable, and community-centric—powered by YOU! 🙌💚 We’re thrilled about this milestone!
+                </p>
+            </div>
+            <!-- ** END: Ownership Renounced Announcement ** -->
+
+            <p class="mb-6 leading-relaxed text-gray-400 italic">This section provides a technical overview for developers interested in interacting with the now ownerless DAN token smart contract or potentially integrating with the Nashop ecosystem. Detailed API documentation will be provided separately if/when platform integrations are opened.</p>
+
+            <h4>Interacting with the DAN Token Contract:</h4>
+            <ul>
+                <li>The DAN token is an ERC-20 compliant smart contract deployed on the Polygon network.</li>
+                <li><strong>Contract Address:</strong> <code class="text-sm bg-slate-800 px-1 rounded">0x46Fc3E44a9dbBBb6B9abcd9c55b7F91037F16cFF</code></li>
+                <li>The contract incorporates standard ERC-20 functionality along with extensions from OpenZeppelin. <strong>Crucially, ownership has been renounced to the <code class="text-xs bg-slate-800 px-1 rounded">0x0...000</code> address, rendering owner-specific functions (like minting or pausing) inactive.</strong>
+                    <ul>
+                        <!-- Specific extensions can still be listed if relevant, e.g., Burnable, Permit -->
+                        <li>ERC20 Standard Functions</li>
+                        <li>ERC20 Burnable (allowing users to burn their own tokens)</li>
+                        <li>ERC20 Permit (for gasless approvals)</li>
+                        <!-- ERC20 Pausable is present but unusable without an owner -->
+                        <!-- Ownable functions are present but unusable without an owner -->
+                    </ul>
+                </li>
+                <li>Developers can use standard Ethereum/Polygon libraries like <code class="text-xs">ethers.js</code> or <code class="text-xs">web3.py</code> to interact with the contract's public functions, including:
+                    <ul>
+                        <li>Read balances: <code class="text-xs">balanceOf(address account)</code></li>
+                        <li>Read total supply: <code class="text-xs">totalSupply()</code> <span class="text-red-400 text-xs italic">(Note: Immutable; minting is disabled due to renounced ownership.)</span></li>
+                        <li>Transfer tokens: <code class="text-xs">transfer(address recipient, uint256 amount)</code></li>
+                        <li>Check spending allowance: <code class="text-xs">allowance(address owner, address spender)</code></li>
+                        <li>Approve spending (standard): <code class="text-xs">approve(address spender, uint256 amount)</code></li>
+                        <li>Approve spending (gasless): <code class="text-xs">permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)</code></li>
+                        <li>Transfer tokens on behalf of others (requires allowance): <code class="text-xs">transferFrom(address sender, address recipient, uint256 amount)</code></li>
+                        <li>Burn own tokens: <code class="text-xs">burn(uint256 amount)</code></li>
+                        <li>Burn tokens from another address (requires allowance): <code class="text-xs">burnFrom(address account, uint256 amount)</code></li>
+                        <li>Listen to events: <code class="text-xs">Transfer(address indexed from, address indexed to, uint256 value)</code>, <code class="text-xs">Approval(address indexed owner, address indexed spender, uint256 value)</code></li>
+                        <!-- Note: Paused/Unpaused events will no longer be emitted -->
+                    </ul>
+                <!-- ** START: Updated Owner Capabilities Section ** -->
+            <h4>Impact of Renounced Ownership on Administrative Functions:</h4>
+            <p class="mb-4 leading-relaxed text-gray-400">
+                Previously, certain administrative functions were restricted to the contract <code class="text-xs">owner</code>. **Now that ownership has been permanently renounced to the zero address (<code class="text-xs bg-slate-800 px-1 rounded">0x0...000</code>), these functions are effectively disabled and cannot be called by anyone:**
+            </p>
+            <ul class="text-gray-400 list-disc list-inside space-y-1">
+                <li><code class="text-xs line-through">mint(address to, uint256 amount)</code>: <span class="text-red-400 italic">No new tokens can ever be created.</span></li>
+                <li><code class="text-xs line-through">pause()</code>: <span class="text-red-400 italic">Token transfers cannot be halted.</span></li>
+                <li><code class="text-xs line-through">unpause()</code>: <span class="text-red-400 italic">If the contract was paused before renouncing, it cannot be unpaused.</span></li>
+                <li><code class="text-xs line-through">transferOwnership(address newOwner)</code>: <span class="text-red-400 italic">Ownership cannot be transferred.</span></li>
+                <li><code class="text-xs line-through">renounceOwnership()</code>: <span class="text-red-400 italic">This action has already been taken and cannot be undone.</span></li>
+            </ul>
+            <p class="mt-2 text-sm text-green-400">This immutability ensures the contract operates exactly as deployed, reinforcing decentralization and trust.</p>
+            <!-- ** END: Updated Owner Capabilities Section ** -->
+
+
+            <h4>Potential Future Nashop APIs:</h4>
+            <p class="mb-4 leading-relaxed">In later stages, Nashop might offer APIs for specific integrations, such as:</p>
+            <ul>
+                <li><strong>Merchant API:</strong> For third-party merchants to list products, manage orders, and potentially configure custom DAN reward campaigns (if marketplace enabled).</li>
+                <li><strong>Rewards API:</strong> Allow external applications to verify DAN holdings or trigger actions based on user balances (with user consent).</li>
+                <li><strong>Data/Analytics API:</strong> Provide anonymized aggregate data about platform usage or DAN economics (respecting user privacy).</li>
+            </ul>
+            <p class="mt-4 text-sm text-gray-400 italic">The availability and specifics of any APIs are subject to future development plans and will be accompanied by comprehensive developer documentation if released.</p>
+        </section>
+        <!-- 15. Glossary -->
+        <section id="glossary" class="content-section">
+            <h2 class="gradient-text-green-teal">15. Glossary of Terms</h2>
+            <div class="space-y-4 text-sm">
+                <p><strong class="text-gray-100">ABI (Application Binary Interface):</strong> The standard way to interact with contracts in the Ethereum ecosystem (and Polygon). It defines the contract's methods and structures.</p>
+                <p><strong class="text-gray-100">Airdrop:</strong> Distribution of free tokens to specific wallet addresses, often for marketing or community building.</p>
+                <p><strong class="text-gray-100">APY (Annual Percentage Yield):</strong> The projected annual rate of return on an investment, including compounding interest (or rewards in staking).</p>
+                <p><strong class="text-gray-100">Audit (Smart Contract):</strong> A thorough review of smart contract code by security experts to identify vulnerabilities and potential issues.</p>
+                <p><strong class="text-gray-100">Blockchain:</strong> A distributed, immutable ledger technology that records transactions across many computers.</p>
+                <p><strong class="text-gray-100">CEX (Centralized Exchange):</strong> A traditional cryptocurrency exchange platform managed by a company (e.g., Binance, Coinbase).</p>
+                <p><strong class="text-gray-100">Circulating Supply:</strong> The number of tokens publicly available and circulating in the market.</p>
+                <p><strong class="text-gray-100">Cliff (Vesting):</strong> An initial period during which locked tokens are not released to the beneficiary.</p>
+                <p><strong class="text-gray-100">DApp (Decentralized Application):</strong> An application that runs on a blockchain network, utilizing smart contracts.</p>
+                <p><strong class="text-gray-100">DEX (Decentralized Exchange):</strong> A cryptocurrency exchange that operates without a central authority, using smart contracts for automated trading (e.g., Uniswap, SushiSwap).</p>
+                <p><strong class="text-gray-100">ERC-20:</strong> The technical standard for fungible tokens on the Ethereum blockchain. POL-20 is the equivalent standard on Polygon.</p>
+                <p><strong class="text-gray-100">Gas Fees:</strong> Transaction fees required to execute operations on a blockchain network (paid to network validators/miners).</p>
+                <p><strong class="text-gray-100">Governance:</strong> The process by which decisions are made regarding a protocol or platform, potentially involving token holder voting.</p>
+                <p><strong class="text-gray-100">Liquidity Pool:</strong> A pool of tokens locked in a smart contract on a DEX, facilitating trades between those assets.</p>
+                <p><strong class="text-gray-100">Mainnet:</strong> The main, live blockchain network where real transactions occur.</p>
+                <p><strong class="text-gray-100">Multi-Signature (Multi-Sig) Wallet:</strong> A wallet that requires multiple private keys to authorize a transaction, enhancing security.</p>
+                <p><strong class="text-gray-100">NFT (Non-Fungible Token):</strong> A unique digital asset representing ownership of a specific item or piece of content on the blockchain.</p>
+                <p><strong class="text-gray-100">POL-20:</strong> The standard for fungible tokens on the Polygon network, equivalent to Ethereum's ERC-20.</p>
+                <p><strong class="text-gray-100">Polygon (Matic):</strong> A Layer 2 scaling solution and blockchain platform designed for lower fees and faster transactions, compatible with Ethereum.</p>
+                <p><strong class="text-gray-100">PolygonScan:</strong> A block explorer and analytics platform for the Polygon network.</p>
+                <p><strong class="text-gray-100">Private Key:</strong> A secret code that proves ownership of cryptocurrency assets in a wallet. Must be kept secure and private.</p>
+                <p><strong class="text-gray-100">Seed Phrase (Recovery Phrase):</strong> A list of words generated by your wallet that allows you to recover your assets if you lose access to your device. Must be kept extremely secure and offline.</p>
+                <p><strong class="text-gray-100">Smart Contract:</strong> Self-executing contracts with the terms of the agreement directly written into code, running on a blockchain.</p>
+                <p><strong class="text-gray-100">Staking:</strong> Locking up cryptocurrency tokens to support a network's operations (security, consensus) or participate in reward distribution, typically earning yield in return.</p>
+                <p><strong class="text-gray-100">Testnet:</strong> A testing environment for blockchain development that mimics the mainnet but uses tokens with no real-world value.</p>
+                <p><strong class="text-gray-100">TGE (Token Generation Event):</strong> The moment when a project's token is officially created and begins to be distributed (e.g., to presale participants, initial unlocks).</p>
+                <p><strong class="text-gray-100">Tokenomics:</strong> The economics of a cryptocurrency token, including its supply, distribution, utility, and demand drivers.</p>
+                <p><strong class="text-gray-100">Total Supply:</strong> The maximum number of tokens that will ever exist.</p>
+                <p><strong class="text-gray-100">Utility Token:</strong> A token designed to be used for a specific purpose within a particular ecosystem or platform (like DAN for rewards/discounts on Nashop).</p>
+                <p><strong class="text-gray-100">Vesting:</strong> A schedule dictating the gradual release of locked tokens over time.</p>
+                <p><strong class="text-gray-100">Wallet (Cryptocurrency):</strong> Software or hardware used to store, manage, and interact with cryptocurrency assets (e.g., MetaMask, Ledger).</p>
+                <p><strong class="text-gray-100">Web3:</strong> The next iteration of the internet, characterized by decentralization, blockchain technology, and user ownership of data and assets.</p>
+            </div>
+        </section>
+
+        <!-- 16. Legal Disclaimer -->
+        <section id="legal-disclaimer" class="content-section border-l-4 border-red-500">
+            <h2 class="gradient-text-red-orange">16. Legal Disclaimer</h2>
+            <p class="mb-4 leading-relaxed font-semibold text-red-300">IMPORTANT: Please read this disclaimer carefully.</p>
+            <p class="mb-4 leading-relaxed">This documentation is provided for informational purposes only and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation for any security, token, or investment product, nor does it constitute an offer to provide investment advisory or other services. Nashop makes no warranties or representations, express or implied, about the accuracy, completeness, or suitability of the information contained herein.</p>
+            <p class="mb-4 leading-relaxed">Investing in cryptocurrencies, including the DAN token, involves significant risk, including the possible loss of your entire investment. Prices can be extremely volatile. The regulatory environment is uncertain and evolving. Past performance is not indicative of future results.</p>
+            <p class="mb-4 leading-relaxed">You should conduct your own thorough due diligence and consult with independent qualified financial, legal, and tax advisors before making any investment decision. Your decision to participate in the Nashop ecosystem or hold/trade DAN tokens should be based solely on your own research and assessment of the risks involved.</p>
+            <p class="mb-4 leading-relaxed">The features, functionalities, and roadmap outlined in this document are subject to change or modification at the sole discretion of the Nashop team without prior notice. The Nashop team is not liable for any loss or damage arising from reliance on this document or participation in the ecosystem.</p>
+            <p class="mb-4 leading-relaxed">By accessing or using this documentation, you agree to these terms and acknowledge the inherent risks associated with cryptocurrencies and blockchain technology.</p>
+        </section>
+
+
+        <!-- 17. Contact & Social Channels -->
+        <section id="contact-socials" class="content-section text-center">
+            <h2 class="gradient-text-blue-purple">17. Contact & Social Channels</h2>
+            <p class="mb-8 text-lg text-gray-400">Stay updated and join the Nashop community through our official channels. Beware of impersonators - always verify links.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="https://nashop.store" target="_blank" rel="noopener noreferrer" class="block p-6 bg-slate-700/70 hover:bg-slate-600/90 rounded-lg transition duration-300 shadow-md hover:shadow-lg border border-slate-600 hover:border-blue-500">
+                    <h4 class="text-xl font-semibold mb-2 text-white">Official Website</h4>
+                    <p class="text-blue-400 break-all">nashop.store</p>
+                </a>
+                <a href="https://token.nashop.store" target="_blank" rel="noopener noreferrer" class="block p-6 bg-slate-700/70 hover:bg-slate-600/90 rounded-lg transition duration-300 shadow-md hover:shadow-lg border border-slate-600 hover:border-blue-500">
+                    <h4 class="text-xl font-semibold mb-2 text-white">Token Information</h4>
+                    <p class="text-blue-400 break-all">token.nashop.store</p>
+                </a>
+                <a href="https://x.com/nashopstoreweb3" target="_blank" rel="noopener noreferrer" class="block p-6 bg-slate-700/70 hover:bg-slate-600/90 rounded-lg transition duration-300 shadow-md hover:shadow-lg border border-slate-600 hover:border-gray-400">
+                    <h4 class="text-xl font-semibold mb-2 text-white">Twitter / X</h4>
+                    <p class="text-gray-400 break-all">@nashopstoreweb3</p>
+                </a>
+                <a href="https://t.me/dan_nashop" target="_blank" rel="noopener noreferrer" class="block p-6 bg-slate-700/70 hover:bg-slate-600/90 rounded-lg transition duration-300 shadow-md hover:shadow-lg border border-slate-600 hover:border-sky-500">
+                    <h4 class="text-xl font-semibold mb-2 text-white">Telegram (Announcements & Chat)</h4>
+                    <p class="text-sky-400 break-all">@dan_nashop</p>
+                </a>
+                <a href="https://www.instagram.com/nashop_store_web3/" target="_blank" rel="noopener noreferrer" class="block p-6 bg-slate-700/70 hover:bg-slate-600/90 rounded-lg transition duration-300 shadow-md hover:shadow-lg border border-slate-600 hover:border-pink-500">
+                    <h4 class="text-xl font-semibold mb-2 text-white">Instagram</h4>
+                    <p class="text-pink-400 break-all">@nashop.store.web3</p>
+                </a>
+                <div class="block p-6 bg-slate-700/70 rounded-lg shadow-md border border-slate-600">
+                    <h4 class="text-xl font-semibold mb-2 text-white">Support</h4>
+                    <p class="text-gray-400 break-all">[ support@nashop.store]</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-8 border-t border-slate-700 text-center text-gray-500 text-sm">
+            <p>© <span id="currentYear"></span> Nashop & Dinakart (DAN) Token. All Rights Reserved.</p>
+            <p class="mt-2">Documentation last updated: <span id="footerUpdateDate">April 8, 2025</span></p>
+        </footer>
+
+    </div>
+
+    <!-- Basic JS for dynamic year & update date -->
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+
+        // Set current date for placeholders - ideally make this dynamic if deployed
+        const updateDateElem = document.getElementById('updateDate');
+        const footerUpdateDateElem = document.getElementById('footerUpdateDate');
+        if (updateDateElem) {
+            updateDateElem.textContent = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        if (footerUpdateDateElem) {
+            footerUpdateDateElem.textContent = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+
+        console.log("Nashop DAN Comprehensive Docs Initialized.");
+
+        // Basic smooth scroll for Table of Contents links
+        document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start' // Adjust block to 'center' or 'end' if preferred
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

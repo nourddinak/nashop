@@ -1,0 +1,1332 @@
+/* style.css */
+
+/* --- General Styles --- */
+.perspective-container { perspective: 1000px; }
+.perspective-1000 { perspective: 1000px; }
+.preserve-3d { transform-style: preserve-3d; }
+.transform-gpu { transform-style: preserve-3d; backface-visibility: hidden; }
+.card-3d-effect { transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+.animate-spin-slow { animation: spin 15s linear infinite; }
+.animate-spin-slow-reverse { animation: spin-reverse 20s linear infinite; }
+
+/* Enhanced animation keyframes */
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spin-reverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(25px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fade-out {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-15px) translateX(10px); }
+    50% { transform: translateY(0) translateX(20px); }
+    75% { transform: translateY(15px) translateX(10px); }
+}
+@keyframes float-slow-reverse {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(15px) translateX(-10px); }
+    50% { transform: translateY(0) translateX(-20px); }
+    75% { transform: translateY(-15px) translateX(-10px); }
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.1; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+@keyframes ping-slow {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 0.4; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+@keyframes ripple {
+    0% { transform: scale(0); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+@keyframes particle-float {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+@keyframes energy-burst {
+    0% { transform: scale(0.8); opacity: 0.8; filter: blur(5px); }
+    50% { transform: scale(1.2); opacity: 0.6; filter: blur(10px); }
+    100% { transform: scale(0.8); opacity: 0; filter: blur(5px); }
+}
+@keyframes rotate-3d {
+    0% { transform: rotate3d(1, 1, 1, 0deg); }
+    100% { transform: rotate3d(1, 1, 1, 360deg); }
+}
+
+/* Animation classes */
+.animate-fade-in-up { animation: fade-in-up 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards; }
+.animate-fade-out { animation: fade-out 2.5s cubic-bezier(0.215, 0.610, 0.355, 1) forwards; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-twinkle { animation: twinkle 4s ease-in-out infinite; }
+.animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 8s ease infinite;
+}
+.animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+.animate-ping-slow {
+    animation: ping-slow 3s ease-in-out infinite;
+}
+.animate-ripple {
+    animation: ripple 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+.animate-energy-burst {
+    animation: energy-burst 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+.animate-rotate-3d {
+    animation: rotate-3d 2s linear infinite;
+}
+
+/* Animation states */
+.animate-fade-in-up { opacity: 0; animation-play-state: paused; }
+.animate-fade-in-up.is-visible { opacity: 1; animation-play-state: running; }
+
+/* Text effects */
+.text-shadow-lg { text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+
+/* Utility classes */
+html { scroll-behavior: smooth; }
+.animation-delay-3000 { animation-delay: 3s; }
+.duration-5000 { animation-duration: 5s; }
+.duration-6000 { animation-duration: 6s; }
+.duration-7000 { animation-duration: 7s; }
+
+/* 3D Transform Utilities */
+.hover\:rotate-y-12:hover {
+    transform: rotateY(12deg);
+}
+.hover\:rotate-x-6:hover {
+    transform: rotateX(6deg);
+}
+
+/* --- Team Profile Styles --- */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-gpu {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* Enhanced 3D rotation effects */
+.group:hover .group-hover\:rotate-x-2 {
+    transform: rotateX(2deg);
+}
+
+.group:hover .group-hover\:-rotate-y-5 {
+    transform: rotateY(-5deg);
+}
+
+.group:hover .group-hover\:rotate-x-4 {
+    transform: rotateX(4deg);
+}
+
+.group:hover .group-hover\:-rotate-y-8 {
+    transform: rotateY(-8deg);
+}
+
+.group:hover .group-hover\:rotate-y-8 {
+    transform: rotateY(8deg);
+}
+
+.transform-origin-bottom {
+    transform-origin: bottom;
+}
+
+/* Pulse animation for online status */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Orbital ring animations */
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+    animation: spin-slow-reverse 30s linear infinite;
+}
+
+/* Cosmic particle animations */
+@keyframes cosmic-particle-1 {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.7; }
+    50% { transform: translateY(-50%) translateX(100%); opacity: 0.3; }
+}
+
+@keyframes cosmic-particle-2 {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.5; }
+    50% { transform: translateY(-50%) translateX(70%); opacity: 0.8; }
+}
+
+@keyframes cosmic-particle-3 {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.6; }
+    50% { transform: translateY(-50%) translateX(-80%); opacity: 0.4; }
+}
+
+.animate-cosmic-particle-1 {
+    animation: cosmic-particle-1 8s ease-in-out infinite;
+}
+
+.animate-cosmic-particle-2 {
+    animation: cosmic-particle-2 12s ease-in-out infinite;
+}
+
+.animate-cosmic-particle-3 {
+    animation: cosmic-particle-3 10s ease-in-out infinite;
+}
+
+/* --- Enhanced Roadmap Styles --- */
+.roadmap-line::before {
+    content: '';
+    position: absolute;
+    inset-y: 0;
+    left: 40px; /* Adjusted for new pl-10 */
+    width: 6px;
+    margin-left: -3px;
+    background: linear-gradient(to bottom,
+        rgba(56, 189, 248, 0.5),
+        rgba(168, 85, 247, 0.5),
+        rgba(217, 70, 239, 0.5),
+        rgba(249, 115, 22, 0.5));
+    border-radius: 3px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    animation: pulse-line 6s infinite ease-in-out;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+    background-size: 400% 400%;
+    animation: pulse-line 6s infinite ease-in-out, gradient-shift 15s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-line {
+    0%, 100% { opacity: 0.7; transform: scaleY(1); }
+    50% { opacity: 0.9; transform: scaleY(1.02); }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Enhanced milestone markers */
+.milestone-marker {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    z-index: 20;
+}
+
+.roadmap-point-glow {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 10px 2px rgba(var(--glow-color, 76, 29, 149), 0.4);
+}
+
+li.group:hover .roadmap-point-glow {
+    box-shadow: 0 0 20px 5px rgba(var(--glow-color, 76, 29, 149), 0.7);
+}
+
+li.group .roadmap-point-glow {
+    transform: scale(1);
+}
+
+li.group:hover .roadmap-point-glow {
+    transform: scale(1.15);
+}
+
+/* Staggered animation for roadmap items */
+.roadmap-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in-up 0.6s forwards ease-out;
+    animation-delay: var(--animation-delay, 0s);
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced hover effects for roadmap items */
+.roadmap-item:hover {
+    z-index: 10;
+}
+
+.roadmap-enhanced .roadmap-item:nth-child(odd)::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(var(--glow-color), 0.7), transparent);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+}
+
+.roadmap-enhanced .roadmap-item:nth-child(odd):hover::before {
+    transform: scaleX(1);
+}
+
+/* Pulse animation for milestone markers */
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
+/* --- Partner Marquee Styles --- */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* Ensures seamless loop if set1 = set2 */
+}
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+section#partners.group:hover .animate-marquee {
+     animation-play-state: paused;
+}
+/* Fade effects for Partner Carousel */
+.partners-carousel-container::before,
+.partners-carousel-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6rem; /* w-24 */
+    z-index: 2;
+    pointer-events: none; /* Allows hover/click through */
+}
+.partners-carousel-container::before {
+    left: 0;
+    /* Match the section background: bg-gray-950/60 -> use rgb(17, 24, 39) */
+    background: linear-gradient(to right, rgb(17, 24, 39) 20%, rgba(17, 24, 39, 0));
+}
+.partners-carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(17, 24, 39) 20%, rgba(17, 24, 39, 0));
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .partners-carousel-container::before,
+  .partners-carousel-container::after {
+      width: 8rem; /* w-32 */
+  }
+}
+
+
+/* --- Feature Pillar Styles --- */
+.feature-pillar-1.is-visible { animation-delay: 0s; }
+.feature-pillar-2.is-visible { animation-delay: 0.15s; }
+.feature-pillar-3.is-visible { animation-delay: 0.3s; }
+
+/* Subtle grid pattern for Features background */
+#features::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+ }
+
+ /* --- Input Focus Glow --- */
+ #email:focus {
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.4); /* Purple glow */
+    /* Tailwind focus rings are removed by focus:ring-0 in the HTML */
+ }
+
+/* --- Enhanced Home Section Styles --- */
+/* Logo container styles */
+.logo-3d-container {
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Title container styles */
+.title-3d-container {
+    transform-style: preserve-3d;
+}
+
+/* Fingerprint interactive styles */
+.fingerprint-clickable {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 10;
+}
+
+.fingerprint-clickable:hover {
+    transform: scale(1.05);
+}
+
+.fingerprint-clickable:active {
+    transform: scale(0.95);
+}
+
+/* Ripple effect styles */
+.fingerprint-ripple {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: rgba(217, 70, 239, 0.8);
+    box-shadow: 0 0 20px rgba(217, 70, 239, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Particle styles */
+.fingerprint-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Energy burst effect */
+.fingerprint-energy-burst {
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 4;
+}
+
+/* Button hover effects */
+.cta-container a:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive adjustments for home section */
+@media (max-width: 640px) {
+    .cta-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cta-container a {
+        width: 100%;
+    }
+
+    .logo-3d-container:hover {
+        transform: rotateY(8deg); /* Less rotation on mobile */
+    }
+}
+
+/* Enhanced cosmic background effects */
+.cosmic-dust {
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+}
+
+.cosmic-dust:hover {
+    opacity: 0.9;
+}
+
+/* Star field animation adjustments */
+.stars-container {
+    pointer-events: none;
+}
+
+/* Scroll indicator enhancements */
+.scroll-indicator {
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 0.9;
+}
+
+/* --- Coming Soon Notification Styles --- */
+.notification-content {
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.notification-content.scale-100 {
+    transform: scale(1);
+}
+
+/* Prevent scrolling when modal is open */
+body.overflow-hidden {
+    overflow: hidden;
+}
+
+/* QR Code highlight effect */
+.qr-code-container {
+    transition: all 0.3s ease;
+}
+
+/* --- Body Styles (can add base styles here if needed) --- */
+/* --- Partner Carousel Styles --- */
+.carouselTrack {
+    display: flex;
+    animation: marquee 45s linear infinite;
+    will-change: transform;
+}
+
+/* We're removing the pause on hover effect as requested */
+
+.carouselTrackContent {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex-shrink: 0;
+}
+
+.brandLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.brandLogo img {
+    display: block;
+    max-height: 70%;
+    max-width: 90%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.brandLogo:hover img {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5));
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .brandLogo {
+      width: 8rem;
+  }
+}
+
+
+/* ===== START: Scroll Navigation Styles ===== */
+/* Base nav styling with enhanced glass morphism effect */
+#scroll-nav {
+   background: rgba(13, 12, 15, 0.7); /* Darker, more premium background */
+   padding: 18px;
+   position: fixed;
+   bottom: 30px;
+   height: 60px; /* Slightly taller for more presence */
+   left: 50%;
+   max-width: 650px; /* Slightly wider */
+   width: 90%;
+   transform: translateX(-50%);
+   z-index: 100;
+   border-radius: 30px;
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+   backdrop-filter: blur(10px);
+   overflow: hidden; /* For glow effects */
+   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover state for the entire nav */
+#scroll-nav:hover {
+   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) inset, 0 0 15px rgba(168, 85, 247, 0.2);
+   transform: translateX(-50%) translateY(-2px);
+}
+
+/* Desktop/laptop side navigation styles */
+@media (min-width: 1024px) {
+   #scroll-nav {
+      left: auto;
+      right: 25px; /* Positioned further to the side for better visibility */
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+      width: 60px; /* Slightly wider for better visibility */
+      height: auto;
+      max-width: none;
+      max-height: 500px; /* Increased max height to accommodate all nodes */
+      padding: 18px 10px; /* Increased padding for better spacing */
+      border-radius: 30px; /* Larger radius for more modern look */
+      display: flex;
+      flex-direction: column;
+      background: rgba(13, 12, 15, 0.85); /* More opaque for better visibility */
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 0 15px rgba(168, 85, 247, 0.15); /* Enhanced shadow with subtle glow */
+      z-index: 200; /* Ensure it's above other elements */
+   }
+
+   #scroll-nav:hover {
+      transform: translateY(-50%) translateX(-3px);
+      right: 28px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 0 20px rgba(168, 85, 247, 0.3); /* Enhanced glow on hover */
+   }
+
+   /* Add a subtle animation when the page loads */
+   @keyframes slide-in-right {
+      0% {
+         opacity: 0;
+         transform: translateY(-50%) translateX(20px);
+      }
+      100% {
+         opacity: 1;
+         transform: translateY(-50%) translateX(0);
+      }
+   }
+
+   #scroll-nav {
+      animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: 0.5s;
+      opacity: 0;
+   }
+}
+
+/* Glow container and effects */
+.scroll-nav-glow-container {
+   position: absolute;
+   inset: 0;
+   overflow: hidden;
+   border-radius: inherit;
+   pointer-events: none;
+}
+
+.scroll-nav-glow {
+   position: absolute;
+   border-radius: 50%;
+   filter: blur(40px);
+   opacity: 0.15;
+   transition: all 0.8s ease;
+}
+
+.scroll-nav-glow-1 {
+   width: 150px;
+   height: 150px;
+   background: radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, rgba(217, 70, 239, 0.4) 70%, transparent 100%);
+   top: -80px;
+   left: 20%;
+   animation: float-glow 8s infinite ease-in-out;
+}
+
+.scroll-nav-glow-2 {
+   width: 120px;
+   height: 120px;
+   background: radial-gradient(circle, rgba(56, 189, 248, 0.8) 0%, rgba(79, 70, 229, 0.4) 70%, transparent 100%);
+   bottom: -60px;
+   right: 25%;
+   animation: float-glow 10s infinite ease-in-out reverse;
+}
+
+@keyframes float-glow {
+   0%, 100% { transform: translateY(0) scale(1); }
+   50% { transform: translateY(-10px) scale(1.1); }
+}
+
+/* Floating particles */
+.scroll-nav-particles {
+   position: absolute;
+   inset: 0;
+   overflow: hidden;
+}
+
+.scroll-nav-particles span {
+   position: absolute;
+   display: block;
+   width: 3px;
+   height: 3px;
+   background: rgba(255, 255, 255, 0.4);
+   border-radius: 50%;
+   animation: particle-float 15s infinite linear;
+}
+
+.scroll-nav-particles span:nth-child(1) {
+   width: 2px; height: 2px;
+   top: 20%; left: 15%;
+   animation-duration: 20s;
+   opacity: 0.6;
+}
+
+.scroll-nav-particles span:nth-child(2) {
+   width: 3px; height: 3px;
+   top: 60%; left: 30%;
+   animation-duration: 25s;
+   animation-delay: -5s;
+   opacity: 0.8;
+}
+
+.scroll-nav-particles span:nth-child(3) {
+   width: 1px; height: 1px;
+   top: 30%; left: 70%;
+   animation-duration: 18s;
+   animation-delay: -8s;
+   opacity: 0.5;
+}
+
+.scroll-nav-particles span:nth-child(4) {
+   width: 2px; height: 2px;
+   top: 70%; left: 80%;
+   animation-duration: 22s;
+   animation-delay: -12s;
+   opacity: 0.7;
+}
+
+.scroll-nav-particles span:nth-child(5) {
+   width: 1px; height: 1px;
+   top: 40%; left: 50%;
+   animation-duration: 15s;
+   animation-delay: -7s;
+   opacity: 0.6;
+}
+
+@keyframes particle-float {
+   0% { transform: translateY(0) translateX(0); }
+   25% { transform: translateY(-10px) translateX(5px); }
+   50% { transform: translateY(0) translateX(10px); }
+   75% { transform: translateY(10px) translateX(5px); }
+   100% { transform: translateY(0) translateX(0); }
+}
+
+/* Wrapper styling */
+#scroll-nav .scroll-nav-wrapper {
+    padding: 0 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Changed to space-between for better layout */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Enhanced logo styling */
+#scroll-nav .scroll-nav-logo-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 15px;
+    flex-shrink: 0;
+    width: 40px;
+    transition: all 0.3s ease;
+}
+
+#scroll-nav .scroll-nav-logo {
+    height: 30px;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+    transition: all 0.3s ease;
+}
+
+.scroll-nav-logo-glow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, rgba(217, 70, 239, 0.1) 70%, transparent 100%);
+    filter: blur(8px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#scroll-nav .scroll-nav-logo-link:hover .scroll-nav-logo {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.6));
+}
+
+#scroll-nav .scroll-nav-logo-link:hover .scroll-nav-logo-glow {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+/* Current section indicator */
+.scroll-nav-current-section {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 12px;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Nodes container with enhanced styling */
+#scroll-nav .scroll-nav-nodes {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin: 0 10px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Desktop/laptop vertical layout adjustments */
+@media (min-width: 1024px) {
+    #scroll-nav .scroll-nav-wrapper {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: 8px 0; /* Reduced padding */
+        justify-content: flex-start;
+        gap: 10px; /* Added gap for better spacing */
+        display: flex;
+        align-items: center;
+    }
+
+    #scroll-nav .scroll-nav-logo-link {
+        margin-right: 0;
+        margin-bottom: 10px; /* Further reduced margin */
+        width: 100%;
+        height: 30px; /* Smaller height */
+        display: flex;
+        justify-content: center;
+    }
+
+    #scroll-nav .scroll-nav-logo {
+        height: 24px; /* Smaller logo */
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4)); /* Enhanced glow */
+    }
+
+    #scroll-nav .scroll-nav-nodes {
+        flex-direction: column;
+        margin: 0; /* Removed margin */
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        gap: 14px; /* Increased gap between nodes for better spacing */
+        padding-bottom: 5px; /* Add a bit of padding at the bottom */
+        position: relative;
+    }
+
+    .scroll-nav-current-section {
+        display: none; /* Hide the current section indicator on desktop */
+    }
+}
+
+/* Enhanced line styling with animated gradient */
+.scroll-nav-line {
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Slightly thicker */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -1;
+    padding: 0 10px;
+    box-sizing: border-box;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-nav-red-line, .scroll-nav-blue-line {
+    width: 100%;
+    height: 2px; /* Match parent */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-nav-red-container {
+    overflow: hidden;
+    height: 2px; /* Match parent */
+    width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); /* Smoother easing */
+}
+
+.scroll-nav-red-line {
+    /* Modern gradient with site colors */
+    background-image: linear-gradient(to right,
+        rgba(168, 85, 247, 0.9) 0%,
+        rgba(217, 70, 239, 0.9) 50%,
+        rgba(56, 189, 248, 0.9) 100%);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+    animation: gradient-shift 3s infinite alternate ease-in-out;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.scroll-nav-blue-line {
+    /* Subtle background line */
+    background-image: linear-gradient(to right,
+        rgba(55, 65, 81, 0.5) 0%,
+        rgba(75, 85, 99, 0.5) 50%,
+        rgba(55, 65, 81, 0.5) 100%);
+    position: relative;
+}
+
+/* Enhanced node styling */
+.scroll-nav-node {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: 0 2px;
+}
+
+/* Tooltip styling */
+.scroll-nav-tooltip {
+    position: absolute;
+    top: -40px; /* Moved further up to ensure it's outside the nav */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(17, 24, 39, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    z-index: 200; /* Increased z-index to ensure it appears above everything */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.scroll-nav-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgba(17, 24, 39, 0.9) transparent transparent transparent;
+}
+
+.scroll-nav-node:hover .scroll-nav-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    transition-delay: 0.1s; /* Small delay for better user experience */
+}
+
+/* Desktop/laptop vertical layout adjustments for line and nodes */
+@media (min-width: 1024px) {
+    .scroll-nav-line {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 0; /* Reduced padding */
+        position: absolute;
+    }
+
+    .scroll-nav-red-line, .scroll-nav-blue-line {
+        width: 2px;
+        height: 100%;
+    }
+
+    .scroll-nav-red-container {
+        width: 2px !important; /* Override JS width setting */
+        height: 0;
+        top: 0;
+        left: 0;
+    }
+
+    .scroll-nav-red-line {
+        background-image: linear-gradient(to bottom,
+            rgba(168, 85, 247, 0.95) 0%, /* Slightly more vibrant */
+            rgba(217, 70, 239, 0.95) 50%,
+            rgba(56, 189, 248, 0.95) 100%);
+        box-shadow: 0 0 8px rgba(168, 85, 247, 0.6); /* Enhanced glow */
+    }
+
+    .scroll-nav-blue-line {
+        background-image: linear-gradient(to bottom,
+            rgba(55, 65, 81, 0.6) 0%, /* Slightly more visible */
+            rgba(75, 85, 99, 0.6) 50%,
+            rgba(55, 65, 81, 0.6) 100%);
+    }
+
+    .scroll-nav-node {
+        margin: 10px 0; /* Reduced margin */
+        width: 20px; /* Slightly smaller nodes */
+        height: 20px;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Enhanced tooltip positioning for desktop */
+    .scroll-nav-tooltip {
+        left: auto;
+        right: calc(100% + 12px); /* Position to the left of the nav */
+        top: 50%;
+        transform: translateY(-50%) translateX(10px); /* Initial position with X offset */
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        opacity: 0; /* Hidden by default */
+        pointer-events: none; /* Prevent tooltip from blocking interactions */
+        transition: all 0.2s ease-out; /* Smooth transition */
+        background: rgba(13, 12, 15, 0.85); /* Slightly more opaque for better readability */
+        backdrop-filter: blur(8px); /* Enhanced glass effect */
+        border: 1px solid rgba(168, 85, 247, 0.3); /* Subtle border matching theme */
+    }
+
+    /* Adjust tooltip arrow for side position */
+    .scroll-nav-tooltip:after {
+        left: auto;
+        right: -4px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        border-width: 4px; /* Slightly larger arrow */
+        border-color: transparent transparent rgba(168, 85, 247, 0.3) rgba(168, 85, 247, 0.3); /* Match border color */
+    }
+}
+
+/* Reposition tooltips for vertical layout */
+@media (min-width: 1024px) {
+    .scroll-nav-tooltip {
+        top: 50%;
+        left: -15px; /* Moved further left to ensure it's outside the nav */
+        transform: translateY(-50%) translateX(-100%);
+        margin-left: -5px; /* Added margin for better spacing */
+    }
+
+    .scroll-nav-tooltip::after {
+        top: 50%;
+        left: 100%;
+        margin-left: 0;
+        margin-top: -4px;
+        border-color: transparent transparent transparent rgba(17, 24, 39, 0.9);
+    }
+
+    .scroll-nav-node:hover .scroll-nav-tooltip {
+        transform: translateY(-50%) translateX(-100%);
+        transition-delay: 0.1s; /* Consistent with horizontal layout */
+    }
+}
+
+/* Enhanced splash effect */
+.scroll-nav-splash {
+    box-shadow: 0 0 15px 5px rgba(168, 85, 247, 0.6); /* Purple glow matching site theme */
+    transform: translateZ(0) scale(1);
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: transform 1200ms cubic-bezier(0.19, 1, 0.22, 1), opacity 1500ms cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: transform, opacity;
+}
+
+.scroll-nav-node.active .scroll-nav-splash {
+    transform: translateZ(0) scale(3);
+    opacity: 0.8;
+}
+
+.scroll-nav-node.activating .scroll-nav-splash {
+    transform: translateZ(0) scale(3);
+    opacity: 0 !important;
+}
+
+.scroll-nav-node.active {
+    transform: scale(1.1);
+}
+
+.scroll-nav-node.active .scroll-nav-active-circle {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.scroll-nav-node.active .scroll-nav-inactive-circle {
+    transition: opacity 200ms;
+    opacity: 0;
+}
+
+/* Enhanced active node styling for desktop */
+@media (min-width: 1024px) {
+    .scroll-nav-node.active {
+        transform: scale(1.15); /* Slightly larger scale for better visibility */
+    }
+
+    .scroll-nav-node.active .scroll-nav-active-circle {
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.7); /* Enhanced glow for active node */
+    }
+
+    .scroll-nav-node.active .scroll-nav-white-dot {
+        transform: translateX(5px) translateY(5px) scale(1.1); /* Adjusted for smaller node size */
+    }
+}
+
+/* Enhanced active circle with site theme colors */
+.scroll-nav-active-circle {
+    transition: all 300ms cubic-bezier(.63,.62,.48,1.84);
+    transform: scale(0.7);
+    position: absolute;
+    opacity: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    background-image: linear-gradient(to bottom right,
+        rgba(168, 85, 247, 1) 0%,
+        rgba(217, 70, 239, 1) 60%,
+        rgba(56, 189, 248, 1) 100%);
+    left: 0; top: 0;
+    will-change: transform, opacity;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.scroll-nav-cover {
+    transform: translateZ(0);
+    width: 18px;
+    height: 18px;
+    background: rgb(13, 12, 15);
+    border-radius: 100%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.scroll-nav-white-dot {
+    transition: all 300ms cubic-bezier(.63,.62,.48,1.84);
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 100%;
+    position: absolute;
+    transform: translateX(6px) translateY(6px) scale(1);
+    will-change: transform;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.scroll-nav-inactive-circle {
+    transition: all 300ms cubic-bezier(.63,.62,.48,1.84);
+    width: 16px;
+    height: 16px;
+    display: block;
+    background: rgb(13, 12, 15);
+    position: absolute;
+    border-radius: 100%;
+    border: 2px solid rgba(168, 85, 247, 0.4); /* Match site theme */
+    top: 3px;
+    left: 3px;
+    will-change: transform, opacity;
+}
+
+/* Enhanced hover effects */
+.scroll-nav-node:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.scroll-nav-node:hover .scroll-nav-active-circle {
+    transition: all 200ms cubic-bezier(.63,.62,.48,1.84);
+    transform: scale(0.84);
+    opacity: 0.5; /* Show a hint of the active circle on hover */
+}
+
+.scroll-nav-node:hover .scroll-nav-active-circle .scroll-nav-white-dot {
+    transition: all 200ms cubic-bezier(.63,.62,.48,1.84);
+    transform: translateX(6px) translateY(6px) scale(1.2);
+}
+
+.scroll-nav-node:hover .scroll-nav-inactive-circle {
+    transition: all 200ms cubic-bezier(.63,.62,.48,1.84);
+    transform: scale(0.9);
+    border-color: rgba(168, 85, 247, 0.7); /* Brighter border on hover */
+}
+
+/* Enhanced desktop hover effects */
+@media (min-width: 1024px) {
+    .scroll-nav-node:hover {
+        transform: scale(1.15);
+    }
+
+    .scroll-nav-node:hover .scroll-nav-active-circle {
+        transform: scale(0.9);
+        opacity: 0.6; /* More visible on hover */
+        box-shadow: 0 0 8px rgba(168, 85, 247, 0.5); /* Subtle glow on hover */
+    }
+
+    .scroll-nav-node:hover .scroll-nav-inactive-circle {
+        border-color: rgba(255, 255, 255, 0.8); /* Brighter border on hover */
+        border-width: 2.5px; /* Slightly thicker border */
+    }
+
+    /* Enhanced tooltip visibility on hover */
+    .scroll-nav-node:hover .scroll-nav-tooltip {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+        transition-delay: 0.1s;
+    }
+
+    /* Enhanced active node styling */
+    .scroll-nav-node.active {
+        transform: scale(1.15);
+    }
+
+    .scroll-nav-node.active .scroll-nav-active-circle {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .scroll-nav-node.active .scroll-nav-inactive-circle {
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments for scroll nav */
+@media (max-width: 640px) {
+    #scroll-nav {
+        height: 50px;
+        padding: 12px;
+        bottom: 20px;
+    }
+
+    #scroll-nav .scroll-nav-logo {
+        height: 24px;
+    }
+
+    .scroll-nav-node {
+        width: 18px;
+        height: 18px;
+    }
+
+    .scroll-nav-active-circle {
+        width: 18px;
+        height: 18px;
+        transform: scale(0.6);
+    }
+
+    .scroll-nav-cover {
+        width: 14px;
+        height: 14px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .scroll-nav-white-dot {
+        width: 5px;
+        height: 5px;
+        transform: translateX(4.5px) translateY(4.5px) scale(1);
+    }
+
+    .scroll-nav-inactive-circle {
+        width: 12px;
+        height: 12px;
+        top: 3px;
+        left: 3px;
+        border-width: 1.5px;
+    }
+
+    .scroll-nav-splash {
+        width: 18px;
+        height: 18px;
+    }
+
+    #scroll-nav .scroll-nav-logo-link {
+        margin-right: 8px;
+        width: 30px;
+    }
+
+    .scroll-nav-line {
+        padding: 0 8px;
+    }
+
+    .scroll-nav-current-section {
+        font-size: 10px;
+        padding: 0 8px;
+    }
+
+    /* Tooltip adjustments for mobile */
+    .scroll-nav-tooltip {
+        top: -35px; /* Adjusted for smaller nav height */
+    }
+
+    /* Hover effects adjustments */
+    .scroll-nav-node:hover .scroll-nav-active-circle {
+        transform: scale(0.75);
+    }
+
+    .scroll-nav-node:hover .scroll-nav-active-circle .scroll-nav-white-dot {
+        transform: translateX(4.5px) translateY(4.5px) scale(1.2);
+    }
+
+    .scroll-nav-node:hover .scroll-nav-inactive-circle {
+        transform: scale(0.85);
+    }
+}
+
+/* Medium screens tooltip adjustment */
+@media (min-width: 641px) and (max-width: 1023px) {
+    /* Ensure tooltips appear above the nav bar */
+    .scroll-nav-tooltip {
+        top: -45px;
+    }
+}
+
+/* ===== END: Scroll Navigation Styles ===== */
+
+/* Ensure any conflicting Tailwind utilities from HTML are overridden or removed */
